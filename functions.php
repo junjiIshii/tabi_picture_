@@ -31,8 +31,8 @@ error_reporting(E_ALL^E_NOTICE);
 //!!!!!!!!!!!!!
 //要編集↓
 //!!!!!!!!!!!!!
-if($_SERVER['HTTP_HOST']=='localhost'){
-    session_save_path("C:/xampp/tmp/");
+if($_SERVER['HTTP_HOST']=='localhost:8888'){
+    session_save_path("/var/tmp/");
 }else{
     session_save_path("/home/junji1996/english-protocol.net/xserver_php/session");
 }
