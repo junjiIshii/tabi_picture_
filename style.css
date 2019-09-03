@@ -1,0 +1,89 @@
+ /*共通部分のCSS↓*/
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+
+}
+
+.allconteiner{
+    width: 90%;
+    margin:0 auto;
+    padding:5px;
+
+}
+
+header{
+    height: 60px;
+    background-color: aquamarine;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-icon{
+    display: inline-block;
+    color: cadetblue;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 60px;
+}
+
+.header-menue{
+    float:right;
+    line-height: 60px;
+}
+
+.head-conteiner{
+    width: 90%;
+    height:100%;
+    margin:0 auto;
+}
+
+
+.head-conteiner li{
+    list-style: none;
+    display: inline;
+    margin-right: 20px;
+    color: darkcyan;
+    font-weight: 600;
+}
+
+.head-conteiner a{
+    color: darkcyan;
+}
+
+.main-conteiner{
+    width: 95%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.search-conteiner{
+    width:200px;
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px;
+    background-color: lightgrey;
+    height: 100%;
+}
+
+.serchsection{
+    margin-bottom: 10px;
+}
+
+footer{
+    width: 100%;
+}
+.copy-right{
+    width:100%;
+    height: 50px;
+    text-align: center;
+    background-color: aquamarine;
+    padding:12px 0px;
+}
+
+
+.cd{
+    clear: both;
+}
