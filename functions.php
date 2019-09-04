@@ -275,11 +275,11 @@ function cautionEcho($errKey){
 //DataBaseコネクション!実装時にELSEを加える!
 //共通のDB接続設定
 function dbconnect(){
-    if($_SERVER['HTTP_HOST'] == 'localhost'){
-        $dsn = 'mysql:dbname=tabi_picture; host=localhost; charset=utf8';
-        $user = 'Junji';
-        $password = 'Junji1996';
-    }
+
+    $dsn = 'mysql:dbname=tabi_picture; host=localhost; charset=utf8';
+    $user = 'root';
+    $password = 'root';
+
     $options = array(
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -437,7 +437,7 @@ function signup(){
         }
 
         }catch(Exception $e){
-            error_log('エラー発生'.$e->getMessage(), 3, 'debug.log');
+            debug('エラー発生'.$e->getMessage());
             $err_msg['fatal']=MSG06;
         }
     }
