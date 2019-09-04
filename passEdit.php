@@ -23,38 +23,31 @@
 
     if(!empty($_POST) && empty($err_msg)){
         try{
-            $dbh = dbconnect();
-            $sql = 'SELECT password, userid FROM users WHERE userid = :userid';
-            $data = array(':userid'=> $userid);
-            $stmt = queryPost($dbh,$sql,$data);
-            $result = $stmt -> fetch(PDO::FETCH_ASSOC);
+            $userdata = getUserData($userid);
+            $userpass = $userdata['password'];
 
-            debug('クエリの中身：'.print_r($result,true));
-
-            //パスワードの照合
-
-            if(password_verify($oldpass, array_shift($result))){
+            //DB上に保存してあったデータと、変更前パスワードが一致しているか？
+            if(password_verify($oldpass, $userpass)){
                 debug('変更前パスワードが合致');
                 $editPass = password_hash($newpass, PASSWORD_DEFAULT);
 
                 $dbh = dbconnect();
+                debug('接続完了');
                 $sql = 'UPDATE users SET password =:pass WHERE userid = :userid';
                 $data = array(':pass'=> $editPass,':userid'=> $userid);
                 $stmt = queryPost($dbh,$sql,$data);
-                $result = $stmt -> fetch(PDO::FETCH_ASSOC);
 
                 if($stmt){
                     debug('クエリ成功');
                     debug('パスワードを変更しました。');
                     debug('マイページへ遷移');
+                    //メールの設定ができな〜〜〜〜〜い怒：Perimmision Denied
+                    $_SESSION['msg_suc']= SUC01;
                     header("location:mypage.php");
                 }else{
                     debug('クエリ失敗');
                     $err_msg['fatal']= MSG06;
                 }
-            }elseif(password_verify($newPass, array_shift($result))){
-                $err_msg['newpass'] = MSG13;
-                debug('変更前パスワードと変更パスワードが変わらない');
             }else{
                 $err_msg['oldpass'] = MSG13;
                 debug('変更前パスワードが非合致');

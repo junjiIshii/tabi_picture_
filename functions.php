@@ -16,6 +16,7 @@ define('MSG11','※郵便番号の形式に一致しません。');
 define('MSG12','※半角数字で入力してください。');
 define('MSG13','※変更前のパスワードが一致しません。');
 define('MSG14','※変更前と同じパスワードです。');
+define('SUC01','パスワードを変更しました。');
 $err_msg =array();
 $signup_db = array();
 
@@ -48,6 +49,17 @@ function debug($str){
     global $debug_flg;
     if(!empty($debug_flg)){
         error_log("\n".'debug：'.$str,3,'debug.log');
+    }
+}
+
+function getSessionFlash($key){
+    if(!empty($_SESSION[$key])){
+        $data=$_SESSION[$key];
+        $_SESSION['msg_suc']='';
+        debug('suc内容：'.$data);
+
+        //↓この$dataには空文字にする前のデータが入っている。
+        return $data;
     }
 }
 
