@@ -30,7 +30,7 @@ function livePreview($inputClass, $imgClass){
         fileReader.readAsDataURL(file);
     })
 }
-
-livePreview('.input_img','.preview-header');
-livePreview('.input_img','.preview-icon');
+    livePreview('.input_img','.preview-header');
+    livePreview(".input_img",".preview-icon");
+    livePreview(".input_img",".preview-product_img");
 

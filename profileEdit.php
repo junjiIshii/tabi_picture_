@@ -19,7 +19,7 @@
         $tel = $_POST['tel'];
         $zip = (!empty($_POST['zip']))? $_POST['zip']:0;
         $adress = htmlspecialchars($_POST['adress']);
-        $age = $_POST['age'];
+        $age = (!empty($_POST['age']))? $_POST['age']:0;
         $email = htmlspecialchars($_POST['email']);
 
         //ユーザーネームのチェック：文字数と入力必須
@@ -100,8 +100,10 @@
                 email = :email,
                 header_img = :hd_im,
                 icon_img = :ic_im,
-                introduction = :intro';
+                introduction = :intro
+                WHERE userid = :userid';
             $data = array(
+                ':userid'=> $_SESSION['user_id'],
                 ':username'=> $username,
                 ':age'=> $age,
                 ':tel'=> $tel,
@@ -117,6 +119,7 @@
             if($stmt){
                 debug('クエリ成功');
                 debug('マイページへ遷移');
+                $_SESSION['msg_suc']= SUC02;
                 header("location:mypage.php");
             }else{
                 debug('クエリ失敗');
@@ -339,8 +342,8 @@
                                 
                                 <div class="header_img area-drop">
                                     <span class="header-import-guide">ファイルをドロップまたはクリック</span>
-                                    <img class="preview-header" src="<?php echo profEditValSet('header_img');?>"
-                                    alt="" style="<?php if(empty(profEditValSet('header_img'))) echo 'display:none;'?>">
+                                    <img class="preview-header" src="<?php echo editValSet('header_img',$dbUserData);?>"
+                                    alt="" style="<?php if(empty(editValSet('header_img',$dbUserData))) echo 'display:none;'?>">
                                     <input type="hidden" name="MAX_FILE_SIZE" value="3145728">
                                     <input
                                     type="file" class="editContent-header_img input_img" name="header_img">
@@ -350,8 +353,8 @@
                             <div class="editArea icon_img area-drop">
                                 <span class="icon-import-guide">写真を追加</span>
                                 <input type="hidden" name="MAX_FILE_SIZE" value="3145728">
-                                <img class="preview-icon" src="<?php echo profEditValSet('icon_img');?>"
-                                    alt="" style="<?php if(empty(profEditValSet('icon_img'))) echo 'display:none;'?>">
+                                <img class="preview-icon" src="<?php echo editValSet('icon_img',$dbUserData);?>"
+                                    alt="" style="<?php if(empty(editValSet('icon_img',$dbUserData))) echo 'display:none;'?>">
                                 <input
                                 type="file" class="editContent-icon_img input_img" name="icon_img";?>
                             </div>
@@ -361,7 +364,7 @@
                                 <span class="caution">入力必須</span>
                                 <input
                                 type="text" class="editContent" name="username"
-                                value="<?php echo profEditValSet('username');?>">
+                                value="<?php echo editValSet('username',$dbUserData);?>">
                                 <span class="err_msg"><?php cautionEcho('username');?></span>
                             </div>
                             
@@ -371,7 +374,7 @@
                             <div class="editArea introduction">
                                 <p class="dataName">自己紹介文</p>
                                 <span class="caution">150文字以内で入力</span>
-                                <textarea name="introduction" class="editContent-textArea"><?php echo profEditValSet('introduction');?></textarea>
+                                <textarea name="introduction" class="editContent-textArea"><?php echo editValSet('introduction',$dbUserData);?></textarea>
                                 <span class="err_msg"><?php cautionEcho('introduction');?></span>
                             </div>
                             
@@ -382,7 +385,7 @@
                                 <span class="caution">ハイフン無しで入力して下さい</span>
                                 <input
                                 type="text" class="editContent"name="tel"
-                                value="<?php echo profEditValSet('tel');?>">
+                                value="<?php echo editValSet('tel',$dbUserData);?>">
                                 <span class="err_msg"><?php cautionEcho('tel');?></span>
                             </div>
 
@@ -392,7 +395,7 @@
                                 <span class="caution">ハイフン無しで入力して下さい</span>
                                 <input
                                 type="text" class="editContent zip"name="zip"
-                                value="<?php if(!empty(profEditValSet('zip'))){echo profEditValSet('zip');}?>">
+                                value="<?php if(!empty(editValSet('zip',$dbUserData))){echo editValSet('zip',$dbUserData);}?>">
                                 <span class="err_msg"><?php cautionEcho('zip');?></span>
                             </div>
 
@@ -402,7 +405,7 @@
                                 <span class="caution"></span>
                                 <input
                                 type="text" class="editContent adress"name="adress"
-                                value="<?php echo profEditValSet('addr');?>">
+                                value="<?php echo editValSet('addr',$dbUserData);?>">
                                 <span class="err_msg"><?php cautionEcho('addr');?></span>
                             </div>
 
@@ -412,7 +415,7 @@
                                 <span class="caution">半角英数字で入力</span>
                                 <input
                                 type="text" class="editContent age"name="age"
-                                value="<?php echo profEditValSet('age') ;?>">
+                                value="<?php if(!empty(editValSet('age',$dbUserData))){echo editValSet('age',$dbUserData);}?>">
                                 <span class="err_msg"><?php cautionEcho('age');?></span>
                             </div>
 
@@ -422,7 +425,7 @@
                                 <span class="caution">入力必須</span>
                                 <input
                                 type="text" class="editContent email" name="email"
-                                value="<?php echo profEditValSet('email');?>">
+                                value="<?php echo editValSet('email',$dbUserData);?>">
                                 <span class="err_msg"><?php cautionEcho('email');?></span>
                             </div>
 
@@ -435,5 +438,6 @@
         <div class="cd"></div>
     </div>
     <?php require_once('footer.php')?>
+
 </body>
 </html>

@@ -16,7 +16,13 @@ define('MSG11','※郵便番号の形式に一致しません。');
 define('MSG12','※半角数字で入力してください。');
 define('MSG13','※変更前のパスワードが一致しません。');
 define('MSG14','※変更前と同じパスワードです。');
+define('MSG15','※選択必須です。');
+define('MSG16','※最低１枚写真を追加してください。');
 define('SUC01','パスワードを変更しました。');
+define('SUC02','プロフィール内容を変更しました。');
+define('SUC03','商品の出品が完了しました。');
+define('SUC04','商品内容を変更しました。');
+define('SUC05','商品内容を削除しました。');
 $err_msg =array();
 $signup_db = array();
 
@@ -144,6 +150,13 @@ function mustEnter($str,$errkey){
     global $err_msg;
     if(empty($str)){
         $err_msg[$errkey] = MSG01;}
+}
+
+function mustSelect($str,$errkey){
+    global $err_msg;
+    if(empty($str)){
+        $err_msg[$errkey] = MSG15;
+    }
 }
 
 //Emailの形式かどうかをチェックしている
@@ -348,29 +361,67 @@ function getUserData($userid){
     }
 }
 
+function getCategory(){
+    debug('カテゴリー情報を取得します');
+    try{
+        $dbh =dbconnect();
+        $sql = 'SELECT categoryid,category_name FROM category';
+
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute();
+
+        return $stmt -> fetchall(PDO::FETCH_ASSOC);
+    }catch(Exception $e){
+        debug('エラー発生'.$e->getMessage());
+    }
+}
+
+function getProduct($u_id, $p_id){
+    debug('商品情報を取得します。');
+    debug('ユーザーID；'.$u_id);
+    debug('商品ID：'.$p_id);
+
+    try{
+        $dbh = dbconnect();
+        $sql = 'SELECT * FROM products WHERE userid = :u_id AND productid= :p_id AND delete_flg=0';
+        $data = array(':u_id'=> $u_id,':p_id'=>$p_id);
+
+        $stmt = queryPost($dbh,$sql,$data);
+
+        if($stmt){
+            debug('クエリ成功');
+            return $stmt -> fetch(PDO::FETCH_ASSOC);
+        }else{
+            return false;
+        }
+    }catch(Exception $e){
+        debug('エラー発生：'.$e->getMessage());
+    }
+}
+
+
 //編集画面でのデフォルトVALUEset
-function profEditValSet($key){
-    global $dbUserData;
+function editValSet($key,$dbData){
     global $err_msg;
 
     //DBにデータがある場合
-    if(!empty($dbUserData)){
+    if(!empty($dbData)){
         //POSTされたが入力内容にエラーがある。
         if(!empty($err_msg[$key])){
             //POST内容がある。
             if(isset($_POST[$key])){
                 return $_POST[$key];
             }else{
-                return $dbUserData[$key];
+                return $dbData[$key];
             }
         }else{
             //エラーなしの入力内容がPOSTされた。
             //DBと違う内容だった場合（更新する場合）
-            if(isset($_POST[$key]) && $_POST[$key] !== $dbUserData[$key]){
+            if(isset($_POST[$key]) && $_POST[$key] !== $dbData[$key]){
                 return $_POST[$key];
             }else{
                 //DBと同じ内容だった場合（入力したけど更新前と同じだった）
-                return $dbUserData[$key];
+                return $dbData[$key];
             }
         }
     //DBにデータがない。（未登録）
@@ -381,6 +432,7 @@ function profEditValSet($key){
         }
     }
 }
+
 
 function profEditImgSet($key){
     global $dbUserData;
@@ -455,3 +507,32 @@ function signup(){
     }
 }
 
+//===================
+//削除処理
+//===================
+
+function productDel($p_id){
+    debug('商品削除ボタンが押されました。');
+    try{
+        $dbh= dbconnect();
+        $sql1= 'UPDATE products SET delete_flg = 1 WHERE productid = :p_id';
+
+        $data = array(':p_id'=>$p_id);
+
+        $stmt =queryPost($dbh,$sql1,$data);
+
+
+        if($stmt){
+            debug('商品を削除しました。商品情報：'.print_r($p_id,true));
+            debug('マイページへ遷移。');
+            $_SESSION['msg_suc']=SUC05;
+            header("location:mypage.php");
+        }else{
+            debug('クエリ失敗！！');
+            $err_msg['fatal']=MSG06;
+        }
+    }catch(Exception $e){
+        debug('エラー発生：'.($e->getMessage()));
+        $err_msg['fatal']= MSG06;
+    }
+}

@@ -25,6 +25,7 @@
             case 'profileEdit.php':
                 echo '<script type="text/javascript" src="imgPreview.js"></script>';
                 break;
+
         }
     ?>
 </footer>

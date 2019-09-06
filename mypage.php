@@ -29,7 +29,7 @@
             <li><a href="logout.php">ログアウト</a></li>
             <li><a href="profileEdit.php">プロフ編集</a></li>
             <li><a href="passEdit.php">パスワード変更</a></li>
-            <li><a href="upload.php">商品アップロード</a></li>
+            <li><a href="productEdit.php">商品アップロード</a></li>
             <li><a href="withdraw.php">退会</a></li>
         </ul>
     <?php require_once('footer.php')?>

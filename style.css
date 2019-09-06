@@ -91,6 +91,7 @@ footer{
 /*案内バーのスタイル*/
 .msg-slide{
     position:fixed;
+    font-weight: bold;
     top:0;
     width:100%;
     height: 40px;
