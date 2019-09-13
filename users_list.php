@@ -1,5 +1,48 @@
 <?php
     require_once('functions.php');
+    $currentPg = (!empty($_GET['pg']))? $_GET['pg']:1;
+    if((int)$currentPg === 0){header("location:?pg=1");}
+
+    $allNum = getNumData('userid','users');
+    $maxShowNum = 12;
+    $offset =($currentPg-1)*$maxShowNum;
+    $u_data = getSelectData($maxShowNum ,$offset,'users','userid,username,introduction,header_img,icon_img');
+
+    //ページングのアルゴリズム
+    $lastPg_count = ceil($allNum/$maxShowNum); //　全ページ数　全体数÷表示数
+
+    debug($lastPg_count);
+    $firstPg = 1;
+    
+    //基本は現在のページから±2ページをだす。
+    $minPageNum=$currentPg-2;
+    $maxPageNum=$currentPg+2;
+
+    if($lastPg_count <5){
+        //ページ表示数が５より少ない時は５個全てだす。
+        $maxPageNum = $lastPg_count;
+        $minPageNum = $firstPg;
+    }elseif($minPageNum<= $firstPg){
+        //ページナンバーが1を下回ってしまう場合。
+        $minPageNum = 1;
+        $maxPageNum = $firstPg+4;
+    }elseif($maxPageNum>=$lastPg_count && $lastPg_count >=5){
+        //ページナンバーが最大を上回ってしまう場合。
+        $maxPageNum=$lastPg_count;
+        $minPageNum = $lastPg_count-4;
+    }
+    
+
+
+    //最後のページで表示できるカード数の調整。余り＝表示する数。（0を除く）
+    $startNum = ($currentPg -1)*$maxShowNum +1;
+
+    //最後のページで表示できるカード数の調整。余り＝表示する数。（0を除く）
+    if($currentPg==$lastPg_count && $allNum % $maxShowNum!=0){
+        $maxShowNum = $allNum % $maxShowNum;
+    }
+
+    $endNum = $startNum + $maxShowNum -1;
 ?>
 
 <!DOCTYPE html>
@@ -9,27 +52,53 @@
     <link href="style.css" rel="stylesheet">
     <title>商品一覧</title>
     <style>
-        .usercards-conteiner{
+    .usercards-conteiner{
     margin: 30px 20px;
     width:80%;
     /*border: 2px black solid;目印用後で消す*/
     float: right;
     overflow: hidden;
-    font-size: 0px;
 }
 
+.guide{
+    border: 1px solid black;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    font-size:15px;
+    padding:0px 10px;
+}
+
+.show-result{
+    display: inline-block;
+    line-height:50px;
+}
+
+.show-nowNum{
+    display: inline-block;
+    float:right;
+    line-height:50px;
+}
 .usercard-unit{
     /*border: 1px red solid;目印用後で消す*/
     width:300px;
     height: 500px;
-    float:left;
+    display: inline-block;
+    vertical-align:top;
     font-size: 20px;
     margin: 0px 10px;
     margin-bottom: 20px;
     background: #f1f1f1;
+    color:black;
     box-shadow:2px 8px   rgba(61, 60, 60, 0.2);
     position: relative;
 }
+
+
+.usercard-unit:hover{
+    background: #d9d9d9;
+}
+
 
 .card-headerimg img{
     width: 100%;
@@ -59,17 +128,27 @@
 }
 
 .follow-btn{
+    position: absolute;
+    top:205px;
+    left:80px;
+    font-size:18px;
     text-align: center;
     width:150px;
     margin: 0 auto;
     border-radius: 20px;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .unfollow{
     color: #0065a8;
     border:2px solid #0065a8;
+    background:#f1f1f1;
 }
+
+.usercard-unit:hover .unfollow{
+    background: #d9d9d9;
+}
+
 
 .followed{
     border:2px solid #0065a8;
@@ -78,12 +157,35 @@
 }
 
 .userinfo{
-    margin-top: 10px;
+    margin-top: 40px;
     text-align: left;
     font-size: 15px;
     padding: 8px;
+    height: 200px;
 }
-    </style>
+
+.to-detail{
+    display:block;
+    text-align: center;
+}
+
+.paging {
+    width: 100%;
+    height:40px;
+    text-align:center;
+}
+
+.pageNum{
+    height:50px;
+    width:40px;
+    line-height:40px;
+    display:inline-block;
+    background-color: #01DFA5;
+    cursor:pointer;
+}
+
+
+</style>
 </head>
 <body>
     <?php require_once('header.php')?>
@@ -111,31 +213,72 @@
         </div>
 
         <div class="usercards-conteiner">
-            <?php for($i=1; $i<=9; $i++) echo
-            '<div class="usercard-unit">
-                
-                <div class="user-icon_usercardunit">
-                    <a href="#"><img src="user_icon/usericon_sample01.jpg"></a>
-                </div>
-                <div class="card-headerimg">
-                    <img src="pictures/sample01.jpg">
-                </div>
-                <p class = "card userName">作者名</p>
-                <div class="card follow-btn unfollow" >
-                    フォロー
-                </div>
-                <div class="card userinfo">
-                    <p>自転車旅が趣味です。日本各地を自転車で回って、その旅の軌跡の写真を上げています。
-                    今まで行ったことのある場所は、北海道一周、台湾一周、東海道、渋峠などです。</p>
+
+            <div class="guide">
+                <span class="show-result"><?php echo"{$maxShowNum}人のユーザーを表示します。"?></span>
+                <span class="show-nowNum"><?php echo "$startNum-$endNum 件/ $allNum 件"; ?></span>
+            </div>
+
+            <?php for($i=0; $i<$maxShowNum; $i++) {?>
+            <div class="usercard-unit" >
+
+                <div class="link-cover" data-url="<?php echo "profile_detail.php?u_id=".$u_data[$i]['userid']?>">
+                    <div class="user-icon_usercardunit">
+                        <img src="<?php echo $u_data[$i]['icon_img']?>">
+                    </div>
+                    <div class="card-headerimg">
+                        <img src="<?php echo $u_data[$i]['header_img']?>">
+                    </div>
+                    <p class = "card userName"><?php echo $u_data[$i]['username']?></p>
+                    <div class="card userinfo">
+                        <p><?php echo $u_data[$i]['introduction']?></p>
+                    </div>
                 </div>
 
-                    <a class="to-detail" href="#">ユーザー詳細</a>
-            </div>' ;?>
+                <button class="card follow-btn unfollow" >
+                        フォロー
+                </button>
+
+            </div>
+
+            <?php }?>
+
+            <div class="paging">
+                <ul class="paging-list">
+                    <?php if($currentPg != 1):?>
+                    <li class="pageNum" data-url="?pg=1">＜</li>
+                    <?php endif?>
+
+                    <?php for($p=$minPageNum;$p<=$maxPageNum;$p++){?>
+                        <li style="<?php if($currentPg==$p)echo'background:#088A4B;'?>"
+                        data-url='?pg=<?php echo $p?>'
+                        class="pageNum">
+                        <?php echo $p?></li>
+                    <?php }?>
+
+                    <?php if($currentPg != $lastPg_count):?>
+                    <li class="pageNum" data-url="?pg=<?php echo $lastPg_count?>">＞</li>
+                    <?php endif;?>
+                </ul>
+            </div>  
 
         </div>
+
         <div class="cd"></div>
     </div>
-
+    
     <?php require_once('footer.php')?>
+    <script>
+
+        $('.link-cover').click(function(){
+            location.href=$(this).attr('data-url')
+        });
+
+        $('.pageNum').click(function(){
+            location.href=$(this).attr('data-url')
+        });
+
+
+    </script>
 </body>
 </html>

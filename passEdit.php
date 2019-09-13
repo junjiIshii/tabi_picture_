@@ -41,7 +41,22 @@
                     debug('クエリ成功');
                     debug('パスワードを変更しました。');
                     debug('マイページへ遷移');
-                    //メールの設定ができな〜〜〜〜〜い怒：Perimmision Denied
+                    
+                    $usename = $userdata['username'];
+                    $to = $userdata['email'];
+                    $sjt = 'パスワード変更のお知らせ。';
+
+                    $mes= <<< EOM
+{$usename} さん
+こちらのアドレスで使用している
+アカウントのパスワードが変更されました。
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+TABI　PICTUREカスタマーセンター
+Email: info@tabipic.com
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+EOM;
+
+                    mail($to,$sjt,$mes);
                     $_SESSION['msg_suc']= SUC01;
                     header("location:mypage.php");
                 }else{

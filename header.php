@@ -4,15 +4,15 @@
 //==============================================
 
     //メニューの一部を特定のページで変更
-    switch($_SERVER['REQUEST_URI']){
+    switch($url = $_SERVER['REQUEST_URI']){
 
         //写真リストページなら、ユーザーリストへのリンクになる。
-        case '/tabi_picture/products_list.php':
+        case strstr($url,'/tabi_picture/products_list.php'):
             $menuLink='<li><a href="users_list.php">ユーザーを見つける</a></li>';
             break;
 
             //ユーザーリストなら、写真リストページへのリンクになる。
-        case '/tabi_picture/users_list.php':
+        case strstr($url,'/tabi_picture/users_list.php'):
             $menuLink='<li><a href="products_list.php">写真を見つける</a></li>';
             break;
     };

@@ -182,7 +182,6 @@
                                 <?php if(!empty($err_msg)) echo $err_msg['email'];?></span>
                                 <input class="formArea valid-email" id="email" type="text" name="email"
                                 value=<?php if(!empty($_POST['email'])) echo $_POST['email'];?>></label>
-                                <!--<div class="err-msg"></div>PHP-->
                         </div>
 
                         <div class="form-group">
@@ -193,7 +192,7 @@
                         </div>
                         <label class="save-check" for="sess_save"><input id="sess_save" type="checkbox" name="pass_save[]" value="save">ログインを保持する。</label>
                         <input class="submit-btn" type="submit" value="ログイン">
-                        <a class="forgetPass" href="#">パスワードを忘れた方はこちら</a>
+                        <a class="forgetPass" href="passReset.php">パスワードを忘れた方はこちら</a>
 
                     </form>
                 </div>

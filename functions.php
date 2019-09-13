@@ -18,11 +18,19 @@ define('MSG13','※変更前のパスワードが一致しません。');
 define('MSG14','※変更前と同じパスワードです。');
 define('MSG15','※選択必須です。');
 define('MSG16','※最低１枚写真を追加してください。');
+define('MSG17','※認証キーが異なります。');
+define('MSG18','※認証キーの有効期限が切れました。再度発行して下さい。');
+define('MSG19','この商品は削除されています。');
+define('MSG20','このユーザーは退会済みです。');
+
 define('SUC01','パスワードを変更しました。');
 define('SUC02','プロフィール内容を変更しました。');
 define('SUC03','商品の出品が完了しました。');
 define('SUC04','商品内容を変更しました。');
 define('SUC05','商品内容を削除しました。');
+define('SUC06','入力したアドレスに認証キーを送信しました。');
+define('SUC07','パスワードを再発行しました。メールをご確認ください。');
+
 $err_msg =array();
 $signup_db = array();
 
@@ -31,9 +39,10 @@ $signup_db = array();
 //共通INI,SESSION,DEBUG設定
 //==============================================
 
+ini_set( 'display_errors', 1 );
+ini_set( 'error_reporting', E_ALL );
 ini_set('debug.log','on');
-ini_set('display_errors', 1);
-error_reporting(E_ALL^E_NOTICE);
+
 
 //!!!!!!!!!!!!!
 //要編集↓
@@ -61,7 +70,7 @@ function debug($str){
 function getSessionFlash($key){
     if(!empty($_SESSION[$key])){
         $data=$_SESSION[$key];
-        $_SESSION['msg_suc']='';
+        $_SESSION[$key]='';
         debug('suc内容：'.$data);
 
         //↓この$dataには空文字にする前のデータが入っている。
@@ -95,7 +104,7 @@ function debugLogStart(){
 
 
 //==============================================
-//ログイン認証設定
+//認証設定
 //==============================================
 function loginAuth(){
     //ログインしている（logidateが発行されている）
@@ -126,6 +135,7 @@ function loginAuth(){
         }
     }
 }
+
 
 
 
@@ -200,6 +210,13 @@ function minMaxWords($str,$min=8,$max=30,$errkey){
         $err_msg[$errkey] = "※{$min}文字以上入力して下さい。";
     }elseif(strlen($str) > $max){
         $err_msg[$errkey] = "※{$max}文字以内で入力して下さい。";
+    }
+}
+
+function lengthCheck($str,$rightLen,$errKey){
+    global $err_msg;
+    if(mb_strlen($str) !== $rightLen){
+        $err_msg[$errKey] = "{$rightLen}文字で入力してください。";
     }
 }
 
@@ -345,12 +362,30 @@ function delFlagchek($email){
     }
 }
 
+//ゲッター系
+//==============================================
+
 //ユーザー情報（）の取得
 function getUserData($userid){
-    debug('ユーザー情報を取得します');
+    debug('ユーザー情報を全て取得します');
     try{
         $dbh =dbconnect();
         $sql = 'SELECT * FROM users WHERE userid = :userid';
+        $data = array(':userid'=> $userid);
+
+        $stmt = queryPost($dbh,$sql,$data);
+        return $stmt -> fetch(PDO::FETCH_ASSOC);
+
+    }catch(Exception $e){
+        debug('エラー発生'.$e->getMessage());
+    }
+}
+
+function getOneUserData($userid,$colKey){
+    debug('以下のユーザー情報を取得します：'.$colKey);
+    try{
+        $dbh =dbconnect();
+        $sql = "SELECT $colKey FROM users WHERE userid = :userid";
         $data = array(':userid'=> $userid);
 
         $stmt = queryPost($dbh,$sql,$data);
@@ -370,14 +405,16 @@ function getCategory(){
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
 
-        return $stmt -> fetchall(PDO::FETCH_ASSOC);
+        $result =$stmt -> fetchall(PDO::FETCH_ASSOC);
+        debug(print_r($result,true));
+        return $result;
     }catch(Exception $e){
         debug('エラー発生'.$e->getMessage());
     }
 }
 
 function getProduct($u_id, $p_id){
-    debug('商品情報を取得します。');
+    debug('ユーザーIDに対する商品情報を取得します。');
     debug('ユーザーID；'.$u_id);
     debug('商品ID：'.$p_id);
 
@@ -399,6 +436,120 @@ function getProduct($u_id, $p_id){
     }
 }
 
+//特定のデータを指定数分だけ取得する。
+function getSelectData($getCount,$offSet,$table,$column){
+    debug("{$table}情報を{$offSet}番目から{$getCount}個取得します。");
+    try{
+        $dbh = dbconnect();
+        $sql = "SELECT {$column} FROM {$table} LIMIT {$getCount} OFFSET {$offSet}";
+
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute();
+
+        $result = $stmt -> fetchAll();
+        return $result;
+    }catch(Exception $e){
+        debug('エラー発生：'.$e->getMessage());
+    }
+}
+
+//テーブルの個数を取得する。
+function getNumData($column,$table){
+    try{
+        $dbh= dbconnect();
+        $sql= "SELECT count({$column}) FROM {$table}" ;
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute();
+
+        $result =  $stmt->fetch();
+        debug($result["count({$column})"]);
+        return $result["count({$column})"];
+    }catch(Exception $e){
+        debug('エラー発生：'.$e->getMessage());
+    }
+}
+
+function getUserProducNum($u_id){
+    try{
+        $dbh = dbconnect();
+        $sql = 'SELECT count(productid) FROM products WHERE userid=:u_id';
+        $data = array(':u_id'=>$u_id);
+
+        $stmt = queryPost($dbh,$sql,$data);
+
+        if($stmt){
+            debug('クエリが成功');
+            $result = $stmt -> fetch();
+            debug('取得データ：'.$result["count(productid)"]);
+            return $result["count(productid)"];
+        }
+    }catch(Exception $e){
+        debug('エラー発生：'.$e->getMessage());
+    }
+}
+
+function makeProducList($maxShow,$offset){
+    try{
+        $dbh = dbconnect();
+        $sql = "SELECT productid,u.userid, username, icon_img,pic1,title,detail
+        FROM users AS u RIGHT JOIN products AS p ON u.userid = p.userid WHERE p.delete_flg = 0 
+        LIMIT {$maxShow} OFFSET {$offset}";
+        
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute();
+
+        $result = $stmt -> fetchAll();
+        debug('取得データ：'.print_r($result,true));
+        return $result;
+
+    }catch(Exception $e){
+        debug('エラー発生：'.$e->getMessage());
+    }
+}
+
+function makeUserProducList($maxShow,$offset,$u_id){
+    try{
+        $dbh = dbconnect();
+        $sql = "SELECT productid,pic1,title,detail FROM products WHERE delete_flg = 0 AND userid = :u_id;
+        LIMIT {$maxShow} OFFSET {$offset}";
+
+        $data = array(':u_id'=>$u_id);
+        
+        $stmt = queryPost($dbh,$sql,$data);
+
+        $result = $stmt -> fetchAll();
+        debug('取得データ：'.print_r($result,true));
+        return $result;
+
+    }catch(Exception $e){
+        debug('エラー発生：'.$e->getMessage());
+    }
+}
+
+//指定した商品IDを元に商品情報とユーザー情報を確かめる。
+//また入力された商品のデリートされている（不正な入力）出ないかチェック
+function showProductData($p_id){
+    try{
+        $dbh = dbconnect();
+        $sql = 'SELECT
+                productid,u.userid, username,icon_img,pic1,pic2,pic3,pic4,pic5,pic6,pic7,pic8,pic9,
+                title,detail,price,p.delete_flg,categoryid,username,icon_img,introduction
+                FROM users AS u RIGHT JOIN products AS p ON u.userid = p.userid
+                WHERE productid=:p_id';
+        $data = array(':p_id'=>$p_id);
+
+        $stmt = queryPost($dbh,$sql,$data);
+
+        if($stmt){
+            debug('クエリが成功');
+            $result = $stmt -> fetch(PDO::FETCH_ASSOC);
+            debug('取得データ：'.print_r($result,true));
+            return $result;
+        }
+    }catch(Exception $e){
+        debug('エラー発生：'.$e->getMessage());
+    }
+}
 
 //編集画面でのデフォルトVALUEset
 function editValSet($key,$dbData){
@@ -535,4 +686,17 @@ function productDel($p_id){
         debug('エラー発生：'.($e->getMessage()));
         $err_msg['fatal']= MSG06;
     }
+}
+
+//===================
+//その他
+//===================
+
+function createAuthKey($leng = 8){
+    $cahrs ='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    $str ='';
+    for($i=0;$i< $leng; $i++){
+        $str .= $cahrs[mt_rand(0,61)];
+    }
+    return $str;
 }
