@@ -54,6 +54,7 @@ header{
     color: darkcyan;
 }
 
+/*メインコンテナのデフォルト設定*/
 .main-conteiner{
     width: 95%;
     margin: 0 auto;
@@ -132,4 +133,23 @@ footer{
     font-size:16px;
     line-height:40px;
     z-index: 1;
+}
+
+/*メニューバーのCSS*/
+.mypage-menu-conteiner{
+    display: inline-block;
+    vertical-align: top;
+    width:200px;
+    padding: 10px;
+    background-color: lightgrey;
+    height: 100%;
+    }
+
+.mypage-menu-section{
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+.mypage-menu-section:last-child{
+    margin-bottom: 0px;
 }
