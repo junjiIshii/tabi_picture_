@@ -108,13 +108,20 @@
     object-fit: cover;
 }
 
-.user-icon_producunit img{
-    object-fit: cover;
-    width: 80px;
-    border-radius: 50%;
+.user-icon_producunit{
+    width:80px;
+    height: 80px;
     position: absolute;
     top:270px;
     left:5px;
+    border-radius: 50%;
+}
+
+.user-icon_producunit img{
+    object-fit: cover;
+    width: 100%;
+    height:100%;
+    border-radius: 50%;
     border: white 5px solid;
 }
 

@@ -97,14 +97,21 @@
     object-fit: cover;
 }
 
-.user-icon_usercardunit img{
-    object-fit: cover;
-    width: 90px;
-    border-radius: 50%;
+.user-icon_usercardunit{
+    width:90px;
+    height: 90px;
     position: absolute;
     top:20%;
     left:5px;
     border: white 5px solid;
+    border-radius: 50%;
+}
+
+.user-icon_usercardunit img{
+    object-fit: cover;
+    width: 100%;
+    height:100%;
+    border-radius: 50%;
 }
 
 
