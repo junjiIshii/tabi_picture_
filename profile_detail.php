@@ -41,33 +41,7 @@
             header("location:mypage.php");
         }
 
-        $firstPg = 1;
-        //基本は現在のページから±2ページをだす。
-        $minPageNum=$currentPg-2;
-        $maxPageNum=$currentPg+2;
-
-        if($lastPg_count <5){
-            //ページ表示数が５より少ない時は５個全てだす。
-            $maxPageNum = $lastPg_count;
-            $minPageNum = $firstPg;
-        }elseif($minPageNum<= $firstPg){
-            //ページナンバーが1を下回ってしまう場合。
-            $minPageNum = 1;
-            $maxPageNum = $firstPg+4;
-        }elseif($maxPageNum>=$lastPg_count && $lastPg_count >=5){
-            //ページナンバーが最大を上回ってしまう場合。
-            $maxPageNum=$lastPg_count;
-            $minPageNum = $lastPg_count-4;
-        }
-        
-        $startNum = ($currentPg -1)*$maxShowNum +1;
-
-        //最後のページで表示できるカード数の調整。余り＝表示する数。（0を除く）
-        if($currentPg==$lastPg_count && $allNum % $maxShowNum!=0){
-            $maxShowNum = $allNum % $maxShowNum;
-        }
-
-        $endNum = $startNum + $maxShowNum -1;
+        $pgData = paging($allNum,$currentPg,$lastPg_count,$maxShowNum);
     }
     
 
@@ -297,10 +271,10 @@
                         <div class="paging">
                                 <ul class="paging-list">
                                     <?php if($currentPg != 1):?>
-                                    <li class="pageNum" data-url="?pg=1">＜</li>
+                                    <li class="pageNum" data-url="<?php echo "?u_id={$u_id}&pg=1"?>">＜</li>
                                     <?php endif?>
 
-                                    <?php for($p=$minPageNum;$p<=$maxPageNum;$p++){?>
+                                    <?php for($p=$pgData['minPg'];$p<=$pgData['maxPg'];$p++){?>
                                         <li style="<?php if($currentPg==$p)echo'background:#088A4B;'?>"
                                         data-url="<?php echo "?u_id={$u_id}&pg={$p}"?>"
                                         class="pageNum">
@@ -332,6 +306,10 @@
     <script type="text/javascript" src="follow_btn.js"></script>
     <script>
         $('.product-unit').click(function(){
+        location.href=$(this).attr('data-url')
+        });
+
+        $('.pageNum').click(function(){
         location.href=$(this).attr('data-url')
         });
     </script>

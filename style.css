@@ -58,19 +58,50 @@ header{
     width: 95%;
     margin: 0 auto;
     position: relative;
+    display:flex;
+    flex-wrap:wrap;
 }
 
 .search-conteiner{
     width:200px;
-    display: inline-block;
     margin-top: 30px;
     padding: 10px;
-    background-color: lightgrey;
+    border:2px dotted aquamarine;
     height: 100%;
 }
 
 .serchsection{
     margin-bottom: 10px;
+}
+
+
+.serchsection input{
+    font-size: 15px;
+    height:28px;
+    width:180px;
+}
+
+.serchsection select{
+    font-size: 14px;
+    height:30px;
+    width:80px;
+}
+
+.bycategory select{
+    width:120px;
+}
+
+.searchStart{
+    -webkit-appearance:none;
+    height:30px;
+    font-size: 18px;
+    padding:2px;
+    
+}
+
+.searchStart:hover{
+    background: aquamarine;
+    transition: background 0.5s;
 }
 
 footer{

@@ -1,51 +1,45 @@
 <?php
     require_once('functions.php');
+    $ctg = getCategory();
 
 
-    $currentPg = (!empty($_GET['pg']))? $_GET['pg']:1;
-    if((int)$currentPg === 0){header("location:?pg=1");}
+    if(empty($_GET['st'])){
+        //stが空＝検索をかけていない通常の表示の時のページング設定
 
-    $allNum = getNumData('productid','products');
-    $maxShowNum = 12;
-    $offset =($currentPg-1)*$maxShowNum;
-    $p_data = makeProducList($maxShowNum,$offset);
+        $currentPg = (!empty($_GET['pg']))? $_GET['pg']:1;
+        if((int)$currentPg === 0){header("location:?pg=1");}
+    
+        $allNum = getNumData('productid','products');
+    
+        $maxShowNum = 12;
+        $offset =($currentPg-1)*$maxShowNum;
+        $p_data = makeProducList($maxShowNum,$offset);
+        $lastPg_count = ceil($allNum/$maxShowNum); //　全ページ数　全体数÷表示数
+    }else{
+        $currentPg = (!empty($_GET['pg']))? $_GET['pg']:1;
+        if((int)$currentPg === 0){header("location:?pg=1");}
 
-    $lastPg_count = ceil($allNum/$maxShowNum); //　全ページ数　全体数÷表示数
+        $rst =  showSearchProd($currentPg);
+        $allNum= $rst['total'];
+        $maxShowNum = $_GET['showNum'];
+        $lastPg_count = ceil($allNum/$maxShowNum);
+
+        $p_data = $rst['data'];
+        debug('検索データ内容：'.print_r($p_data,true));
+    }
+
+
 
     //最大ページ以上のGETパラメータを不正に入力した場合、１ページ目へ送る。
-    if($currentPg > $lastPg_count){
+    if($currentPg > $lastPg_count && $allNum != 0){
         header("location:?pg=1");
     }
 
-    debug($lastPg_count);
-    $firstPg = 1;
     
-    //基本は現在のページから±2ページをだす。
-    $minPageNum=$currentPg-2;
-    $maxPageNum=$currentPg+2;
-
-    if($lastPg_count <5){
-        //ページ表示数が５より少ない時は５個全てだす。
-        $maxPageNum = $lastPg_count;
-        $minPageNum = $firstPg;
-    }elseif($minPageNum<= $firstPg){
-        //ページナンバーが1を下回ってしまう場合。
-        $minPageNum = 1;
-        $maxPageNum = $firstPg+4;
-    }elseif($maxPageNum>=$lastPg_count && $lastPg_count >=5){
-        //ページナンバーが最大を上回ってしまう場合。
-        $maxPageNum=$lastPg_count;
-        $minPageNum = $lastPg_count-4;
+    if($allNum != 0){
+        $pgData =  paging($allNum,$currentPg,$lastPg_count,$maxShowNum);
     }
     
-    $startNum = ($currentPg -1)*$maxShowNum +1;
-
-    //最後のページで表示できるカード数の調整。余り＝表示する数。（0を除く）
-    if($currentPg==$lastPg_count && $allNum % $maxShowNum!=0){
-        $maxShowNum = $allNum % $maxShowNum;
-    }
-
-    $endNum = $startNum + $maxShowNum -1;
 
 ?>
 
@@ -64,21 +58,17 @@
     margin-bottom: 20px;
     font-size:15px;
     padding:0px 10px;
+    display:flex;
+    align-items:center;
 }
 
-.show-result{
-    display: inline-block;
-    line-height:50px;
-}
 
 .show-nowNum{
-    display: inline-block;
-    float:right;
-    line-height:50px;
+    margin-left:auto;
 }
 
 .prodocuts-conteiner{
-    margin: 30px 0px;
+    margin: 30px 20px;
     width:80%;
     /*border: 2px black solid;目印用後で消す*/
     float: right;
@@ -174,78 +164,113 @@
     <div class="main-conteiner">
 
         <div class="search-conteiner">
-            <div class="serchsection byName">
-                <p>ユーザー名で探す</p>
-                <input type="text" placeholder="ユーザー名" name="searchByName"
-                value="<?php if(!empty ($_POST['searchByName'])) echo $_POST['searchByName'];?>">
-            </div>
+            <form class="search-form" method="get">
+                
+                <div class="serchsection byName">
+                    <p>商品タイトルで探す</p>
+                    <input type="text" placeholder="商品名" name="byName"
+                    value="<?php if(!empty ($_GET['byName'])) echo $_GET['byName'];?>">
+                </div>
 
-            <div class="serchsection bycategory">
-                <p>カテゴリーで探す<span style="font-size:10px;"><br>(スペースでAND検索)</span></p>
-                <input type="text" placeholder="カテゴリ名" name="searchBycategory"
-                value="<?php if(!empty ($_POST['searchBycategory'])) echo $_POST['searchBycategory'];?>">
-            </div>
+                <div class="serchsection bycategory">
+                    <p>カテゴリーで探す</p>
+                    <select name="c_id">
+                        
+                            <option value="0" <?php selectedEcho('c_id',"0")?>>指定しない</option>
+                            <?php for($i=0;$i<count($ctg);$i++):?>
+                                <option value="<?php echo $ctg[$i]['categoryid']?>"
+                                <?php selectedEcho('c_id',$ctg[$i]['categoryid'])?>><?php echo $ctg[$i]['category_name']?></option>
+                            <?php endfor;?>
 
-            <div class="serchsection byintro">
-                <p>キーワード検索</p>
-                <input type="text" placeholder="キーワード" name="searchByintro"
-                value="<?php if(!empty ($_POST['searchByintro'])) echo $_POST['searchByintro'];?>">
-            </div>
+                    </select>
+                </div>
+
+                <div class="serchsection showNumber">
+                    <p>表示数</p>
+                    <select name="showNum" class="showNum">
+                        <?php for($i=1;$i<=4;$i++):?>
+                            <option value="<?php echo $i*12?>" <?php selectedEcho('showNum',$i*12)?>><?php echo $i*12?></option>
+                        <?php endfor;?>
+                    </select>
+                </div>
+
+                <div class="serchsection showHow">
+                    <p>表示形式</p>
+                    <select name="sort" class="showType">
+                        <option value="1" <?php selectedEcho('sort',"1")?>>新しい順</option>
+                        <option value="2" <?php selectedEcho('sort',"2")?>>古い順</option>
+                    </select>
+                </div>
+
+                <div class="serchsection submit-btn">
+                <input type="hidden" name="st" value="searchpr">
+                <input class="searchStart" type="submit" value="検索">
+                </div>
+
+                
+            </form>
         </div>
 
         <div class="prodocuts-conteiner">
-
-            <div class="guide">
-                <span class="show-result"><?php echo"{$maxShowNum}件の商品を表示します。"?></span>
-                <span class="show-nowNum"><?php echo "$startNum-$endNum 件/ $allNum 件"; ?></span>
-            </div>
-
-            <?php for($i=0; $i<$maxShowNum; $i++) {;?>
-            <div class="product-unit">
-
-                <div class="user-icon_producunit">
-                    <a href="<?php echo "profile_detail.php?u_id=".$p_data[$i]['userid']?>"><img src="<?php echo $p_data[$i]['icon_img']?>"></a>
+            <?php if($allNum !=0){ //検索結果や商品が０の時は出力しない。?>
+                <div class="guide">
+                    <span class="show-result"><?php echo"{$pgData['maxShow']}件の商品を表示します。"?></span>
+                    <span class="show-nowNum"><?php echo "{$pgData['start']}-{$pgData['end']} 件/ {$allNum} 件"; ?></span>
                 </div>
 
-                <div class="link-cover" data-url="<?php echo 'product_detail.php?p_id='.$p_data[$i]['productid']?>">
-                    <div class="product-img">
-                        <img src="<?php echo $p_data[$i]['pic1']?>">
-                    </div>
-                    <p class = "product author"><?php echo $p_data[$i]['username']?></p>
-                    <p class = "product title"><?php echo $p_data[$i]['title']?></p>
-                    <div class="product pictureinfo">
-                        <p><?php $detail = $p_data[$i]['detail'] ;
-                            //商品詳細文は150文字までだす。
-                            if(strlen($detail)>150){
-                                echo mb_substr($detail,0,150)."...";
-                            }else{
-                                echo $detail;
-                            }
-                            ?></p>
-                    </div>
-                </div>
+            
+                <?php for($i=0; $i<$pgData['maxShow']; $i++) {;?>
+                <div class="product-unit">
 
-            </div>
+                    <div class="user-icon_producunit">
+                        <a href="<?php echo "profile_detail.php?u_id=".$p_data[$i]['userid']?>"><img src="<?php echo $p_data[$i]['icon_img']?>"></a>
+                    </div>
+
+                    <div class="link-cover" data-url="<?php echo 'product_detail.php?p_id='.$p_data[$i]['productid']?>">
+                        <div class="product-img">
+                            <img src="<?php echo $p_data[$i]['pic1']?>">
+                        </div>
+                        <p class = "product author"><?php echo $p_data[$i]['username']?></p>
+                        <p class = "product title"><?php echo $p_data[$i]['title']?></p>
+                        <div class="product pictureinfo">
+                            <p><?php $detail = $p_data[$i]['detail'] ;
+                                //商品詳細文は150文字までだす。
+                                if(strlen($detail)>150){
+                                    echo mb_substr($detail,0,150)."...";
+                                }else{
+                                    echo $detail;
+                                }
+                                ?></p>
+                        </div>
+                    </div>
+
+                </div>
+                <?php }?>
+            
+
+                <div class="paging">
+                    <ul class="paging-list">
+                        <?php if($currentPg != 1):?>
+                        <li class="pageNum" data-url="<?php echo "?pg=1".withGetPram()?>">＜</li>
+                        <?php endif?>
+
+                        <?php for($p=$pgData['minPg'];$p<=$pgData['maxPg'];$p++){?>
+                            <li style="<?php if($currentPg==$p)echo'background:#088A4B;'?>"
+                            data-url='<?php echo "?pg={$p}".withGetPram()?>'
+                            class="pageNum">
+                            <?php echo $p?></li>
+                        <?php }?>
+
+                        <?php if($currentPg != $lastPg_count):?>
+                            <li class="pageNum" data-url="<?php echo "?pg={$lastPg_count}".withGetPram();?>">＞</li>
+                        <?php endif;?>
+                    </ul>
+                </div>  
+            <?php }else{;?>
+                <div class="guide">
+                    <span class="no-result">商品が見つかりませんでした。</span>
+                </div>
             <?php }?>
-
-            <div class="paging">
-                <ul class="paging-list">
-                    <?php if($currentPg != 1):?>
-                    <li class="pageNum" data-url="?pg=1">＜</li>
-                    <?php endif?>
-
-                    <?php for($p=$minPageNum;$p<=$maxPageNum;$p++){?>
-                        <li style="<?php if($currentPg==$p)echo'background:#088A4B;'?>"
-                        data-url='?pg=<?php echo $p?>'
-                        class="pageNum">
-                        <?php echo $p?></li>
-                    <?php }?>
-
-                    <?php if($currentPg != $lastPg_count):?>
-                    <li class="pageNum" data-url="?pg=<?php echo $lastPg_count?>">＞</li>
-                    <?php endif;?>
-                </ul>
-            </div>  
 
         </div>
         <div class="cd"></div>
@@ -263,6 +288,7 @@
 
 
     </script>
+    
 
 </body>
 </html>

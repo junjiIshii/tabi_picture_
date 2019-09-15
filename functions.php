@@ -413,6 +413,7 @@ function getCategory(){
     }
 }
 
+
 function getProduct($u_id, $p_id){
     debug('ユーザーIDに対する商品情報を取得します。');
     debug('ユーザーID；'.$u_id);
@@ -453,7 +454,7 @@ function getSelectData($getCount,$offSet,$table,$column){
     }
 }
 
-//テーブルの個数を取得する。
+//任意テーブルにおける、任意のカラムのレコード個数を取得する。
 function getNumData($column,$table){
     try{
         $dbh= dbconnect();
@@ -469,6 +470,7 @@ function getNumData($column,$table){
     }
 }
 
+//IDで指定したユーザーが持っている商品データの総数を取得する。
 function getUserProducNum($u_id){
     try{
         $dbh = dbconnect();
@@ -488,6 +490,7 @@ function getUserProducNum($u_id){
     }
 }
 
+//削除フラグ無しの登録されている商品のデータと、合致するユーザーデータを任意数分取得する。
 function makeProducList($maxShow,$offset){
     try{
         $dbh = dbconnect();
@@ -507,6 +510,7 @@ function makeProducList($maxShow,$offset){
     }
 }
 
+//IDで指定したユーザーが持っている商品のデータを任意数分、取得する。
 function makeUserProducList($maxShow,$offset,$u_id){
     try{
         $dbh = dbconnect();
@@ -548,6 +552,136 @@ function showProductData($p_id){
         }
     }catch(Exception $e){
         debug('エラー発生：'.$e->getMessage());
+    }
+}
+
+//検索結果分のデータを表示する。
+function showSearchProd($currentPg){
+    $nameSer = htmlspecialchars($_GET['byName']);
+    $catSer =  htmlspecialchars($_GET['c_id']);
+    $slectShowNum =  htmlspecialchars($_GET['showNum']);
+    $slectShowType =  htmlspecialchars($_GET['sort']);
+
+    try{
+        $dbh=dbconnect();
+
+        //検索にヒットするレコードを指定数分取得する。
+        $sql = 'SELECT productid,u.userid, username, icon_img,pic1,title,detail,p.create_time
+        FROM users AS u RIGHT JOIN products AS p ON u.userid = p.userid';
+
+        //検索総数を出すためのカウント
+        $sql2 = 'SELECT count(productid)
+        FROM users AS u RIGHT JOIN products AS p ON u.userid = p.userid';
+        $data = array();
+
+        //
+        if(!empty($nameSer)){
+            $sql .= ' WHERE title=:tle';
+            $sql2 .= ' WHERE title=:tle';
+            $data[':tle'] = $nameSer;
+        }
+
+        if(!empty($nameSer) && $catSer !=0 ){
+            $sql .= ' AND categoryid=:cat_id';
+            $sql2 .=' AND categoryid=:cat_id';
+            $data[':cat_id'] = $catSer;
+        }elseif($catSer !=0){
+            $sql .= ' WHERE categoryid=:cat_id';
+            $sql2 .=' WHERE categoryid=:cat_id';
+            $data[':cat_id'] = $catSer;
+        }
+
+        switch($slectShowType){
+            case 1:
+            $sql .= " ORDER BY create_time ASC";
+            break;
+
+            case 2:
+            $sql .= " ORDER BY create_time DESC";
+            break;
+
+            
+        }
+        $stmt2 = queryPost($dbh,$sql2,$data);
+        $allcount = $stmt2 -> fetch();
+        debug('検索総数結果：'.print_r($allcount,true));
+
+        
+        $offset =($currentPg-1)*$slectShowNum;
+        $sql .= " LIMIT {$slectShowNum} OFFSET {$offset}";
+        $stmt = queryPost($dbh,$sql,$data);
+        
+        
+
+        if($stmt && $stmt2){
+            $arrayData= $stmt -> fetchall(PDO::FETCH_ASSOC);
+            $result['total'] = $allcount['count(productid)'];
+            $result['data'] = $arrayData;
+
+            return $result;
+        }
+        
+    }catch(Exception $e){
+        debug('エラー発生:'.$e->getMessage());
+    }
+}
+
+function showSearchUser($currentPg){
+    $nameSer = htmlspecialchars($_GET['byName']);
+    $slectShowNum =  htmlspecialchars($_GET['showNum']);
+    $slectShowType =  htmlspecialchars($_GET['sort']);
+
+    try{
+        $dbh=dbconnect();
+
+        //検索にヒットするレコードを指定数分取得する。
+        $sql = 'SELECT userid,username,introduction,header_img,icon_img,create_date
+        FROM users';
+
+        //検索総数を出すためのカウント
+        $sql2 = 'SELECT count(userid) FROM users';
+        $data = array();
+
+        //
+        if(!empty($nameSer)){
+            $sql .= ' WHERE username=:u_name';
+            $sql2 .= ' WHERE username=:u_name';
+            $data[':u_name'] = $nameSer;
+        }
+
+
+        switch($slectShowType){
+            case 1:
+            $sql .= " ORDER BY create_date ASC";
+            break;
+
+            case 2:
+            $sql .= " ORDER BY create_date DESC";
+            break;
+
+            
+        }
+        $stmt2 = queryPost($dbh,$sql2,$data);
+        $allcount = $stmt2 -> fetch();
+        debug('検索総数結果：'.print_r($allcount,true));
+
+        
+        $offset =($currentPg-1)*$slectShowNum;
+        $sql .= " LIMIT {$slectShowNum} OFFSET {$offset}";
+        $stmt = queryPost($dbh,$sql,$data);
+        
+        
+
+        if($stmt && $stmt2){
+            $arrayData= $stmt -> fetchall(PDO::FETCH_ASSOC);
+            $result['total'] = $allcount['count(userid)'];
+            $result['data'] = $arrayData;
+
+            return $result;
+        }
+        
+    }catch(Exception $e){
+        debug('エラー発生:'.$e->getMessage());
     }
 }
 
@@ -692,6 +826,7 @@ function productDel($p_id){
 //その他
 //===================
 
+//ランダムな文字列を用意する
 function createAuthKey($leng = 8){
     $cahrs ='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     $str ='';
@@ -699,4 +834,64 @@ function createAuthKey($leng = 8){
         $str .= $cahrs[mt_rand(0,61)];
     }
     return $str;
+}
+
+//ページングの関数。引数について前から、表示する要素の全ての数、現在のページ、最後のページ番号、１ページあたりの表示数。
+function paging($allNum,$currentPg,$lastPg_count,$maxShowNum){
+    $firstPg = 1;
+    
+        //基本は現在のページから±2ページ分の番号をだす
+        $minPageNum=$currentPg-2;
+        $maxPageNum=$currentPg+2;
+
+        if($lastPg_count <5){
+            //ページ表示数が５より少ない時は５個全てだす。
+            $maxPageNum = $lastPg_count;
+            $minPageNum = $firstPg;
+        }elseif($minPageNum<= $firstPg){
+            //ページナンバーが1を下回ってしまう場合。
+            $minPageNum = 1;
+            $maxPageNum = $firstPg+4;
+        }elseif($maxPageNum>=$lastPg_count && $lastPg_count >=5){
+            //ページナンバーが最大を上回ってしまう場合。
+            $maxPageNum=$lastPg_count;
+            $minPageNum = $lastPg_count-4;
+        }
+        
+        $startNum = ($currentPg -1)*$maxShowNum +1;
+
+        //最後のページで表示できるカード数の調整。余り＝表示する数。（0を除く）
+        if($currentPg==$lastPg_count && $allNum % $maxShowNum!=0){
+            $maxShowNum = $allNum % $maxShowNum;
+        }
+
+        $endNum = $startNum + $maxShowNum -1;
+        
+        return array(
+                    "start"=>$startNum,//現在のページで表示する商品の件数（はじめ）、
+                    "minPg"=>$minPageNum,//現在ページから表示する最小のページ番号
+                    "maxPg"=>$maxPageNum,//現在ページから表示する最大のページ番号
+                    "end"=>$endNum,//現在のページで表示する商品の件数（終わり）
+                    "maxShow"=>$maxShowNum//1ページあたりの最大表示数。カードの数の調整が入った時に更新するため。
+                    );
+}
+
+//検索モードと通常表示モードでのGETパラメータの付け方を変更。
+function withGetPram(){
+    if(!empty($_GET['st'])){
+        //検索モードの時は＆にして、検索用のGETパラメータが消えないようにする。
+        if(!empty($_GET['pg'])) unset($_GET['pg']);
+        $serGet = "";
+        foreach ($_GET as $key => $value) {
+            $serGet .= "&".$key."=".$value;
+        }
+        return $serGet;
+    }
+}
+
+function selectedEcho($key,$num){
+    if(!empty($_GET) && isset($_GET[$key])){
+        if($_GET[$key] == "$num"){echo "selected";
+        }
+  }
 }

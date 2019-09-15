@@ -33,11 +33,13 @@
     <style>
         .main-conteiner{
             width:65%;
+            justify-content:center;
         }
 
         .detail-baseinfo{
             width:100%;
             margin-top: 30px;
+            
         }
         .detail-baseinfo p{ 
             display: inline-block;
@@ -110,22 +112,9 @@
         }*/
 
         .slidesImg{
-            
             height:400px;
             width:400px;
-            
-
         }
-
-
-        .is_hide{
-            width:0px;
-        }
-
-        .is_show{
-            width:400px;
-        }
-
 
 
         .detail-info{
@@ -230,10 +219,12 @@
     <div class="main-conteiner">
         <div class="detail-baseinfo">
             <p class="productName"><?php echo $p_data['title']?></p>
+
+            <span class="productCategory">
+                <?php echo $category?>
+            </span>
         </div>
-        <span class="productCategory">
-            <?php echo $category?>
-        </span>
+        
 
         <div class="detail-pictures">
             
@@ -281,23 +272,25 @@
                 <button type="button" class="dm-btn">作者にDM</button>
                 <button type="button" class="favorit-btn">お気に入り</button>
             </div>
+
+            <div class="under-coteiner">
+
+                <div class="user-icon-unit" data-url="<?php echo "profile_detail.php?u_id=".$p_data['userid']?>">
+                    <img src="<?php echo $p_data['icon_img']?>">
+                </div>
+
+                <div class="right-side">
+                    <p class = "card userName"><?php echo $p_data['username']?></p>
+                    <p class = "introduction"><?php echo $p_data['introduction']?></p>
+                </div>
+
+            </div>
         </div>
+    </div>
 
 
         
-        <div class="under-coteiner">
-
-            <div class="user-icon-unit" data-url="<?php echo "profile_detail.php?u_id=".$p_data['userid']?>">
-                <img src="<?php echo $p_data['icon_img']?>">
-            </div>
-
-            <div class="right-side">
-                <p class = "card userName"><?php echo $p_data['username']?></p>
-                <p class = "introduction"><?php echo $p_data['introduction']?></p>
-            </div>
-
-        </div>
-    </div>
+        
 
     <?php require_once('footer.php')?>
     <script type="text/javascript" src="imgSlide.js"></script>
