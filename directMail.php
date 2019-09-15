@@ -1,7 +1,57 @@
 <?php
     require_once('functions.php');
     loginAuth();
+    if(!empty($_GET['to'])){
+        $send = $_GET['to'];
+    }else{
+        header('location:mypage.php');
+    }
+    
+    $u_id = $_SESSION['user_id'];
 
+    //やること、SEND側の実装。TIMESTAMPのCSS調整。
+
+    function getMesaage($to,$user){
+        debug('DM内容を取得します。');
+        try{
+            $dbh = dbconnect();
+            $sql = 'SELECT send_from,send_to,send_msg,d.create_time,u.username,u.icon_img
+                    FROM users AS u RIGHT JOIN dm AS d ON u.userid = send_to
+                    WHERE send_from= :sender AND send_to = :sendto
+                    ORDER BY d.create_time DESC';
+
+            //送信者が自分自身。このデータでは自分が送ったメッセージを取得
+            $dataSed = array(':sender'=>$user, ':sendto'=>$to);
+
+            //自分宛に送られた相手のメッセージ
+            $dataRec = array(':sender'=>$to, ':sendto'=>$user);
+
+            $stmtSed = queryPost($dbh,$sql,$dataSed);
+            $stmtRec = queryPost($dbh,$sql,$dataRec);
+
+            $sendData = $stmtSed -> fetchall(PDO::FETCH_ASSOC);
+            $reciveData = $stmtRec -> fetchall(PDO::FETCH_ASSOC);;
+
+            //自分が送信したもの、相手から受信したものを一つの配列にマージする。
+            $dmData = array_merge($reciveData,$sendData);
+            //debug('ソート前DM配列：'.print_r($dmData,true));
+
+            //creat_timeの昇順でソートするために、そのソート源としての配列を作る。
+            foreach($dmData as $key =>$val){
+                $sort[$key] = $val['create_time'];
+            }
+            //debug('ソート配列：'.print_r($sort,true));
+            //ソート用配列を元に、creat_time=送信時間順番に並び替える。
+            array_multisort($sort,SORT_ASC,$dmData);
+            //debug('ソート後DM配列：'.print_r($dmData,true));
+            
+            return $dmData;
+        }catch(Exception $e){
+            debug('エラー内容：'.$e->getMessage());
+        }
+    }
+
+    $dmData = getMesaage($u_id,$send);
 ?>
 
 <!DOCTYPE html>
@@ -51,6 +101,7 @@
         margin-left: 20px;
         font-size:18px;
         font-weight: bold;
+        align-self:center;
     }
 
     .message-conteiner{
@@ -111,7 +162,7 @@
     .postTime{
         align-self: flex-end;
         font-size:10px;
-        margin:0px 3px;
+        margin:0px 3px 8px 3px;
     }
 
     .messageEnter form{
@@ -158,30 +209,31 @@
             </div>
 
             <div class="message-conteiner">
-                <div class="opposit-message">
-                    <div class="mini-user-icon inMessage">
-                        <img src="pictures/sample01.jpg" alt="">
-                    </div>
-                    
-                    
-                    <p class="message">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                    
-                    <span class="postTime">2019/7/15 16:30</span>
-                </div>
+                <?php foreach ($dmData as $key => $val):?>
 
-                <div class="my-message">
-                    
-                    <div class="mini-user-icon inMessage">
-                        <img src="pictures/sample03.jpg" alt="">
-                    </div>
-                    <p class="message">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                    <span class="postTime">2019/7/15 16:30</span>
-                </div>
+                    <?php if($val['send_from']==$send){?>
+                        <div class="opposit-message">
+                            <div class="mini-user-icon inMessage">
+                                <img src="<?php echo $val['icon_img']?>" alt="">
+                            </div>
+                            
+                            
+                            <p class="message"><?php echo $val['send_msg']?></p>
+                            
+                            <span class="postTime"><?php echo $val['create_time']?></span>
+                        </div>
+                    <?php }elseif($val['send_from']==$u_id){?>
+                        <div class="my-message">
+                            
+                            <div class="mini-user-icon inMessage">
+                                <img src="<?php echo $val['icon_img']?>" alt="">
+                            </div>
+                            <p class="message"><?php echo $val['send_msg']?></p>
+                            <span class="postTime"><?php echo $val['create_time']?></span>
+                        </div>
+                    <?php }?>
 
-                
-
-                
-                
+                <?php endforeach;?>
             </div>
 
             <div class="messageEnter">
