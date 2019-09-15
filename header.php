@@ -3,6 +3,7 @@
 //共通ヘッダー
 //==============================================
 
+debug($_SESSION['user_id']);
     //メニューの一部を特定のページで変更
     switch($url = $_SERVER['REQUEST_URI']){
 
@@ -36,7 +37,7 @@
 
         <div class='header-menue'>
             <ul>
-                <?php echo $menuLink;?>
+                <?php if(isset($menuLink)) echo $menuLink;?>
                 <?php echo $regiOrMypage;?>
                 <?php echo $log_InOrOut;?>
             </ul>
