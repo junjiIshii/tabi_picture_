@@ -12,7 +12,7 @@
     }
 
     //ユーザーのデータを取得
-    $u_data = getOneUserData($u_id,"username,introduction,header_img,icon_img,delete_flg");
+    $u_data = getOneUserData($u_id,"userid,username,introduction,header_img,icon_img,delete_flg");
 
     if(empty($u_data)){
         debug('存在しないユーザーのIDが入力されました。');
@@ -142,13 +142,11 @@
         height:40px;
         border-radius: 20px;
         cursor: pointer;
-    }
-
-    .unfollow{
         color: #0065a8;
         border:2px solid #0065a8;
         background:#f1f1f1;
     }
+
 
     .followed{
         border:2px solid #0065a8;
@@ -171,10 +169,6 @@
         padding:5px 0px;
         border-top: 2px dotted gray;
         border-bottom: 2px dotted gray;
-    }
-
-    .productArea{
-        
     }
 
     .product-unit-wrap{
@@ -237,20 +231,23 @@
 
             <div class="profileArea">
 
+            <?php if($u_data['userid'] != $_SESSION['user_id']){ //自分の場合はフォローボタンとDMボタンは表示しない。?>
                 <div class="btn-wrapper">
-                <button type="button" class="dm-btn">DMをする</button>
-                <button type="button" class="card follow-btn unfollow" >フォロー</button>
+                    <button type="button" class="dm-btn" data-url="<?php echo "directMail.php?to=".$u_id?>">DMをする</button>
+                    <button type="button" class="card follow-btn <?php if(isFollow($u_data['userid'])) echo "followed"?>" data-userid="<?php echo $u_data['userid']?>">フォロー</button>
                 </div>
 
                 <div class="info-wrap">
                     <p class="userName"><?php echo $u_data['username']?></p>
                     <p class="introduction"><?php echo $u_data['introduction']?></p>
                 </div>
+            <?php }?>
+
                 <h2>出品商品一覧</h2>
                 <div class="productArea">
                     <?php if($allNum != 0){?>
                     <div class="product-unit-wrap"> 
-                        <?php for($i=0; $i< $maxShowNum; $i++) {;?>
+                        <?php for($i=0; $i< $pgData['maxShow']; $i++) {;?>
                             <div class="product-unit" data-url="<?php echo "product_detail.php?p_id=".$p_data[$i]['productid']?>">
                                 
                                 <div class="product-img">
@@ -312,6 +309,30 @@
         $('.pageNum').click(function(){
         location.href=$(this).attr('data-url')
         });
+
+        $('.dm-btn').click(function(){
+        location.href=$(this).attr('data-url')
+        });
+
+        $('.follow-btn').on('click',function(){
+            $(this).toggleClass("followed");
+
+
+                $u_id = $(this).attr('data-userid') || null ;
+
+                if($u_id !== undefined && $u_id !== null){
+                
+                    $.ajax({
+                        type:"POST",
+                        url:"ajaxfavo.php",
+                        data:{userid:$u_id}
+                    }).done(function(data){
+                        console.log('AjaxSuccess');
+                    }).fail(function(msg){
+                        console.log('AjaxFailed');
+                    });        
+                }
+            });
     </script>
 </body>
 </html>

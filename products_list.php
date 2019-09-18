@@ -48,6 +48,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="style.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <title>商品一覧</title>
     <style>
 
@@ -90,6 +91,17 @@
     box-shadow:2px 8px   rgba(61, 60, 60, 0.2);
     position: relative;
     vertical-align:top;
+}
+
+.favorit-btn{
+    position:absolute;
+    right:2px;
+    top:2px;
+    color:lightgray;
+}
+
+.checked{
+    color:pink;
 }
 
 .product-unit:hover{
@@ -233,12 +245,16 @@
                         <a href="<?php echo "profile_detail.php?u_id=".$p_data[$i]['userid']?>"><img src="<?php echo $p_data[$i]['icon_img']?>"></a>
                     </div>
 
-                    <div class="link-cover" data-url="<?php echo 'product_detail.php?p_id='.$p_data[$i]['productid']?>">
+                    
                         <div class="product-img">
+                            <i class="fas fa-heart favorit-btn fa-2x <?php if(isFavorit($p_data[$i]['productid']))echo "checked"?>"
+                            data-productid ="<?php echo $p_data[$i]['productid']?>"></i>
                             <img src="<?php echo $p_data[$i]['pic1']?>">
                         </div>
+                    <div class="link-cover" data-url="<?php echo 'product_detail.php?p_id='.$p_data[$i]['productid']?>">
                         <p class = "product author"><?php echo $p_data[$i]['username']?></p>
                         <p class = "product title"><?php echo $p_data[$i]['title']?></p>
+
                         <div class="product pictureinfo">
                             <p><?php $detail = $p_data[$i]['detail'] ;
                                 //商品詳細文は150文字までだす。
@@ -249,6 +265,7 @@
                                 }
                                 ?></p>
                         </div>
+                        
                     </div>
 
                 </div>
@@ -292,6 +309,26 @@
     $('.pageNum').click(function(){
         location.href=$(this).attr('data-url')
     });
+
+    $('.favorit-btn').on('click',function(){
+        $(this).toggleClass("checked");
+
+
+            $p_id = $(this).attr('data-productid') || null ;
+
+            if($p_id !== undefined && $p_id !== null){
+            
+                $.ajax({
+                    type:"POST",
+                    url:"ajaxfavo.php",
+                    data:{productid:$p_id}
+                }).done(function(data){
+                    console.log('AjaxSuccess');
+                }).fail(function(msg){
+                    console.log('AjaxFailed');
+                });        
+            }
+        });
 
 
     </script>

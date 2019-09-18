@@ -30,6 +30,7 @@ define('SUC04','商品内容を変更しました。');
 define('SUC05','商品内容を削除しました。');
 define('SUC06','入力したアドレスに認証キーを送信しました。');
 define('SUC07','パスワードを再発行しました。メールをご確認ください。');
+define('SUC08','メッセージを送信しました。');
 
 $err_msg =array();
 $signup_db = array();
@@ -341,7 +342,7 @@ function queryPost($dbh,$sql,$data){
     return $stmt;
 }
 
-//デリートフラグのチェック（復活処理）
+//Emailデリートフラグのチェック（復活処理）
 function delFlagchek($email){
     try{
         debug('関数実行');
@@ -361,6 +362,7 @@ function delFlagchek($email){
         debug('エラー発生'.$e->getMessage());
     }
 }
+
 
 //ゲッター系
 //==============================================
@@ -487,6 +489,49 @@ function getUserProducNum($u_id){
         }
     }catch(Exception $e){
         debug('エラー発生：'.$e->getMessage());
+    }
+}
+
+//DM取得
+function getMesaage($to,$user){
+    debug('DM内容を取得します。');
+    try{
+        $dbh = dbconnect();
+        $sql = 'SELECT send_from,send_to,send_msg,d.create_time,u.username,u.icon_img
+                FROM users AS u RIGHT JOIN dm AS d ON u.userid = send_from
+                WHERE send_from= :sender AND send_to = :sendto
+                ORDER BY d.create_time DESC';
+
+        //送信者が自分自身。このデータでは自分が送ったメッセージを取得
+        $dataSed = array(':sender'=>$user, ':sendto'=>$to);
+
+        //自分宛に送られた相手のメッセージ
+        $dataRec = array(':sender'=>$to, ':sendto'=>$user);
+
+        $stmtSed = queryPost($dbh,$sql,$dataSed);
+        $stmtRec = queryPost($dbh,$sql,$dataRec);
+
+        $sendData = $stmtSed -> fetchall(PDO::FETCH_ASSOC);
+        $reciveData = $stmtRec -> fetchall(PDO::FETCH_ASSOC);;
+
+        //自分が送信したもの、相手から受信したものを一つの配列にマージする。
+        $dmData = array_merge($reciveData,$sendData);
+        //debug('ソート前DM配列：'.print_r($dmData,true));
+
+        //creat_timeの昇順でソートするために、そのソート源としての配列を作る。
+        foreach($dmData as $key =>$val){
+            $sort[$key] = $val['create_time'];
+        }
+        //debug('ソート配列：'.print_r($sort,true));
+        //ソート用配列を元に、creat_time=送信時間順番に並び替える。
+        array_multisort($sort,SORT_ASC,$dmData);
+        debug('ソート後DM配列：'.print_r($dmData,true));
+        
+        return $dmData;
+    }catch(Exception $e){
+        debug('エラー内容：'.$e->getMessage());
+        global $err_msg;
+        $err_msg['fatal']=MSG06;
     }
 }
 
@@ -894,4 +939,86 @@ function selectedEcho($key,$num){
         if($_GET[$key] == "$num"){echo "selected";
         }
   }
+}
+
+function sendMessage($to,$user,$msg){
+    debug('メッセージを送信します。');
+    try{
+        $to = htmlspecialchars($to);
+        $user = htmlspecialchars($user);
+        $msg = htmlspecialchars($msg);
+
+        $dbh =dbconnect();
+        $sql = 'INSERT INTO dm(send_from,send_to,send_msg) VALUES(:sefrom, :seto, :msg)';
+        $data = array(':sefrom'=>$user, ':seto'=>$to, ':msg'=>$msg);
+
+        $stmt = queryPost($dbh,$sql,$data);
+        if($stmt){
+            debug('メッセージを送信しました。');
+            $_SESSION['msg_suc'] = SUC08;
+        }
+
+    }catch(Exception $e){
+        debug('エラー発生；'.$e->getMessage());
+    }
+}
+
+//対照ユーザーがログインユーザーであるか(セッションがセットまたは、時間オーバーでない。)))をチェックする。
+function islogin(){
+    if(time() > $_SESSION['login_limit']+$_SESSION['login_date']){
+        debug('有効期限切れています。');
+        session_destroy();
+        return false;
+    }elseif(empty(['user_id'])){
+        debug('ログインしていません。');
+        return false;
+    }elseif(!empty($_SESSION['login_date'])){
+        debug('ログインユーザーのです。');
+        return true;
+    }else{
+        debug('ログインしていません。');
+        return false;
+    }
+}
+
+function isFavorit($p_id){
+    try{
+        $p_id=htmlspecialchars($p_id);
+
+        $dbh = dbconnect();
+        $sql = 'SELECT * FROM favorite WHERE productid =:p_id AND userid = :u_id';
+        $data = array(':u_id' => $_SESSION['user_id'], ':p_id'=>$p_id);
+
+        $stmt = querypost($dbh,$sql,$data);
+        $resultCount = $stmt -> rowCount();
+
+        if(!empty($resultCount)){
+            return true;
+        }else{
+            return false;
+        }
+    }catch(Exception $e){
+        debug('エラー発生；'.$e->getMessage());
+    }
+}
+
+function isFollow($target){
+    try{
+        $target=htmlspecialchars($target);
+
+        $dbh = dbconnect();
+        $sql = 'SELECT * FROM follows WHERE follow =:fl AND userid = :u_id';
+        $data = array(':u_id' => $_SESSION['user_id'], ':fl'=>$target);
+
+        $stmt = querypost($dbh,$sql,$data);
+        $resultCount = $stmt -> rowCount();
+
+        if(!empty($resultCount)){
+            return true;
+        }else{
+            return false;
+        }
+    }catch(Exception $e){
+        debug('エラー発生；'.$e->getMessage());
+    }
 }

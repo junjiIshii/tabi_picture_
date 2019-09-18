@@ -18,10 +18,6 @@
                 echo '<script type="text/javascript" src="signupVal.js"></script>';
                 break;
 
-            case 'users_list.php':
-                echo '<script type="text/javascript" src="follow_btn.js"></script>';
-                break;
-
             case 'profileEdit.php':
                 echo '<script type="text/javascript" src="imgPreview.js"></script>';
                 break;

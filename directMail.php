@@ -1,66 +1,47 @@
 <?php
     require_once('functions.php');
     loginAuth();
+    debug('セッション情報：'.print_r($_SESSION,true));
+    $opposUser = getOneUserData($_GET['to'],'username,icon_img,delete_flg');
+    $u_id = $_SESSION['user_id'];
+    
     if(!empty($_GET['to'])){
         $send = $_GET['to'];
-    }else{
+    }
+    
+    if($opposUser['delete_flg']==1){
+        header('location:mypage.php');
+    }elseif($_GET['to']==$_SESSION['user_id']){
         header('location:mypage.php');
     }
     
-    $u_id = $_SESSION['user_id'];
+    
 
-    //やること、SEND側の実装。TIMESTAMPのCSS調整。
+//EMPTY→0が送れない。POST['send_mes']内の空文字（未入力）は排除できる。
+//isset⇨0は送れる。　空文字、未入力が排除できない。
+//文字数で条件分岐したところ解決。
 
-    function getMesaage($to,$user){
-        debug('DM内容を取得します。');
-        try{
-            $dbh = dbconnect();
-            $sql = 'SELECT send_from,send_to,send_msg,d.create_time,u.username,u.icon_img
-                    FROM users AS u RIGHT JOIN dm AS d ON u.userid = send_to
-                    WHERE send_from= :sender AND send_to = :sendto
-                    ORDER BY d.create_time DESC';
 
-            //送信者が自分自身。このデータでは自分が送ったメッセージを取得
-            $dataSed = array(':sender'=>$user, ':sendto'=>$to);
-
-            //自分宛に送られた相手のメッセージ
-            $dataRec = array(':sender'=>$to, ':sendto'=>$user);
-
-            $stmtSed = queryPost($dbh,$sql,$dataSed);
-            $stmtRec = queryPost($dbh,$sql,$dataRec);
-
-            $sendData = $stmtSed -> fetchall(PDO::FETCH_ASSOC);
-            $reciveData = $stmtRec -> fetchall(PDO::FETCH_ASSOC);;
-
-            //自分が送信したもの、相手から受信したものを一つの配列にマージする。
-            $dmData = array_merge($reciveData,$sendData);
-            //debug('ソート前DM配列：'.print_r($dmData,true));
-
-            //creat_timeの昇順でソートするために、そのソート源としての配列を作る。
-            foreach($dmData as $key =>$val){
-                $sort[$key] = $val['create_time'];
-            }
-            //debug('ソート配列：'.print_r($sort,true));
-            //ソート用配列を元に、creat_time=送信時間順番に並び替える。
-            array_multisort($sort,SORT_ASC,$dmData);
-            //debug('ソート後DM配列：'.print_r($dmData,true));
-            
-            return $dmData;
-        }catch(Exception $e){
-            debug('エラー内容：'.$e->getMessage());
-        }
+    if(isset($_POST['send_mes']) && strlen($_POST['send_mes'])>0){
+        $msg = $_POST['send_mes'];
+        $t = [$send,$u_id,$msg];
+        debug(print_r($t,true));
+        sendMessage($send,$u_id,$msg);
+        //リロード時にメッセージが送信されない様にするためにPOSTをリセットする。
+        $_POST =array();
     }
 
-    $dmData = getMesaage($u_id,$send);
+    $dmData = getMesaage($send,$u_id);
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>プロフィール編集</title>
+    <title>ダイレクトメッセージ</title>
     <link href="style.css" rel="stylesheet">
     <style>
+        
     .main-conteiner{
         width: 60%;
         margin-top:15px;
@@ -74,6 +55,13 @@
     }
     .mainWrapper{
         width:100%;
+    }
+
+    .showErr{
+        width:100%;
+        display:inline-block;
+        color:red;
+        text-align: center;
     }
 
     .oppositInfo-continer{
@@ -145,10 +133,10 @@
     }
 
     .mini-user-icon{
-        width:60px;
-        height: 60px;
+        width:40px;
+        height: 40px;
         border-radius: 50%;
-        border: white 5px solid;
+        margin:0px 5px;
         display:inline-block;
     }
 
@@ -162,7 +150,7 @@
     .postTime{
         align-self: flex-end;
         font-size:10px;
-        margin:0px 3px 8px 3px;
+        margin:0px 3px;
     }
 
     .messageEnter form{
@@ -186,7 +174,7 @@
         text-align:center;
         padding:5px;
         vertical-align: bottom;
-        font-size:13px;
+        font-size:10px;
         margin-top:5px;
     }
 
@@ -199,13 +187,14 @@
     <?php require_once('header.php')?>
 
     <div class="main-conteiner">
-        <div class="mainWrapper">
+        <div class="mainWrapper"> 
+            <span class="showErr"><?php cautionEcho('fatal')?></span>
             <div class="oppositInfo-continer">
-                <div class="oppositUser-icon">
-                    <img src="pictures/sample01.jpg" alt="">
+                <div class="oppositUser-icon" data-url="<?php echo "profile_detail.php?u_id=".$send?>">
+                    <img src="<?php echo $opposUser['icon_img']?>" alt="">
                 </div>
 
-                <p class="oppositUser-name">相手の名前</p>
+                <p class="oppositUser-name"><?php echo $opposUser['username']?></p>
             </div>
 
             <div class="message-conteiner">
@@ -213,7 +202,7 @@
 
                     <?php if($val['send_from']==$send){?>
                         <div class="opposit-message">
-                            <div class="mini-user-icon inMessage">
+                            <div class="mini-user-icon">
                                 <img src="<?php echo $val['icon_img']?>" alt="">
                             </div>
                             
@@ -238,14 +227,19 @@
 
             <div class="messageEnter">
                 <form action="" method="post">
-                    <textarea name="sendMes" cols="40"></textarea>
-                    <input class="send-btn" type="submitt" value="メッセージ送信">
+                    <textarea name="send_mes" cols="40"></textarea>
+                    <input class="send-btn" type="submit" value="メッセージ送信">
                 </form>
             </div>
         </div>
         <?php require_once('mypageBar.php')?>
     </div>
-
+    <pre><?php var_dump($_GET)?></pre>
     <?php require_once('footer.php')?>
+    <script  type="text/javascript">
+        $('.oppositUser-icon').click(function(){
+        location.href=$(this).attr('data-url')
+        });
+    </script>
 </body>
 </html>

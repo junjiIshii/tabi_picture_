@@ -13,6 +13,7 @@
         $offset =($currentPg-1)*$maxShowNum;
         $u_data = getSelectData($maxShowNum ,$offset,'users','userid,username,introduction,header_img,icon_img');
         $lastPg_count = ceil($allNum/$maxShowNum); //　全ページ数　全体数÷表示数
+        //debug('検索データ内容：'.print_r($u_data,true));
     }else{
         $currentPg = (!empty($_GET['pg']))? $_GET['pg']:1;
         if((int)$currentPg === 0){header("location:?pg=1");}
@@ -135,13 +136,12 @@
     margin: 0 auto;
     border-radius: 20px;
     cursor: pointer;
-}
 
-.unfollow{
     color: #0065a8;
     border:2px solid #0065a8;
     background:#f1f1f1;
 }
+
 
 .usercard-unit:hover .unfollow{
     background: #d9d9d9;
@@ -244,10 +244,11 @@
                             <p><?php echo $u_data[$i]['introduction']?></p>
                         </div>
                     </div>
-
-                    <button class="card follow-btn unfollow" >
-                            フォロー
-                    </button>
+                    <?php if($u_data[$i]['userid'] != $_SESSION['user_id']){?>
+                        <button class="card follow-btn <?php if(isFollow($u_data[$i]['userid'])) echo "followed"?>" data-userid="<?php echo $u_data[$i]['userid']?>">
+                                フォロー
+                        </button>
+                    <?php }?>
 
                 </div>
 
@@ -293,7 +294,26 @@
             location.href=$(this).attr('data-url')
         });
 
+        //なぜがファイルを外に出すと効かなくなる↓
+        $('.follow-btn').on('click',function(){
+            $(this).toggleClass("followed");
 
+
+                $u_id = $(this).attr('data-userid') || null ;
+
+                if($u_id !== undefined && $u_id !== null){
+                
+                    $.ajax({
+                        type:"POST",
+                        url:"ajaxfavo.php",
+                        data:{userid:$u_id}
+                    }).done(function(data){
+                        console.log('AjaxSuccess');
+                    }).fail(function(msg){
+                        console.log('AjaxFailed');
+                    });        
+                }
+            });
     </script>
     <pre><?php var_dump($_GET)?></pre>
 </body>

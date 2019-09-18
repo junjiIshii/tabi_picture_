@@ -1,5 +1,6 @@
 <?php
     require_once('functions.php');
+
     loginAuth();
 
     $currentPg_id = $_GET['p_id']; 
@@ -208,7 +209,12 @@
             color:#B40404;
             background:#f5f5f5;
             border:2px solid #B40404;
+        }
 
+        .checked{
+            background:#B40404;
+            color:white;
+            border:2px solid #B40404;
         }
 
 
@@ -270,7 +276,7 @@
                 <p class="price"><?php echo "￥".number_format($p_data['price'])?></p>
                 <button type="button" class="buy-btn">購入する</button>
                 <button type="button" class="dm-btn">作者にDM</button>
-                <button type="button" class="favorit-btn">お気に入り</button>
+                <button type="button" class="favorit-btn <?php if(isFavorit($p_data['productid']))echo "checked"?>" data-productid="<?php echo $p_data['productid']?>">お気に入り</button>
             </div>
 
             <div class="under-coteiner">
@@ -298,6 +304,27 @@
         $('.user-icon-unit').click(function(){
         location.href=$(this).attr('data-url')
         });
+
+
+        var $favo,$p_id;
+        $favo = $('.favorit-btn')|| null ;
+        $p_id = $('.favorit-btn').attr('data-productid') || null ;
+
+        if($p_id !== undefined && $p_id !== null){
+            $favo.on('click',function(){
+                $.ajax({
+                    type:"POST",
+                    url:"ajaxfavo.php",
+                    data:{productid:$p_id}
+                }).done(function(data){
+                    console.log('AjaxSuccess');
+                    $($favo).toggleClass('checked')
+                }).fail(function(msg){
+                    console.log('AjaxFailed');
+                });
+            });
+        }
+
     </script>
 </body>
 </html>
