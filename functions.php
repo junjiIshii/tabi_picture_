@@ -535,6 +535,63 @@ function getMesaage($to,$user){
     }
 }
 
+//ユーザーがフォローしているユーザーの名前、アイコン、IDをとる。
+function getFollowData($u_id){
+    try{
+        $dbh = dbconnect();
+        $sql ='SELECT f.userid, follow,username,icon_img
+        FROM follows AS f LEFT JOIN users AS u ON f.follow = u.userid 
+        WHERE u.delete_flg =0 AND f.userid = :f_user';
+
+        $data = array(':f_user'=>$u_id);
+        $stmt = queryPost($dbh,$sql,$data);
+
+        $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        debug('取得データ：'.print_r($result,true));
+        return $result;
+    }catch(Exception $e){
+        debug('エラー発生：'.$e->getMessage());
+    }
+}
+
+//ユーザーをフォローしているユーザー一覧作成のため、フォロワーの名前、アイコン、IDをとる。
+function getWhoFollow($u_id){
+    try{
+        $dbh = dbconnect();
+        $sql ='SELECT follow, f.userid, u.userid,username,icon_img
+        FROM follows AS f RIGHT JOIN users AS u ON f.userid = u.userid 
+        WHERE u.delete_flg =0 AND f.follow = :f_user';
+
+        $data = array(':f_user'=>$u_id);
+        $stmt = queryPost($dbh,$sql,$data);
+
+        $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        debug('取得データ：'.print_r($result,true));
+        return $result;
+    }catch(Exception $e){
+        debug('エラー発生：'.$e->getMessage());
+    }
+}
+
+function getFavoList($u_id){
+    try{
+        $dbh = dbconnect();
+        $sql ='SELECT p.productid,p.userid,u.username,pic1,title,detail,icon_img FROM favorite AS fv
+        LEFT JOIN products AS p ON fv.productid = p.productid 
+        LEFT JOIN users AS u ON p.userid = u.userid 
+        WHERE p.delete_flg=0 AND fv.userid = :u_id';
+
+        $data = array(':u_id'=>$u_id);
+        $stmt = queryPost($dbh,$sql,$data);
+
+        $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        debug('取得データ：'.print_r($result,true));
+        return $result;
+    }catch(Exception $e){
+        debug('エラー発生：'.$e->getMessage());
+    }
+}
+
 //削除フラグ無しの登録されている商品のデータと、合致するユーザーデータを任意数分取得する。
 function makeProducList($maxShow,$offset){
     try{
@@ -1002,6 +1059,7 @@ function isFavorit($p_id){
     }
 }
 
+//ユーザーがTargetをフォローしているかをチェックする。
 function isFollow($target){
     try{
         $target=htmlspecialchars($target);

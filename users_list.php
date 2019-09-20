@@ -222,6 +222,7 @@
             </form>
         </div>
 
+        <!--ユーザー情報 -->
         <div class="usercards-conteiner">
             <?php if($allNum !=0){ //検索結果や商品が０の時は出力しない。?>
                 <div class="guide">
@@ -229,9 +230,11 @@
                     <span class="show-nowNum"><?php echo "{$pgData['start']}-{$pgData['end']} 件/ {$allNum} 件"; ?></span>
                 </div>
 
+                
                 <?php for($i=0; $i<$pgData['maxShow']; $i++) {?>
                 <div class="usercard-unit" >
 
+                <!-- link-coverはユーザー詳細に映るためのURLデータを持っている。-->
                     <div class="link-cover" data-url="<?php echo "profile_detail.php?u_id=".$u_data[$i]['userid']?>">
                         <div class="user-icon_usercardunit">
                             <img src="<?php echo $u_data[$i]['icon_img']?>">

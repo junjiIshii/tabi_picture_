@@ -21,6 +21,9 @@
     </p>
 
     <?php require_once('header.php')?>
+    <div class="main-conteiner">
+        <?php require_once('mypageBar.php')?>
+    </div>
         <ul>
             <li><a href="products_list.php">商品リスト</a></li>
             <li><a href="users_list.php"></a>ユーザーリスト</li>
@@ -31,6 +34,7 @@
             <li><a href="passEdit.php">パスワード変更</a></li>
             <li><a href="productEdit.php">商品アップロード</a></li>
             <li><a href="withdraw.php">退会</a></li>
+            <li><a href="followList.php">フォローリスト</a></li>
         </ul>
     <?php require_once('footer.php')?>
 </body>
