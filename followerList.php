@@ -31,6 +31,27 @@
             
         }
 
+        .switchList{
+            text-align: center;
+        }
+
+        .switchList button{
+            width:150px;
+            font-size:15px;
+            padding:5px;
+            border-radius: 10px;
+        }
+
+        .follows{
+            background:#f5f5f5;
+            color:gray;
+        }
+
+        .followers{
+            background:#0065a8;
+            color:white;
+        }
+
         .userListCard{
             display: flex;
             flex-wrap:nowrap;
@@ -83,7 +104,10 @@
 
         <div class="main-conteiner">
             <div class="list-conteiner">
-            <h2>フォローリスト</h2>
+                <div class="switchList">
+                    <button type="button" class="follows" data-url="followList.php">フォロー</button>
+                    <button type="button" class="followers" >フォロワー</button>
+                </div>
                 <?php foreach($followerData as $key => $val){?>
                     <div class="userListCard">
 
@@ -106,6 +130,10 @@
 
     <?php require_once('footer.php')?>
     <script>
+        $('.follows').on('click',function(){
+            location.href=$(this).attr('data-url');
+        })
+
         $('.follow-btn').on('click',function(){
             $(this).toggleClass("followed");
 

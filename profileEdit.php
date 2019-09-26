@@ -148,23 +148,7 @@
 
 
 
-    .mypage-menu-conteiner{
-        display: inline-block;
-        vertical-align: top;
-        width:200px;
-        padding: 10px;
-        background-color: lightgrey;
-        height: 100%;
-        }
 
-    .mypage-menu-section{
-        list-style: none;
-        margin-bottom: 15px;
-    }
-
-    .mypage-menu-section:last-child{
-        margin-bottom: 0px;
-    }
 
     .edit-menu-wrapper{
         display: inline-block;

@@ -141,13 +141,20 @@ footer{
     vertical-align: top;
     width:200px;
     padding: 10px;
-    background-color: lightgrey;
+    background-color: rgba(7, 230, 163, 0.6);
+    
     height: 100%;
+    margin-top: 30px;
     }
 
 .mypage-menu-section{
     list-style: none;
     margin-bottom: 15px;
+   
+}
+
+.mypage-menu-section a{
+    color: darkcyan;
 }
 
 .mypage-menu-section:last-child{

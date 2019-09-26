@@ -318,6 +318,5 @@
                 }
             });
     </script>
-    <pre><?php var_dump($_GET)?></pre>
 </body>
 </html>

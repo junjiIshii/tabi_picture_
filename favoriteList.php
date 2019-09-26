@@ -10,12 +10,22 @@
         <link href="style.css" rel="stylesheet">
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
         <title>商品一覧</title>
+        <!--CSSを整える-->
         <style>
+            
+        .main-conteiner {
+            justify-content: center;
+        }
+
+        .prodocuts-conteiner{
+            display: flex;
+            flex-wrap:wrap;
+            width:70%;
+        }
         .product-unit{
             /*border: 1px red solid;目印用後で消す*/
             width:280px;
             height: 600px;
-            display: inline-block;
             font-size: 20px;
             margin: 0px 10px;
             margin-bottom: 20px;
@@ -107,11 +117,9 @@
         <?php require_once('header.php')?>
 
         <div class="main-conteiner">
+            <div class="prodocuts-conteiner">
             <?php if(count($p_data) !=0){ //お気に入り数が0の時は何も表示しない?>
-
-                <div class="guide">
-                    <span class="result"><?php echo count($p_data)."件のお気に入り登録があります。"; ?></span>
-                </div>
+                <span class="guide"><?php echo count($p_data)."件のお気に入り登録があります。"; ?></span>
 
                 <?php for($i=0; $i< count($p_data); $i++) {;?>
                     <div class="product-unit">
@@ -143,11 +151,13 @@
                     </div>
                 <?php }?>
 
-            <?php }else{?>
-                <div class="guide">
-                    <span class="no-result">まだお気に入りには何も登録されていません。<a href="mypage.php">戻る</a></span>
-                </div>
-            <?php }?>
+                <?php }else{?>
+                    
+                    <span class="guide">まだお気に入りには何も登録されていません。<a href="mypage.php">戻る</a></span>
+                    
+                <?php }?>
+            </div>
+            <?php require_once('mypageBar.php') ?>
         </div>
             <?php require_once('footer.php')?>
             <script>

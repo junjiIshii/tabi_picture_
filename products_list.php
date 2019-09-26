@@ -4,7 +4,7 @@
 
 
     if(empty($_GET['st'])){
-        //stが空＝検索をかけていない通常の表示の時のページング設定
+        //st(state)が空＝検索をかけていない通常の表示の時のページング設定
 
         $currentPg = (!empty($_GET['pg']))? $_GET['pg']:1;
         if((int)$currentPg === 0){header("location:?pg=1");}

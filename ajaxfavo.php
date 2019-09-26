@@ -6,6 +6,8 @@
     
 
     //Ajax通信内容
+
+    //お気に入り登録
     if(!empty($_POST['productid']) && isset($_SESSION['user_id']) && islogin()){
         $p_id = $_POST['productid'];
         debug('お気に入り商品登録POST有り：'.$p_id);
@@ -26,12 +28,22 @@
                 $sql = 'INSERT favorite (userid,productid,create_date) VALUES (:u_id, :p_id, :date)';
                 $data = array(':u_id' => $_SESSION['user_id'], ':p_id'=>$p_id, ':date'=>date('Y-m-d H:i:s'));
                 $stmt = querypost($dbh,$sql,$data);
+                
+                //通知用の設定
+                //良いねした商品のユーザーIDを取得する。
+                $toUser = getOneProductData($p_id,'userid');
+                debug($toUser['userid']);
+                set_notify($toUser['userid'],$_SESSION['user_id'],1,$p_id);
+                
+                //通知用の設定
+                //良いねした商品のユーザーIDを取得する。
             }
         }catch(Exception $e){
             debug('エラー発生；'.$e->getMessage());
         }
     }
 
+    //フォローアクション
     if(!empty($_POST['userid']) && isset($_SESSION['user_id']) && islogin()){
         $target = htmlspecialchars($_POST['userid']);
         debug($target.'へのフォローアクション：');
@@ -50,11 +62,13 @@
             }else{
                 $sql = 'INSERT follows (userid,follow) VALUES (:u_id, :tgt)';
                 $stmt = querypost($dbh,$sql,$data);
+                set_notify($target,$_SESSION['user_id'],0,1);
             }
         }catch(Exception $e){
             debug('エラー発生；'.$e->getMessage());
         }
         }
+
     
 
 ?>

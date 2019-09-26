@@ -384,14 +384,16 @@ function getUserData($userid){
 }
 
 function getOneUserData($userid,$colKey){
-    debug('以下のユーザー情報を取得します：'.$colKey);
+    debug($userid.'のユーザー情報を取得します：'.$colKey);
     try{
         $dbh =dbconnect();
         $sql = "SELECT $colKey FROM users WHERE userid = :userid";
         $data = array(':userid'=> $userid);
 
         $stmt = queryPost($dbh,$sql,$data);
-        return $stmt -> fetch(PDO::FETCH_ASSOC);
+        $result = $stmt -> fetch(PDO::FETCH_ASSOC);
+        //debug(print_r($result,true));
+        return $result ;
 
     }catch(Exception $e){
         debug('エラー発生'.$e->getMessage());
@@ -436,6 +438,23 @@ function getProduct($u_id, $p_id){
         }
     }catch(Exception $e){
         debug('エラー発生：'.$e->getMessage());
+    }
+}
+
+function getOneProductData($productid,$colKey){
+    debug('getOneProductData以下の商品情報を取得します：'.$colKey);
+    try{
+        $dbh =dbconnect();
+        $sql = "SELECT $colKey FROM products WHERE productid = :productid";
+        $data = array(':productid'=> $productid);
+
+        $stmt = queryPost($dbh,$sql,$data);
+        $result = $stmt -> fetch(PDO::FETCH_ASSOC);
+        debug('検索結果：'.print_r($result,true));
+        return $result;
+
+    }catch(Exception $e){
+        debug('エラー発生'.$e->getMessage());
     }
 }
 
@@ -518,16 +537,22 @@ function getMesaage($to,$user){
         $dmData = array_merge($reciveData,$sendData);
         //debug('ソート前DM配列：'.print_r($dmData,true));
 
-        //creat_timeの昇順でソートするために、そのソート源としての配列を作る。
-        foreach($dmData as $key =>$val){
-            $sort[$key] = $val['create_time'];
+        //こDMデータが空＝初めてDMするときは、実行しない。
+        if(!empty($dmData)){
+            //creat_timeの昇順でソートするために、そのソート源としての配列を作る。
+            foreach($dmData as $key =>$val){
+                $sort[$key] = $val['create_time'];
+            }
+            //debug('ソート配列：'.print_r($sort,true));
+            //ソート用配列を元に、creat_time=送信時間順番に並び替える。
+            array_multisort($sort,SORT_ASC,$dmData);
+            debug('ソート後DM配列：'.print_r($dmData,true));
+            
+            return $dmData;
+        }else{
+            return $dmData;
         }
-        //debug('ソート配列：'.print_r($sort,true));
-        //ソート用配列を元に、creat_time=送信時間順番に並び替える。
-        array_multisort($sort,SORT_ASC,$dmData);
-        debug('ソート後DM配列：'.print_r($dmData,true));
-        
-        return $dmData;
+
     }catch(Exception $e){
         debug('エラー内容：'.$e->getMessage());
         global $err_msg;
@@ -1006,14 +1031,88 @@ function sendMessage($to,$user,$msg){
         $msg = htmlspecialchars($msg);
 
         $dbh =dbconnect();
-        $sql = 'INSERT INTO dm(send_from,send_to,send_msg) VALUES(:sefrom, :seto, :msg)';
-        $data = array(':sefrom'=>$user, ':seto'=>$to, ':msg'=>$msg);
+        $sql = 'INSERT INTO dm(send_from,send_to,send_msg,create_time) VALUES(:sefrom, :seto, :msg,:cre_time)';
+        $data = array(':sefrom'=>$user, ':seto'=>$to, ':msg'=>$msg, ':cre_time'=>date('Y-m-d H:i'));
 
         $stmt = queryPost($dbh,$sql,$data);
         if($stmt){
             debug('メッセージを送信しました。');
             $_SESSION['msg_suc'] = SUC08;
         }
+
+    }catch(Exception $e){
+        debug('エラー発生；'.$e->getMessage());
+    }
+}
+
+//どのユーザーとユーザーのDMルームかを区別するためのデータを作成、作成する。
+function createMesRoom($host, $client){
+    try{
+        $dbh=dbconnect();
+        $sql1='SELECT count(roomid) FROM dmLists WHERE (user1 = :u1 AND user2=:u2) OR (user1 = :u2 AND user2=:u1)';
+        $data = array(':u1'=>$host, ':u2'=>$client);
+    
+        $stmt = queryPost($dbh,$sql1,$data);
+        $result = $stmt -> fetch();
+    
+        if($result['count(roomid)']==0){
+            $sql2='INSERT INTO dmLists(user1,user2) VALUES (:u3,:u4)';
+            $data2 = array(':u3'=> $host, ':u4'=>$client);
+            queryPost($dbh,$sql2,$data2);
+            debug($host.'と：'.$client.'メッセージルームが作成されました。ユーザー：');
+        }else{
+            debug($host.'と：'.$client.'同士のメッセージルームは作成済みです。');
+        }
+
+    }catch(Exception $e){
+        debug('エラー発生；'.$e->getMessage());
+    }
+}
+
+
+function getMesRommList($host){
+    try{
+        $dbh = dbconnect();
+        $sql = 'SELECT * FROM dmLists WHERE user1 = :u1 OR user2=:u1';
+        $data = array(':u1'=>$host);
+        $stmt = queryPost($dbh,$sql,$data);
+
+        $result = $stmt -> fetchall(PDO::FETCH_ASSOC);
+
+        debug('ユーザーID：'.$host.'が含まれているメッセージルームの情報'.print_r($result,true));
+        return $result;
+
+    }catch(Exception $e){
+        debug('エラー発生；'.$e->getMessage());
+    }
+}
+
+function getMesRomm($host,$client){
+    try{
+        $dbh = dbconnect();
+        $sql = 'SELECT roomid FROM dmLists WHERE (user1 = :u1 AND user2=:u2) OR (user1 = :u2 AND user2=:u1)';
+        $data = array(':u1'=>$host, ':u2'=>$client);
+        $stmt = queryPost($dbh,$sql,$data);
+
+        $result = $stmt -> fetch();
+
+        debug($client.'と'.$host.'が話しているメッセージルームのID'.print_r($result,true));
+        return $result;
+
+    }catch(Exception $e){
+        debug('エラー発生；'.$e->getMessage());
+    }
+}
+
+function updateMesRoom($roomid,$mes){
+    try{
+        $mes = htmlspecialchars($mes);
+        $dbh = dbconnect();
+        $sql = 'UPDATE dmLists SET last_mes = :mes, update_time = :u_time WHERE roomid = :r_id';
+        $data = array(':mes'=>$mes,':r_id'=>$roomid, ':u_time'=>date('Y-m-d h:i:s'));
+        $stmt = queryPost($dbh,$sql,$data);
+
+        debug('ルームID：'.$roomid.'の内容をアップデートしました。');
 
     }catch(Exception $e){
         debug('エラー発生；'.$e->getMessage());
@@ -1080,3 +1179,71 @@ function isFollow($target){
         debug('エラー発生；'.$e->getMessage());
     }
 }
+
+//==================
+//通知設定
+//==================
+
+//通知内容をDMにセットする。、TOが送り先、FROMが送り主、TYPEは通知内容の種別わけ（DMなのか、フォローなのか等）
+function set_notify($toUser,$fromUser,$type,$p_id=1){
+    debug('通知内容をセットします。');
+    $fromUser=  getOneUserData($fromUser,'userid, username');
+    $p_data = getOneProductData($p_id,'productid, title');
+
+    try{
+        switch($type){
+            case 0://フォロー通知
+                $mes = $fromUser['username']."さんがあなたをフォローしました。";
+                break;
+    
+            case 1://いいね通知
+                $mes = $fromUser['username']."さんが ".$p_data['title']." をいいねしました。";
+                break;
+    
+            case 2://DM通知
+                $mes = $fromUser['username']."さんからのDMが届いています。";
+                break;
+        }
+
+
+
+        $dbh= dbconnect();
+        $sql = 'INSERT INTO notify(to_user, from_user, type, contents,create_time) VALUES (:to_u,:from_u, :typ, :content,:create_time)';
+        $data = array(
+                        ':to_u' => $toUser,
+                        ':from_u' => $fromUser['userid'],
+                        ':typ' => $type,
+                        ':content' => $mes,
+                        ':create_time'=> date('Y-m-d H:i:s'));
+        $stmt = queryPost($dbh,$sql,$data);
+    
+
+
+    }catch(Exception $e){
+        debug('エラー発生；'.$e->getMessage());
+    }
+    
+}
+
+//マイページに表示する通知の取得
+function get_notify($u_id,$limit=5){
+    try{
+            $dbh = dbconnect();
+            $sql = "SELECT u.userid, u.icon_img, contents,type,create_time 
+                    FROM notify AS n LEFT JOIN users AS u ON n.from_user = u.userid 
+                    WHERE n.to_user = :u_id 
+                    ORDER BY create_time DESC 
+                    LIMIT $limit ";
+
+            $data = array(':u_id'=>$u_id);
+            
+            $stmt = queryPost($dbh,$sql,$data);
+            $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+            debug('取得データ：'.print_r($result,true));
+
+            return $result;
+    }catch(Exception $e){
+        debug('エラー発生；'.$e->getMessage());
+    }
+}
+

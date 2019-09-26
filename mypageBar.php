@@ -10,8 +10,16 @@
                         'menuName'=>'プロフィール編集',
                         'subClass'=>'toProfEdit'],
 
+                        ['url'=> 'productEdit.php',
+                        'menuName'=>'商品アップロード',
+                        'subClass'=>'toUpload'],
+
                         ['url'=> '#',
-                        'menuName'=>'お気に入り',
+                        'menuName'=>'出品リスト',
+                        'subClass'=>'toUpload'],
+
+                        ['url'=> 'favorite.php',
+                        'menuName'=>'お気に入り一覧',
                         'subClass'=>'toFavorite'],
 
                         ['url'=> 'followList',
