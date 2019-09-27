@@ -39,6 +39,7 @@ header{
     width: 90%;
     height:100%;
     margin:0 auto;
+
 }
 
 
@@ -61,11 +62,11 @@ header{
     position: relative;
     display:flex;
     flex-wrap:wrap;
+    margin-top:30px;
 }
 
 .search-conteiner{
     width:200px;
-    margin-top: 30px;
     padding: 10px;
     border:2px dotted aquamarine;
     height: 100%;
@@ -142,9 +143,7 @@ footer{
     width:200px;
     padding: 10px;
     background-color: rgba(7, 230, 163, 0.6);
-    
     height: 100%;
-    margin-top: 30px;
     }
 
 .mypage-menu-section{
@@ -159,4 +158,19 @@ footer{
 
 .mypage-menu-section:last-child{
     margin-bottom: 0px;
+}
+
+/*ページングボタンのCSS*/
+.paging {
+    width: 100%;
+    text-align:center;
+}
+
+.pageNum{
+    height:50px;
+    width:40px;
+    line-height:50px;
+    display:inline-block;
+    background-color: #01DFA5;
+    cursor:pointer;
 }

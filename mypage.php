@@ -57,14 +57,16 @@
             cursor:pointer;
         }
 
-        .fordirectMailList{
+        .blue{
             background:skyblue;
             color:dodgerblue;
+            margin-right:10px;
         }
 
-        .forProfList{
+        .green{
             background: rgba(7, 230, 163, 0.6);
             color:cadetblue;
+            margin-right:10px;
         }
 
         .user-icon{
@@ -91,18 +93,7 @@
         .guide-button{
             display:flex;
             justify-content: center;
-        }
-
-        .first{
             margin-bottom:10px;
-        }
-
-        .forProdList{
-            margin-right:10px;
-        } 
-        
-        .fordirectMailList{
-            margin-right:10px;
         }
 
         .notifyUnit{
@@ -162,13 +153,18 @@
             <div class="upload-guide">
                 <h3 class="menu-name">メイン</h3>
                 <div class="guide-button first">
-                    <button class="url-button forProdList" type="button">商品を編集する</button>
-                    <button class="url-button forUpload has-link" type="button" data-url="productEdit.php">商品をアップロードする</button>
+                    <button class="url-button green" type="button">商品を編集する</button>
+                    <button class="url-button blue has-link " type="button" data-url="productEdit.php">商品をアップロードする</button>
                 </div>
 
-                <div class="guide-button first">
-                    <button class="url-button fordirectMailList has-link" type="button" data-url="directMail.php">DMを見る</button>
-                    <button class="url-button forProfList has-link" type="button" data-url="profileEdit.php">プロフィール編集</button>
+                <div class="guide-button second">
+                    <button class="url-button blue has-link" type="button" data-url="directMail.php">DMを見る</button>
+                    <button class="url-button green has-link" type="button" data-url="profileEdit.php">プロフィール編集</button>
+                </div>
+
+                <div class="guide-button third">
+                    <button class="url-button green has-link" type="button" data-url="products_lists.php">商品一覧</button>
+                    <button class="url-button blue has-link" type="button" data-url="users_list.php">ユーザー一覧</button>
                 </div>
 
 

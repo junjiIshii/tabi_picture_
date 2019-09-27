@@ -159,21 +159,7 @@
     left:25%;
 
 }
-
-.paging {
-    width: 100%;
-    height:40px;
-    text-align:center;
-}
-
-.pageNum{
-    height:50px;
-    width:40px;
-    line-height:50px;
-    display:inline-block;
-    background-color: #01DFA5;
-    cursor:pointer;
-}
+/*ここにあったページングのCSSは共通のCSSファイルに格上げした*/
 
     </style>
 </head>
