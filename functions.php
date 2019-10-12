@@ -33,7 +33,6 @@ define('SUC07','パスワードを再発行しました。メールをご確認�
 define('SUC08','メッセージを送信しました。');
 
 $err_msg =array();
-$signup_db = array();
 
 
 //==============================================
@@ -43,15 +42,15 @@ $signup_db = array();
 ini_set( 'display_errors', 1 );
 ini_set( 'error_reporting', E_ALL );
 ini_set('debug.log','on');
-
+require('secretpass.php');
 
 //!!!!!!!!!!!!!
 //要編集↓
 //!!!!!!!!!!!!!
 if($_SERVER['HTTP_HOST']=='localhost:8888'){
-    session_save_path("/var/tmp/");
+    session_save_path($local_session_path);
 }else{
-    session_save_path("/home/junji1996/english-protocol.net/xserver_php/session");
+    session_save_path($real_session_path);
 }
 
 ini_set('session.gc_maxlifetime',60*60*24*30);
@@ -59,11 +58,13 @@ ini_set('session.cookie_lifetime',60*60*24*30);
 session_start();
 session_regenerate_id();
 
-$debug_flg= true;
+
+//デバックログの設定TRUE→ログ開始、FALSE→ログを出さない
+$debug_flg= false;
 
 function debug($str){
     global $debug_flg;
-    if(!empty($debug_flg)){
+    if($debug_flg){
         error_log("\n".'debug：'.$str,3,'debug.log');
     }
 }
@@ -320,9 +321,10 @@ function cautionEcho($errKey){
 //共通のDB接続設定
 function dbconnect(){
 
-    $dsn = 'mysql:dbname=tabi_picture; host=localhost; charset=utf8';
-    $user = 'root';
-    $password = 'root';
+    require('secretpass.php');
+    $dsn = $dataBase_name;
+    $user = $user_name;
+    $password = $server_pass;
 
     $options = array(
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

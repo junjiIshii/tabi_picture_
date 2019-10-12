@@ -101056,3 +101056,125 @@ debug：取得データ：Array
         )
 
 )
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：8
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 1
+            [userid] => 16
+            [username] => jun
+            [icon_img] => uploads/noimage.png
+            [pic1] => uploads/0f12fae63c716960549370049393ab671a9b9f80.jpeg
+            [title] => 台湾旅行
+            [detail] => 修学旅行でアメリカ行った時の写真。（テスト）
+        )
+
+    [1] => Array
+        (
+            [productid] => 86
+            [userid] => 14
+            [username] => Junji
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+        )
+
+    [2] => Array
+        (
+            [productid] => 87
+            [userid] => 14
+            [username] => Junji
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+        )
+
+    [3] => Array
+        (
+            [productid] => 88
+            [userid] => 14
+            [username] => Junji
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+        )
+
+    [4] => Array
+        (
+            [productid] => 89
+            [userid] => 14
+            [username] => Junji
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+        )
+
+    [5] => Array
+        (
+            [productid] => 90
+            [userid] => 14
+            [username] => Junji
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+        )
+
+    [6] => Array
+        (
+            [productid] => 91
+            [userid] => 14
+            [username] => Junji
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+        )
+
+    [7] => Array
+        (
+            [productid] => 92
+            [userid] => 14
+            [username] => Junji
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+        )
+
+)
