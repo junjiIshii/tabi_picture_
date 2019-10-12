@@ -9,6 +9,6 @@
     }else{
         $dataBase_name = 'mysql:dbname=tabi_picture; host=localhost; charset=utf8';
         $user_name ='sample';
-        $server_pass = 'sample';
+        $server_pass = 'saple';
     }
 ?>
