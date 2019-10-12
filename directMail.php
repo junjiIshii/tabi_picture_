@@ -67,9 +67,10 @@
     <meta charset="UTF-8">
     <title>ダイレクトメッセージ</title>
     <link href="style.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <style>
         
-    .main-conteiner{
+    #direcmail-mainconteiner{
         /*width: 60%;*/
         margin-top:20px;
         flex-wrap: nowrap;
@@ -80,11 +81,7 @@
         margin-top:0px;
     }
 
-    .mypage-menu-conteiner{
-        margin-left:20px;
-        
-    }
-    .mainWrapper{
+    .direcMail-mainWrapper{
         width:50%;
     }
 
@@ -219,6 +216,8 @@
         height: 40px;
         border-radius: 50%;
         margin:0px 5px;
+        min-width:40px;
+        min-height: 40px;
     }
 
     /*↓DMないのアイコンとリストのアイコンのCSSを兼ねている。*/
@@ -275,6 +274,7 @@
 
     
     </style>
+    <link href="responsive.css" rel="stylesheet">
 </head>
 <body>
         <!-- 案内用のニュッと出てくるやつ-->
@@ -284,7 +284,7 @@
 
     <?php require_once('header.php')?>
 
-    <div class="main-conteiner">
+    <div class="main-conteiner" id="direcmail-mainconteiner">
         <div class="mailList-conteiner">
             <h3>メッセージリスト</h3>
             <?php foreach($userdata as $key => $val){?>
@@ -312,7 +312,7 @@
         </div>
 
 
-        <div class="mainWrapper"> 
+        <div class="direcMail-mainWrapper"> 
             <?php if($send != 0){?>
                 <?php if(!empty($err_msg)){ //エラーがあった場合表示?>
                     <span class="showErr"><?php cautionEcho('fatal')?></span>
@@ -362,7 +362,7 @@
                     </form>
                 </div>
             <?php }else{ //まずリストから送信先を選ぶ場合?>
-                <p class="first-guide">左のメッセージリストから送信先を選択してください。</p>
+                <p class="first-guide">メッセージリストから送信先を選択してください。</p>
                 <p class="first-guide">送信ユーザーを追加する場合、プロフィール一覧＞ユーザーを選択＞DMをする で追加してください。</p>
             <?php }?>
         </div>

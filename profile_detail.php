@@ -52,36 +52,19 @@
     <meta charset="UTF-8">
     <title>プロフィール編集</title>
     <link href="style.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
     <style>
     .main-conteiner{
         width: 85%;
         margin: 0 auto;
         margin-top:10px;
-            }
-
-    .mypage-menu-conteiner{
-        display: inline-block;
-        vertical-align: top;
-        width:200px;
-        padding: 10px;
-        background-color: lightgrey;
-        height: 100%;
-        }
-
-    .mypage-menu-section{
-        list-style: none;
-        margin-bottom: 15px;
-    }
-
-    .mypage-menu-section:last-child{
-        margin-bottom: 0px;
     }
 
     .user-data-container{
         display: inline-block;
         height: 100%;
-        width:70%;
+        width:80%;
         background: #f5f5f5;
         position:relative;
         
@@ -136,6 +119,16 @@
             cursor: pointer;
         }
 
+    .profEdit-btn{
+        background:darkcyan;
+        color:white;
+        font-size:18px;
+        width:160px;
+        height:40px;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
     .follow-btn{
         font-size:18px;
         width:150px;
@@ -155,7 +148,7 @@
     }
 
     .info-wrap{
-        margin:30px 0px 20px 0px;
+        margin:50px 0px 20px 0px;
 
     }
 
@@ -171,10 +164,10 @@
         border-bottom: 2px dotted gray;
     }
 
-    .product-unit-wrap{
+    .productArea{
         display:flex;
+        flex-direction: column;
         justify-content: center;
-        flex-wrap:wrap;
     }
 
     .product-unit{    
@@ -198,6 +191,14 @@
         object-fit: cover;
     }
 
+    .pictureinfo{
+        padding:3px;
+    }
+
+    .pictureinfo .title{
+        font-weight: bold;
+    }
+
     .paging {
         width: 100%;
         height:40px;
@@ -214,10 +215,11 @@
         cursor:pointer;
     }
     </style>
+    <link href="responsive.css" rel="stylesheet">
 </head>
 <body>
     <?php require_once('header.php')?>
-    <div class="main-conteiner">
+    <div class="main-conteiner" id ="profile-detail">
 
         <div class="user-data-container">
             
@@ -231,32 +233,36 @@
 
             <div class="profileArea">
 
-            <?php if($u_data['userid'] != $_SESSION['user_id']){ //自分の場合はフォローボタンとDMボタンは表示しない。?>
+            <?php if($u_data['userid'] != $_SESSION['user_id'] && isset($_SESSION['user_id'])){ //自分の場合はフォローボタンとDMボタンは表示しない。?>
                 <div class="btn-wrapper">
                     <button type="button" class="dm-btn" data-url="<?php echo "directMail.php?to=".$u_id?>">DMをする</button>
                     <button type="button" class="card follow-btn <?php if(isFollow($u_data['userid'])) echo "followed"?>" data-userid="<?php echo $u_data['userid']?>">フォロー</button>
                 </div>
-
+            <?php }else{?>
+                <div class="btn-wrapper">
+                    <button type="button" class="profEdit-btn has-link" data-url="profileEdit.php">プロフィール編集</button>
+                    <button type="button" class="dm-btn has-link " data-url="myproducts_list.php">商品編集</button>
+                </div>
+            <?php }?>
                 <div class="info-wrap">
                     <p class="userName"><?php echo $u_data['username']?></p>
                     <p class="introduction"><?php echo $u_data['introduction']?></p>
                 </div>
-            <?php }?>
+            
 
                 <h2>出品商品一覧</h2>
                 <div class="productArea">
                     <?php if($allNum != 0){?>
                     <div class="product-unit-wrap"> 
                         <?php for($i=0; $i< $pgData['maxShow']; $i++) {;?>
-                            <div class="product-unit" data-url="<?php echo "product_detail.php?p_id=".$p_data[$i]['productid']?>">
+                            <div class="product-unit has-link" data-url="<?php echo "product_detail.php?p_id=".$p_data[$i]['productid']?>">
                                 
                                 <div class="product-img">
                                     <img src="<?php echo $p_data[$i]['pic1']?>">
                                 </div>
-                            
-                                <p class = "product title"><?php echo $p_data[$i]['title']?></p>
 
                                 <div class="product pictureinfo">
+                                    <p class = "product title"><?php echo $p_data[$i]['title']?></p>
                                     <p><?php echo $p_data[$i]['detail']?></p>
                                 </div>
 
@@ -268,18 +274,18 @@
                         <div class="paging">
                                 <ul class="paging-list">
                                     <?php if($currentPg != 1):?>
-                                    <li class="pageNum" data-url="<?php echo "?u_id={$u_id}&pg=1"?>">＜</li>
+                                    <li class="pageNum has-link" data-url="<?php echo "?u_id={$u_id}&pg=1"?>">＜</li>
                                     <?php endif?>
 
                                     <?php for($p=$pgData['minPg'];$p<=$pgData['maxPg'];$p++){?>
                                         <li style="<?php if($currentPg==$p)echo'background:#088A4B;'?>"
                                         data-url="<?php echo "?u_id={$u_id}&pg={$p}"?>"
-                                        class="pageNum">
+                                        class="pageNum has-link">
                                         <?php echo $p?></li>
                                     <?php }?>
 
                                     <?php if($currentPg != $lastPg_count):?>
-                                    <li class="pageNum" data-url="<?php echo "?u_id={$u_id}&pg={$lastPg_count}"?>">＞</li>
+                                    <li class="pageNum has-link" data-url="<?php echo "?u_id={$u_id}&pg={$lastPg_count}"?>">＞</li>
                                     <?php endif;?>
                                 </ul>
                         </div> 
@@ -302,15 +308,8 @@
     <?php require_once('footer.php')?>
     <script type="text/javascript" src="follow_btn.js"></script>
     <script>
-        $('.product-unit').click(function(){
-        location.href=$(this).attr('data-url')
-        });
 
-        $('.pageNum').click(function(){
-        location.href=$(this).attr('data-url')
-        });
-
-        $('.dm-btn').click(function(){
+        $('.has-link').click(function(){
         location.href=$(this).attr('data-url')
         });
 

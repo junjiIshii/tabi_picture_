@@ -6,11 +6,12 @@
     debugLogStart();
     loginAuth();
 
-    $oldpass = htmlspecialchars($_POST['oldpass']);
-    $newpass = htmlspecialchars($_POST['newpass']);
-    $userid = $_SESSION['user_id'];
+
 
     if(!empty($_POST)){
+        $oldpass = htmlspecialchars($_POST['oldpass']);
+        $newpass = htmlspecialchars($_POST['newpass']);
+        $userid = $_SESSION['user_id'];
 
         minMaxWords($newpass,8,30,'newpass');
         mustEnter($oldpass,'oldpass');
@@ -81,15 +82,16 @@ EOM;
     <meta charset="UTF-8">
     <title>パスワード変更ページ</title>
     <link href="style.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <style>
         .main-conteiner{
-            width: 60%;
+
             margin: 0 auto;
         }
 
         .signup-conteiner{
             padding: 25px 30px;
-            width: 80%;
+            width: 44%;
             margin: 110px auto;
             background-color: #f5f5f5;
         }
@@ -153,7 +155,7 @@ EOM;
         }
 
     </style>
-
+    <link href="responsive.css" rel="stylesheet">
 </head>
 <body>
     <?php require_once('header.php')?>
@@ -179,14 +181,11 @@ EOM;
                     </div>
 
                     <input class="submit-btn" type="submit" value="パスワード変更">
-                    <a class="forgetPass" href="#">パスワードを忘れた方はこちら</a>
+                    <a class="forgetPass" href="passReset.php">パスワードを忘れた方はこちら</a>
 
                 </form>
             </div>
         </div>
-        <pre>
-            <?php var_dump($_POST);?>
-        </pre>
         <?php require_once('footer.php')?>
 </body>
 </html>

@@ -5,10 +5,7 @@
     debug('」」」」」」」」」」」」」」」」」」」」」」」」」」」」');
     debugLogStart();
 
-    if(!empty($_SESSION['user_id'])){
-        //ログインしているユーザーが再発行ページに来たので追い返す。
-        header('location:mypage.php');
-    }
+
     //期限切れの人が来た→すでにある認証キーの中身、アドレス、有効期限をリセットする。
     session_unset();
     if(!empty($_POST)){
@@ -79,14 +76,11 @@ EOM;
     <title>パスワード変更ページ</title>
     <link href="style.css" rel="stylesheet">
     <style>
-        .main-conteiner{
-            width: 60%;
-            margin: 0 auto;
-        }
+
 
         .signup-conteiner{
             padding: 25px 30px;
-            width: 60%;
+            width: 50%;
             margin: 110px auto;
             background-color: #f5f5f5;
         }
@@ -149,7 +143,7 @@ EOM;
         }
 
     </style>
-
+    <link href="responsive.css" rel="stylesheet">
 </head>
 <body>
     <?php require_once('header.php')?>
@@ -164,7 +158,7 @@ EOM;
                 <form method="post">
 
                     <div class="form-group">
-                        <p class= "formName">ご指定のメールアドレス宛にパスワード再発行用の<br>URLと認証キーをお送りします。</p>
+                        <p class= "formName">ご指定のメールアドレス宛にパスワード再発行用のURLと認証キーをお送りします。</p>
                         <div class="help-block"><?php if(!empty($err_msg)) echo $err_msg['fatal'];?></div>
 
                         <label class="formLabel" for="email">登録Email<span class="help-block">

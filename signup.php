@@ -8,36 +8,55 @@
                 'password'=>$_POST['password'],
                 'repassword'=>$_POST['repassword']);
 
-        //1.Email形式かのチェック
-        vaidemail($chk[0],'email');
-
-        //2.パスワードと再入力が合っているかのチェック
-        passMuch($chk['password'],$chk['repassword'],'repassword');
-
-        //3-1.ユーザーネームの最大・最小文字数
-        minMaxWords($chk['user-name'],0,15,'user-name');
-
-        //3-2.パスワードの最大・最小文字数
-        minMaxWords($chk['password'],8,30,'password');
-
-        //4.アドレスが重複していないか。
-        vaidemailDup($chk['email']);
-        if(delFlagchek($chk['email']) !=0 ){
-            debug('デリート該当あり');
-            $err_msg['email']= '退会処理済みです。復活する場合はログインしてください。';
-        }
-
-        //5.そもそも入力されているか？（未入力チェック）
+        //0.そもそも入力されているか？（未入力チェック）
         foreach($chk as $key => $value){
-        mustEnter($value,$key);
+            mustEnter($value,$key);
         }
+
+        
+        if(!empty($_POST['email'])){
+            //Email形式かのチェック
+            vaidemail($chk[0],'email');
+
+            //アドレスが重複していないか
+            vaidemailDup($chk['email']);
+
+            //過去に退会したユーザーであるか？
+            if(delFlagchek($chk['email']) !=0 ){
+                debug('デリート該当あり');
+                $err_msg['email']= '退会処理済みです。復活する場合はログインしてください。';
+            }
+
+            //仮に過去に退会したユーザーならば復活処理をする。
+            if(delFlagchek($chk['email']) !=0 && empty($err_msg)){
+                debug('デリート該当あり');
+                $_SESSION['past_email'] = $chk['email'];
+                header('location:signup_again.php');
+                exit();
+            }
+        }
+
+        if(!empty($_POST['password'])){
+            //パスワードの最大・最小文字数
+            minMaxWords($chk['password'],8,30,'password');
+        }
+
+        if(!empty($_POST['password']) && !empty($_POST['repassword'])){
+            //パスワードと再入力が合っているかのチェック
+            passMuch($chk['password'],$chk['repassword'],'repassword');
+        }
+    
+        if(!empty($_POST['user-name'])){
+            //ユーザーネームの最大・最小文字数
+            minMaxWords($chk['user-name'],0,15,'user-name');
+        }
+        
+
+
+
+    
     }
-    if(delFlagchek($chk['email']) !=0 && empty($err_msg)){
-        debug('デリート該当あり');
-        $_SESSION['past_email'] = $chk['email'];
-        header('location:signup_again.php');
-        exit();
-    }
+
 
     if(!empty($_POST) && empty($err_msg)){
         signup();
@@ -51,15 +70,15 @@
     <meta charset="UTF-8">
     <title>登録ページ</title>
     <link href="style.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <style>
         .main-conteiner{
-            width: 60%;
             margin: 0 auto;
         }
 
         .signup-conteiner{
             padding: 25px 30px;
-            width: 80%;
+            width: 40%;
             margin: 110px auto;
             background-color: #f5f5f5;
         }
@@ -117,6 +136,7 @@
 
         .has-error input {}
     </style>
+    <link href="responsive.css" rel="stylesheet">
 
 </head>
 <body>
@@ -124,7 +144,7 @@
         <div class="main-conteiner">
             <div class="signup-conteiner">
                 <h2 class= "formName">ユーザー登録</h2>
-                <div class="help-block"><?php if(!empty($err_msg)) echo $err_msg['fatal'];?></div>
+                <div class="help-block"><?php if(!empty($err_msg['fatal'])) echo $err_msg['fatal'];?></div>
 
                 <form method="post">
 
@@ -158,16 +178,10 @@
                             value=<?php if(!empty($_POST['repassword'])) echo $_POST['repassword'];?>></label>
                     </div>
                     <input class="submit-btn" type="submit" value="登録する">
-                    <a class="reSignup" href="signup_again.php">退会して再度登録する場合はこちら</a>
 
                 </form>
             </div>
         </div>
-        <pre>
-            <?php
-            var_dump($_POST);
-            var_dump(delFlagchek($_POST['email']));?>
-        </pre>
         <?php require_once('footer.php')?>
 </body>
 </html>

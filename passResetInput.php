@@ -1,7 +1,7 @@
 <?php
     require("functions.php");
     debug('「「「「「「「「「「「「「「「「「「「「「「「「「「「「');
-    debug('「パスワードリセット」');
+    debug('「パスワードリセットインプット」');
     debug('」」」」」」」」」」」」」」」」」」」」」」」」」」」」');
     debugLogStart();
 
@@ -20,7 +20,8 @@
         mustEnter($inpAuth,'authKey');
 
     }
-    //ここから！！！バリデーションのチェックと認証キーが期限切れと間違った場合の処理をかく。
+    
+
     if(!empty($_POST) && empty($err_msg) && $inpAuth == $_SESSION['auth_key'] ){
         debug('バリデーションOKかつ認証キー合致');
         $new_pass = createAuthKey($leng = 8);
@@ -54,7 +55,7 @@ http://localhost:8888/tabi_picture/signin.php
 EOM;
 
                 mail($to,$sjt,$msg);
-                session_unset();
+                session_destroy();
                 $_SEESION['msg_suc']=SUC07;
                 header('location:signin.php');
             }
@@ -81,13 +82,12 @@ EOM;
     <link href="style.css" rel="stylesheet">
     <style>
         .main-conteiner{
-            width: 60%;
             margin: 0 auto;
         }
 
         .signup-conteiner{
             padding: 25px 30px;
-            width: 60%;
+            width: 50%;
             margin: 110px auto;
             background-color: #f5f5f5;
         }
@@ -150,7 +150,7 @@ EOM;
         }
 
     </style>
-
+    <link href="responsive.css" rel="stylesheet">
 </head>
 <body>
     <?php require_once('header.php')?>
@@ -165,7 +165,7 @@ EOM;
                 <form method="post">
 
                     <div class="form-group">
-                        <p class= "formName">ご指定のメールアドレス宛にパスワード再発行用の<br>URLと認証キーをお送りします。</p>
+                        <p class= "formName">入力したアドレス宛に認証キーを送信しました。認証キーを入力して「確認」を押してください。認証キーが一致した場合、メールにて再発行用のパスワードを送信します。</p>
                         <div class="help-block"><?php if(!empty($err_msg)) echo $err_msg['fatal'];?></div>
 
                         <label class="formLabel" for="authKey">認証キー入力<span class="help-block">
@@ -174,7 +174,7 @@ EOM;
                             value=<?php if(!empty($_POST['authKey'])) echo $_POST['authKey'];?>></label>
                     </div>
 
-                    <input class="submit-btn" type="submit" value="送信する">
+                    <input class="submit-btn" type="submit" value="確認">
                     <a class="forgetPass" href="signin.php">ログイン画面へ戻る</a>
 
                 </form>

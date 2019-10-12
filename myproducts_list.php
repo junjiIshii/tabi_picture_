@@ -10,7 +10,7 @@
         $currentPg = (!empty($_GET['pg']))? $_GET['pg']:1;
         if((int)$currentPg === 0){header("location:?pg=1");}
     
-        $allNum = getNumData('productid','products');
+        $allNum = getUserProducNum($_SESSION['user_id']);
     
         $maxShowNum = 12;
         $offset =($currentPg-1)*$maxShowNum;
@@ -20,7 +20,7 @@
         $currentPg = (!empty($_GET['pg']))? $_GET['pg']:1;
         if((int)$currentPg === 0){header("location:?pg=1");}
 
-        $rst =  showSearchProd($currentPg);
+        $rst =  showSearchProd($currentPg,2);
         $allNum= $rst['total'];
         $maxShowNum = $_GET['showNum'];
         $lastPg_count = ceil($allNum/$maxShowNum);
@@ -44,8 +44,9 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>ダイレクトメッセージ</title>
+        <title>商品編集一覧</title>
         <link href="style.css" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
         <style>
             .main-conteiner{
                 justify-content: center;
@@ -94,7 +95,10 @@
             
 
             .actions{
-                align-self:flex-end;
+                display:flex;
+                flex-direction:column;
+                align-self:center;
+                margin-left:auto;
             }
 
             .actionbutton{
@@ -109,19 +113,31 @@
             .red{
                 background:rgba(230, 7, 40, 0.6);;
                 color:darkred;
-                margin-right:10px;
             }
 
             .green{
                 background: rgba(7, 230, 163, 0.6);
                 color:cadetblue;
             }
+
+            .locked{
+                background:skyblue;
+                color:dodgerblue;
+                margin:5px 0px;
+            }
+
+            .open{
+                border:2px solid skyblue;
+                color:dodgerblue;
+                margin:5px 0px;
+            }
         </style>
+        <link href="responsive.css" rel="stylesheet">
     </head>
     <body>
         <?php require_once('header.php')?>
 
-        <div class="main-conteiner">
+        <div class="main-conteiner" id="myproducts_main-conteiner">
             <div class="search-conteiner">
                 <form class="search-form" method="get">
                     
@@ -170,11 +186,11 @@
                 </form>
             </div>
 
-            <div class="prodocuts-conteiner">
+            <div class="prodocuts-conteiner" id="myproduct-conteiner">
                 <?php if($allNum !=0){ //検索結果や商品が０の時は出力しない。?>
 
                     <?php for($i=0; $i<$pgData['maxShow']; $i++) {;?>
-                    <div class="product-unit">
+                    <div class="product-unit" id="myproduct-unit">
                         <div class="product-img">
                             <img src="<?php echo $p_data[$i]['pic1']?>">
                         </div>
@@ -190,10 +206,18 @@
                                 }
                                 ?></p>
 
-                            <div class="actions">
-                                <button class="actionbutton red" type="button">削除する</button>
-                                <button class="actionbutton green" type="button">編集する</button>
-                            </div>
+                        </div>
+
+                        <div class="actions">
+                                <button class="actionbutton green has-link" type="button" data-url="<?php echo "productEdit.php?p_id=".$p_data[$i]['productid']?>">編集する</button>
+
+                                <?php if($p_data[$i]['open_flg']==1){?>
+                                    <button class="actionbutton changeState open" type="button" data-productid="<?php echo $p_data[$i]['productid']?>">公開中</button>
+                                <?php }else{?> 
+                                    <button class= "actionbutton changeState locked " type="button" data-productid="<?php echo $p_data[$i]['productid']?>">非公開中</button>
+                                <?php }?> 
+
+                                <button class="actionbutton red doDlete" type="button" data-delproductid="<?php echo $p_data[$i]['productid']?>">削除する</button>
                         </div>
                     </div>
                     <?php }?>
@@ -232,6 +256,39 @@
             $('.has-link').click(function(){
             location.href=$(this).attr('data-url')
             });
+
+            $('.doDlete').on('click',function(){
+                $p_id = $(this).attr('data-delproductid') || null ;
+                $unit = $(this).parents('.product-unit');
+                $.ajax({
+                        type:"POST",
+                        url:"ajaxfavo.php",
+                        data:{delproductid:$p_id}
+                    }).done(function(data){
+                        console.log('AjaxSuccess');
+                        $unit.fadeOut();
+                    }).fail(function(msg){
+                        console.log('AjaxFailed');
+                    });  
+            })
+
+            $('.changeState').on('click',function(){
+                $p_id = $(this).attr('data-productid') || null ;
+                $(this).toggleClass("locked").text('非公開中');
+                $(this).toggleClass("open").text('公開中');
+
+                
+
+                $.ajax({
+                        type:"POST",
+                        url:"ajaxfavo.php",
+                        data:{stChangeproductid:$p_id}
+                }).done(function(data){
+                        console.log('AjaxSuccess');
+                }).fail(function(msg){
+                    console.log('AjaxFailed');
+                });  
+            })
         </script>
     </body>
 </html>

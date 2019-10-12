@@ -21,6 +21,9 @@
         debug('削除された商品のIDが入力されました。');
         $_SESSION['msg_suc']=MSG19;
         header("location:mypage.php");
+    }elseif($p_data['open_flg']==0){
+        debug('非公開の商品にアクセスしました。');
+        header("location:mypage.php");
     }
 ?>
 
@@ -33,7 +36,8 @@
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <style>
         .main-conteiner{
-            width:65%;
+            width:75%;
+            flex-direction:column;
             justify-content:center;
         }
 
@@ -47,7 +51,6 @@
             vertical-align: middle;
             /*border: 1px black solid;*/
             padding:0px 10px;
-            margin-right: 20px;
         }
 
         .productName{
@@ -69,9 +72,10 @@
         }
 
         .slide-btn{
-            margin:180px 20px 0px 20px ;
             cursor:pointer;
             color:#01DFA5;
+            align-self:center;
+            margin:0px 10px;
         }
 
         .now-imgNum{
@@ -88,33 +92,29 @@
         }
 
         .detail-pictures{
-            text-align: center;
-            margin: 0 auto;
+            display: flex;
+            flex-direction:column;
+            align-items: center;
             margin: 15px 0px;
 
         }
 
         .detail-product{
-            width: 400px;
-            height:400px;
-            display: inline-block;
-            vertical-align: top;
+            display: flex;
+            flex-wrap:wrap;
             margin: 0px 5px;
-            box-shadow:3px 4px   rgba(61, 60, 60, 0.2);
             /*position:relative;*/
         }
 
-        /*.imgWrap{
-            position:absolute;
-            width:300px;
-            height:400px;
-            overflow: hidden;
-            left:0;
-        }*/
+        .imgWrap{
+            width:350px;
+            height:350px;
+        }
 
         .slidesImg{
-            height:400px;
-            width:400px;
+            height:100%;
+            width:100%;
+            box-shadow:3px 4px rgba(61, 60, 60, 0.2);
         }
 
 
@@ -133,13 +133,9 @@
             height: 130px;
         }
 
-        .price{
-            display:inline-block;
-            font-size:26px;
-            font-weight:bold;
-        }
-
         .under-coteiner{
+            display:flex;
+            flex-direction:column;
             width:60%;
             height: 180px;
             background:#f5f5f5;
@@ -147,52 +143,79 @@
             margin:20px 0px;
             padding:8px;
         }
+
+        .upper-side{
+            border-bottom:2px dotted gray;
+            display:flex;
+        }
+
+        .under-side{
+            padding:4px;
+            width:70%;
+            width:100%;
+        }
+
+        .price{
+            margin-right:10px;
+            font-size:26px;
+            font-weight:bold;
+            background:#f5f5f5;
+            display:inline-block;
+            padding:5px;
+            margin:5px 0px;
+        }
         
         .user-icon-unit{
-            width: 25%;
-            height:100%;
-            position: relative;
-            vertical-align: middle;
-            display:inline-block;
+            width: 70px;
+            height:70px;
         }
 
         .userName{
-            border-bottom:2px dotted gray;
+            align-self:flex-end;
             font-weight:bold;
             font-size:25px;
+            margin-left:5px;
         }
+
+        
         .user-icon-unit img{
             object-fit: cover;
             width: 100%;
+            height:100%;
             border-radius: 50%;
-            position: absolute;
+            cursor:pointer;
             border: white 5px solid;
         }
 
-        .right-side{
-            display:inline-block;
-            vertical-align: top;
-            margin-left:10px;
-            width:70%;
+        .mini-imgNum{
+            display:none;
         }
 
         .introduction{
             width:100%;
+            height:auto;
+            max-height:90px;
         }
 
         .actions{
+            display:flex;
+            flex-wrap:wrap;
             margin:15px 0px;
-            padding:10px 5px;
-            background:#f5f5f5;
         }
 
-        .actions button{
-            margin-left:10px;
+        .buttons{
+            width: auto;
+            display:flex;
+            flex-wrap:wrap;
+        }
+
+        .buttons button{
             width:180px;
             vertical-align: top;
             padding:5px 10px;
             font-size: 18px;
             font-weight:bold;
+            margin:2px;
         }
 
         .buy-btn{
@@ -219,10 +242,12 @@
 
 
     </style>
+    <link href="responsive.css" rel="stylesheet">
+
 </head>
 <body>
     <?php require_once('header.php')?>
-    <div class="main-conteiner">
+    <div class="main-conteiner" id="product-detail">
         <div class="detail-baseinfo">
             <p class="productName"><?php echo $p_data['title']?></p>
 
@@ -234,23 +259,25 @@
 
         <div class="detail-pictures">
             
-            <i class="fas fa-angle-left fa-4x slide-btn toLess"></i>
+            
             <div class="detail-product">
-                
-                    <?php for($i=1; $i<=9; $i++ ):?>
-                        <div class=<?php echo "imgWrap wrapNum".$i?>>
-                        <?php if(!empty($p_data['pic'.$i])):?>
-                            <img class="slidesImg <?php echo "pic".$i?>"
-                            src="<?php echo $p_data['pic'.$i]?>"
-                            style="<?php if($i>1) echo 'display:none';?>"
-                            >
-                        <?php endif?>
+                <i class="fas fa-angle-left fa-4x slide-btn normal toLess"></i>
+                    
+                        <div class="imgWrap wrapNum">
+                            <?php for($i=1; $i<=9; $i++ ):?>
+                                <?php if(!empty($p_data['pic'.$i])):?>
+                                    <img class="slidesImg <?php echo "pic".$i?>"
+                                    src="<?php echo $p_data['pic'.$i]?>"
+                                    style="<?php if($i>1) echo 'display:none';?>"
+                                    >
+                                <?php endif?>
+                            <?php endfor;?>
                         </div>
 
-                    <?php endfor;?>
-                
+                    
+                <i class="fas fa-angle-right fa-4x slide-btn normal toMore"></i>
             </div>
-            <i class="fas fa-angle-right fa-4x slide-btn toMore"></i>
+            
             
 
             <div class="now-imgNum">
@@ -263,6 +290,18 @@
                 <?php endfor;?>
             </div>
 
+            <div class="mini-imgNum">
+                <i class="fas fa-angle-left fa-4x slide-btn mini toLess"></i>
+                    <?php for($i=1; $i<=9; $i++ ):?>
+
+                        <?php if(!empty($p_data['pic'.$i])):?>
+                            <i class="<?php echo 'fas fa-circle dots dot'.$i?>"></i>
+                        <?php endif?>
+
+                    <?php endfor;?>
+                <i class="fas fa-angle-right fa-4x slide-btn mini toMore"></i>
+            </div>
+
 
         </div>
 
@@ -272,21 +311,30 @@
                 <?php echo $p_data['detail']?>
             </p>
 
+            <p class="price"><?php echo "￥".number_format($p_data['price'])?></p>
             <div class="actions">
-                <p class="price"><?php echo "￥".number_format($p_data['price'])?></p>
-                <button type="button" class="buy-btn">購入する</button>
-                <button type="button" class="dm-btn">作者にDM</button>
-                <button type="button" class="favorit-btn <?php if(isFavorit($p_data['productid']))echo "checked"?>" data-productid="<?php echo $p_data['productid']?>">お気に入り</button>
+                
+                <div class="buttons">
+                    <?php if($p_data['userid'] != $_SESSION['user_id']){?>
+                        <button type="button" class="buy-btn">購入する</button>
+                        <button type="button" class="dm-btn has-link" data-url="<?php echo "directMail.php?to=".$p_data['userid']?>">作者にDM</button>
+                        <button type="button" class="favorit-btn <?php if(isFavorit($p_data['productid']))echo "checked"?>" data-productid="<?php echo $p_data['productid']?>">お気に入り</button>
+                    <?php }else{ ?>
+
+                        <button type="button" class="buy-btn has-link" data-url="<?php echo "productEdit.php?p_id=".$p_data['productid']?>">編集する</button>
+                    <?php }?>
+                </div>
             </div>
 
             <div class="under-coteiner">
-
-                <div class="user-icon-unit" data-url="<?php echo "profile_detail.php?u_id=".$p_data['userid']?>">
-                    <img src="<?php echo $p_data['icon_img']?>">
-                </div>
-
-                <div class="right-side">
+                <div class="upper-side">
+                    <div class="user-icon-unit has-link" data-url="<?php echo "profile_detail.php?u_id=".$p_data['userid']?>">
+                        <img src="<?php echo $p_data['icon_img']?>">
+                    </div>
                     <p class = "card userName"><?php echo $p_data['username']?></p>
+                </div>
+                
+                <div class="under-side">
                     <p class = "introduction"><?php echo $p_data['introduction']?></p>
                 </div>
 
@@ -301,8 +349,8 @@
     <?php require_once('footer.php')?>
     <script type="text/javascript" src="imgSlide.js"></script>
     <script>
-        $('.user-icon-unit').click(function(){
-        location.href=$(this).attr('data-url')
+        $('.has-link').click(function(){
+            location.href=$(this).attr('data-url')
         });
 
 

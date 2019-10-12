@@ -14,15 +14,15 @@
                         'menuName'=>'商品アップロード',
                         'subClass'=>'toUpload'],
 
-                        ['url'=> '#',
-                        'menuName'=>'出品リスト',
+                        ['url'=> 'myproducts_list.php',
+                        'menuName'=>'商品編集一覧',
                         'subClass'=>'toUpload'],
 
-                        ['url'=> 'favorite.php',
+                        ['url'=> 'favoriteList.php',
                         'menuName'=>'お気に入り一覧',
                         'subClass'=>'toFavorite'],
 
-                        ['url'=> 'followList',
+                        ['url'=> 'followList.php',
                         'menuName'=>'フォロー管理',
                         'subClass'=>'toFollows'],
 

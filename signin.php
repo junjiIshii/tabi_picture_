@@ -15,11 +15,8 @@
         //1.Email形式かのチェック
         vaidemail($_POST['email'],'email');
 
-        //2.パスワードが8文字以上入力/30文字以内で入力されているか？
-        minMaxWords($_POST['password'],7,30,'password');
 
-
-        //5.そもそも入力されているか？（未入力チェック）
+        //入力されているか？（未入力チェック）
         mustEnter($_POST['email'],'email');
         mustEnter($_POST['password'],'password');
     }
@@ -98,15 +95,15 @@
     <meta charset="UTF-8">
     <title>ログインページ</title>
     <link href="style.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <style>
         .main-conteiner{
-            width: 60%;
             margin: 0 auto;
         }
 
         .signup-conteiner{
             padding: 25px 30px;
-            width: 80%;
+            width: 50%;
             margin: 110px auto;
             background-color: #f5f5f5;
         }
@@ -167,26 +164,31 @@
             margin-bottom: 20px;
         }
     </style>
-
+    <link href="responsive.css" rel="stylesheet">
     </head>
     <body>
+        <!-- 案内用のニュッと出てくるやつ-->
+        <p id="js-show-msg"  class="msg-slide" style="display:none;">
+            <?php echo getSessionFlash('msg_suc') ;?>
+        </p>
+
         <?php require_once('header.php')?>
             <div class="main-conteiner">
                 <div class="signup-conteiner">
                     <h2 class= "formName">ログイン</h2>
-                    <div class="help-block"><?php if(!empty($err_msg)) echo $err_msg['fatal'];?></div>
+                    <div class="help-block"><?php if(!empty($err_msg['fatal'])) echo $err_msg['fatal'];?></div>
 
                     <form method="post">
                         <div class="form-group">
                             <label class="formLabel" for="email">登録Email<span class="help-block">
-                                <?php if(!empty($err_msg)) echo $err_msg['email'];?></span>
+                                <?php if(!empty($err_msg['email'])) echo $err_msg['email'];?></span>
                                 <input class="formArea valid-email" id="email" type="text" name="email"
                                 value=<?php if(!empty($_POST['email'])) echo $_POST['email'];?>></label>
                         </div>
 
                         <div class="form-group">
                             <label class="formLabel" for="password">登録パスワード<span class="help-block">
-                            <?php if(!empty($err_msg)) echo $err_msg['password'];?></span>
+                            <?php if(!empty($err_msg['password'])) echo $err_msg['password'];?></span>
                                 <input class="formArea valid-pass" id="password" type="password" name="password"
                                 value=<?php if(!empty($_POST['password'])) echo $_POST['password'];?>></label>
                         </div>

@@ -1,0 +1,663 @@
+/*スマホ縦用~479px*/
+@media screen and (max-width:480px){
+    /*======共通=======*/
+    /*ヘッダー*/
+    /*===============*/
+        /*ヘッダーメニューを消して、アイコンにする*/
+        .header-menue{
+            display:none;
+        }
+
+        .menu-button-wrapper{
+            display: inline-block;
+            align-self: center;
+            margin-left: auto;
+        }
+
+    /*======共通=======*/
+    /*スライドメニューとメインメニュー*/
+    /*===============*/
+        .mypage-menu-conteiner{
+            display: none;
+        }
+
+        .fa-align-justify{
+            color:darkcyan;
+        }
+
+    /*===============*/
+    /*フッター*/
+    /*===============*/
+        /*コピーライトを小さくしておく*/
+        .copy-right{
+            font-size: 10px;
+        }
+
+    /*===============*/
+    /*検索条件入力欄*/
+    /*===============*/
+        .search-conteiner{
+            width:100%;
+            margin-bottom:10px;
+        }
+
+        .byName input{
+            width:80%;
+            height:34px;
+        }
+
+        .bycategory{
+            display:inline-block;
+            margin-right:8px;
+        }
+        
+        .showNumber{
+            display:inline-block;
+            margin-right:8px;
+        }
+
+        .showHow{
+            display:inline-block;
+        }
+
+        .searchStart{
+            margin:0 auto;
+        }
+
+
+    /*--------独立---------*/
+    /*マイページ*/
+    /*-------------------*/
+
+        .guide-conteiner{
+            width:100%;
+        }
+
+        .notify-conteiner{
+            width:100%;
+        }
+
+        .content{
+            font-size:14px;
+        }
+
+
+    /*-------------------*/
+    /*ログインページ*/
+    /*パスワードリセット申請画面*/
+    /*-------------------*/
+
+        .signup-conteiner{
+            width:100%;
+            padding:15px 20px;
+        }
+
+        .formArea{
+            width:100%;
+        }
+
+    /*-------------------*/
+    /*新規登録ページ*/
+    /*-------------------*/
+        .help-block{
+            display:block;
+            margin-bottom:10px;
+        }
+
+    /*-------------------*/
+    /*フォローユーザー管理*/
+    /*-------------------*/
+
+        .switchList button{
+            display:block;
+            margin:10px auto;
+        }
+
+        .followuser-icon{
+            width:50px;
+            height:50px;
+        }
+
+        .follow-btn{
+            width:120px;
+        }
+
+        .list-conteiner {
+            margin:0px;
+        }
+
+        .userListCard p{
+            font-size:13px; 
+        }
+
+    /*-------------------*/
+    /*お気に入りリスト*/
+    /*-------------------*/
+
+        .favorite-prodocuts-conteiner{
+            width:100%;
+        }
+
+        .favorite-product-unit{
+            margin:0px auto;
+            margin-bottom:20px;
+            width:240px;
+            height:540px;
+        }
+
+        .favorite-product-img{
+            height:240px;
+        }
+
+        .favorite-user-icon_producunit{
+            top:200px;
+        }
+
+    /*-------------------*/
+    /*マイ商品編集一覧*/
+    /*-------------------*/
+        #myproducts_main-conteiner{
+            flex-wrap:wrap;
+        }
+
+        #myproduct-conteiner{
+        width:100%;
+        }
+
+        #myproduct-unit{
+            flex-wrap:wrap;
+        }
+
+        #myproduct-unit .product-img{
+            order:1;
+        }
+
+        #myproduct-unit .product-info{
+            order:3;
+        }
+
+        #myproduct-unit .actions{
+            order:2;
+            width:50%;
+            margin: 0 auto;
+        }
+
+        #myproduct-unit .changeState{
+            margin:10px 0px;
+        }
+
+        #myproduct-unit button{
+            width:100%;
+        }
+
+    /*-------------------*/
+    /*ダイレクトメッセージ*/
+    /*-------------------*/
+
+        #direcmail-mainconteiner{
+            flex-direction: column;
+        }
+
+        .mailList-conteiner{
+            width: 100%;
+            height: 250px;
+            order:2;
+        }
+
+        .direcMail-mainWrapper{
+            width:100%;
+            order:1;
+        }
+
+        .message{
+            max-width:45%
+        }
+
+        .first-guide{
+            font-size:11px;
+        }
+
+
+    /*-------------------*/
+    /*商品アップロード画面*/
+    /*プロフィール編集*/
+    /*-------------------*/
+
+        .edit-menu-wrapper{
+            width:100%;
+            
+        }
+
+        .edit-menu-conteiner{
+            width:100%;
+            padding:10px;
+        }
+
+        .images-contener{
+            overflow: scroll;
+            height: 270px;
+            width:270px;
+            display: flex;
+            flex-direction:column;
+            flex-wrap: wrap;
+            margin:0 auto;
+        }
+
+        #productEdit .area-drop{
+            width:250px;
+            height: 250px;
+            margin:0px 5px 0px 0px;
+        }
+
+        #productEdit .btn-conteiner{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #productEdit .form-btn{
+            margin:0px;
+        }
+
+        #productEdit .btn-conteiner .locked{
+            margin:5px 0px;
+        }
+
+    /*-------------------*/
+    /*商品一覧画面*/
+    /*-------------------*/
+        #productList-main-conteiner{
+            flex-wrap:wrap;
+        }
+
+        #productList-main-conteiner .prodocuts-conteiner{
+            width:100%;
+            margin:0px;
+        }
+
+        .guide{
+            width:100%;
+        }
+
+        #productList-main-conteiner .unit-wrapper{
+            justify-content: center;
+        }
+
+        #productList-main-conteiner .product-unit{
+            width:150px
+        }
+
+        #productList-main-conteiner .product-img{
+            height:150px;
+        }
+
+        #productList-main-conteiner .user-icon_producunit{
+            display:none;
+        }
+
+    /*-------------------*/
+    /*ユーザー一覧画面*/
+    /*-------------------*/
+
+        #userList-main-conteiner{
+            flex-wrap: wrap;
+        }
+
+        .usercards-conteiner{
+            width:100%;
+            margin:0px;
+        }
+
+        .userList-wrapper{
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+    /*-------------------*/
+    /*プロフィール詳細*/
+    /*-------------------*/
+
+        #profile-detail{
+            width:95%;
+        }
+
+        .user-data-container{
+            width: 100%;
+        }
+
+        #profile-detail .user-header{
+            height:200px;
+        }
+
+        #profile-detail  .user-icon{
+            width: 90px;
+            height:90px;
+            top:150px;
+        }
+
+        .btn-wrapper{
+            margin: 50px auto 0px auto;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .info-wrap{
+            margin: 20px 0px 20px 0px;
+        }
+
+    /*-------------------*/
+    /*商品詳細*/
+    /*-------------------*/
+
+        #product-detail{
+            width: 95%;
+        }
+
+        .imgWrap{
+            width:260px;
+            height:260px;
+        }
+
+        #product-detail .detail-info{
+            width:100%;
+        }
+
+        #product-detail .under-coteiner{
+            width:100%;
+        }
+
+        .mini-imgNum{
+            display:flex;
+            align-content: center;
+        }
+
+        .mini-imgNum .dots{
+            align-self: center;
+            margin:0px 1px;
+        }
+
+        .now-imgNum{
+            display:none;
+        }
+
+        .detail-product .slide-btn{
+            display:none;
+        }
+
+
+}
+/*スマホ横600~480px*/
+
+@media screen and (max-width:896px) and (min-width:481px){
+    /*======共通=======*/
+    /*ヘッダー*/
+    /*===============*/
+        /*ヘッダーメニューを消して、アイコンにする*/
+        .header-menue{
+            display:none;
+        }
+
+        .menu-button-wrapper{
+            display: inline-block;
+            align-self: center;
+            margin-left: auto;
+        }
+
+    /*======共通=======*/
+    /*スライドメニューとメインメニュー*/
+    /*===============*/
+        .mypage-menu-conteiner{
+            display: none;
+        }
+
+        .fa-align-justify{
+            color:darkcyan;
+        }
+
+    /*===============*/
+    /*フッター*/
+    /*===============*/
+        /*コピーライトを小さくしておく*/
+        .copy-right{
+            font-size: 15px;
+        }
+
+    /*--------独立---------*/
+    /*マイページ*/
+    /*-------------------*/
+
+        .guide-conteiner{
+            width:90%;
+        }
+
+        .notify-conteiner{
+            width:100%;
+            max-width:470px;
+            margin: 0 auto;
+        }
+
+        .content{
+            font-size:14px;
+        }
+
+    /*-------------------*/
+    /*商品アップロード画面*/
+    /*プロフィール編集*/
+    /*-------------------*/
+
+        .edit-menu-wrapper{
+            width:85%;
+            
+        }
+
+        .edit-menu-conteiner{
+            width:100%;
+            padding:10px;
+        }
+
+    /*-------------------*/
+    /*ダイレクトメッセージ*/
+    /*-------------------*/
+
+    #direcmail-mainconteiner{
+        
+    }
+
+    .mailList-conteiner{
+        min-width:190px;
+    }
+
+    .direcMail-mainWrapper{
+        width:80%;
+    }
+
+    .message{
+        max-width:45%
+    }
+
+    .first-guide{
+        font-size:11px;
+    }
+
+    /*-------------------*/
+    /*マイ商品編集一覧*/
+    /*-------------------*/
+        #myproducts_main-conteiner{
+            flex-direction: column;
+            width:80%;
+            max-width:590px;
+            min-width:450px;
+        }
+        
+        /*-------------------*/
+        /*検索*/
+        /*-------------------*/
+        #myproducts_main-conteiner .search-conteiner{
+            /*マイ商品編集一覧*/
+            width:100%;
+        }
+
+        .byName input{
+            width:80%;
+            height:34px;
+        }
+
+        .bycategory{
+            display:inline-block;
+            margin-right:8px;
+        }
+        
+        .showNumber{
+            display:inline-block;
+            margin-right:8px;
+        }
+
+        .showHow{
+            display:inline-block;
+        }
+
+        #myproducts_main-conteiner .searchStart{
+            margin:0 auto;
+        }
+
+        #myproduct-conteiner{
+            width:100%;
+            margin:10px 0px;
+        }
+
+        #myproduct-conteiner .product-unit{
+
+        }
+
+        /*ログイン、パスワード変更。新規登録、パスワードリセット申請、認証キー入力*/
+        .signup-conteiner{
+            width:70%;
+        }
+
+    /*-------------------*/
+    /*商品詳細*/
+    /*-------------------*/
+
+        #product-detail{
+            width: 75%;
+            min-width: 470px
+        }
+
+        .imgWrap{
+            width:250px;
+            height:250px;
+        }
+
+        #product-detail .under-coteiner{
+            width:80%;
+            min-width:400px;
+        }
+
+    /*-------------------*/
+    /*ユーザー詳細*/
+    /*-------------------*/
+        #profile-detail{
+            width:95%;
+        }
+
+        .user-data-container{
+            width:100%;
+            min-width: 450px;
+        }
+
+        .btn-wrapper{
+            display:flex;
+            flex-direction: column;
+            justify-content: flex-end
+        }
+
+        .btn-wrapper button{
+            margin-left:auto;
+        }
+
+        .btn-wrapper .dm-btn{
+            margin-top:10px;
+        }
+
+        .info-wrap{
+            margin-top:15px;
+        }
+
+        .user-data-container .user-header{
+            height:240px;
+        }
+
+        .user-data-container  .user-icon{
+            top:160px;
+        }
+
+        .product-unit-wrap{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-unit-wrap .product-unit{
+            width:100%;
+            display: flex;
+            flex-wrap:wrap;
+            height:150px;
+            max-width:530px;
+            margin:10px auto;
+        }
+
+        .product-unit-wrap .product-img{
+            width:150px;
+            
+        }
+
+        .product-unit-wrap img{
+            height: 100%;
+            width: 100%;
+        }
+
+    /*-------------------*/
+    /*ユーザー一覧画面*/
+    /*-------------------*/
+
+        #userList-main-conteiner{
+            flex-direction:column;
+            justify-content: center;
+        }
+
+        .usercards-conteiner{
+            width:100%;
+            margin:0px;
+        }
+
+        .userList-wrapper{
+            display:flex;
+            flex-wrap: wrap;
+        }
+
+        #userList-main-conteiner .search-conteiner{
+            width:70%;
+            margin:10px auto;
+        }
+
+        #userList-main-conteiner .guide{
+            width:70%;
+        }
+
+    /*-------------------*/
+    /*商品一覧画面*/
+    /*-------------------*/
+        #productList-main-conteiner{
+            flex-direction:column;
+        }
+
+        #productList-main-conteiner .search-conteiner{
+            width:70%;
+            margin:10px auto;
+        }
+
+        #productList-main-conteiner .prodocuts-conteiner{
+            width:100%;
+        }
+}
+

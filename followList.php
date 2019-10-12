@@ -17,6 +17,7 @@
     <meta charset="UTF-8">
     <title>フォロー管理画面</title>
     <link href="style.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <style>
         .main-conteiner{
             flex-wrap:nowrap;
@@ -32,7 +33,7 @@
         }
 
         .switchList{
-            text-align: center;
+            margin:0px auto;
         }
 
         .switchList button{
@@ -61,14 +62,14 @@
 
         }
 
-        .user-icon{
+        .followuser-icon{
             width:70px;
             height: 70px;
             border: white 5px solid;
             border-radius: 50%;
         }
 
-        .user-icon img{
+        .followuser-icon img{
             object-fit: cover;
             width: 100%;
             height:100%;
@@ -98,6 +99,7 @@
             color:white;
         }
     </style>
+    <link href="responsive.css" rel="stylesheet">
 </head>
 <body>
     <?php require_once('header.php')?>
@@ -111,7 +113,7 @@
                 <?php foreach($followData as $key => $val){?>
                     <div class="userListCard">
 
-                        <div class="user-icon">
+                        <div class="followuser-icon">
                                 <img src="<?php echo $val['icon_img']?>">
                         </div>
 

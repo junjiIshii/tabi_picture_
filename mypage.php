@@ -70,10 +70,12 @@
         }
 
         .user-icon{
-            width:60px;
-            height: 60px;
+            width:50px;
+            height: 50px;
             border: white 5px solid;
             border-radius: 50%;
+            min-width:50px;
+            min-height:50px;
         }
 
         .user-icon img{
@@ -134,11 +136,10 @@
 
         .notify_time{
             font-size:10px;
-            align-self: flex-end;
-
         }
 
     </style>
+    <link href="responsive.css" rel="stylesheet">
 </head>
 <body>
     <!-- 案内用のニュッと出てくるやつ-->
@@ -153,7 +154,7 @@
             <div class="upload-guide">
                 <h3 class="menu-name">メイン</h3>
                 <div class="guide-button first">
-                    <button class="url-button green" type="button">商品を編集する</button>
+                    <button class="url-button green has-link" type="button" data-url="myproducts_list.php">商品を編集する</button>
                     <button class="url-button blue has-link " type="button" data-url="productEdit.php">商品をアップロードする</button>
                 </div>
 
@@ -163,7 +164,7 @@
                 </div>
 
                 <div class="guide-button third">
-                    <button class="url-button green has-link" type="button" data-url="products_lists.php">商品一覧</button>
+                    <button class="url-button green has-link" type="button" data-url="products_list.php">商品一覧</button>
                     <button class="url-button blue has-link" type="button" data-url="users_list.php">ユーザー一覧</button>
                 </div>
 
@@ -175,6 +176,7 @@
                     
                         <?php if(!empty($notifyData)){?>
                         <?php foreach($notifyData as $key => $val){?>
+
                             <?php if($val['type']==1){ //お気に入りの通知?>
                                 <div class="notifyUnit has-link" data-url="<?php echo "directMail.php?to=".$val['userid']?>">
                                     <div class="user-icon has-link" data-url="<?php echo "directMail.php?to=".$val['userid']?>">
@@ -182,10 +184,9 @@
                                     </div>
 
                                     <div class="content-area">
-                                        <i class="fas fa-heart favorit-btn fa-lg" ></i><p class = "content"><?php echo $val['contents']?></p>
-                                        <span class="notify_time"><?php echo $val['create_time']?></span>
+                                        <i class="fas fa-heart favorit-btn fa-lg" ></i><p class = "content"><?php echo $val['contents']?><span class="notify_time"><?php echo $val['create_time']?></span></p>
+                                        
                                     </div>
-
                                 </div>
                             <?php }elseif($val['type']==0){ //フォローの通知?>
                                 <div class="notifyUnit has-link" data-url="<?php echo "profile_detail.php?u_id=".$val['userid']?>">
@@ -194,8 +195,7 @@
                                     </div>
 
                                     <div class="content-area">
-                                        <i class="fas fa-user fa-lg"></i><p class = "content"><?php echo $val['contents']?></p>
-                                        <span class="notify_time"><?php echo $val['create_time']?></span>
+                                        <i class="fas fa-user fa-lg"></i><p class = "content"><?php echo $val['contents']?><span class="notify_time"><?php echo $val['create_time']?></span></p>
                                     </div>
                                 </div>
                             <?php }elseif($val['type']==2){ //DMの通知?>
@@ -204,14 +204,12 @@
                                         <img src="<?php echo $val['icon_img']?>">
                                     </div>
                                     <div class="content-area">
-                                        <i class="fas fa-envelope fa-lg"></i><p class = "content"><?php echo $val['contents']?></p>
-                                        <span class="notify_time"><?php echo $val['create_time']?></span>
+                                        <i class="fas fa-envelope fa-lg"></i><p class = "content"><?php echo $val['contents']?><span class="notify_time"><?php echo $val['create_time']?></span></p>
                                     </div>
                                 </div>
-
                             <?php } ?>
+
                         <?php } ?>
-                            <!-- <button class="moreShow" type="button">もっと表示する</button> -->
                         <?php }else{ ?>
                             <p>まだ通知はありません。</p>
                         <?php } ?>

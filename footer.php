@@ -11,6 +11,8 @@
 
     <script type="text/javascript" src="showMessage.js"></script>
 
+    <script type="text/javascript" src="slidemenu.js"></script>
+
     <!--特定のページのみに働くJSファイル -->
     <?php
         switch(basename($_SERVER['REQUEST_URI'])){

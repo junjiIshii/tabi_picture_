@@ -46,136 +46,144 @@
 <head>
     <meta charset="UTF-8">
     <link href="style.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <title>商品一覧</title>
     <style>
     .usercards-conteiner{
-    margin: 30px 20px;
-    width:80%;
-    /*border: 2px black solid;目印用後で消す*/
-    float: right;
-    overflow: hidden;
-}
+        margin: 30px 20px;
+        width:80%;
+        display: flex;
+        flex-wrap:wrap;
+        /*border: 2px black solid;目印用後で消す*/
+    }
 
-.guide{
-    border: 1px solid black;
-    width: 100%;
-    height: 50px;
-    margin-bottom: 20px;
-    font-size:15px;
-    padding:0px 10px;
-    display:flex;
-    align-items:center;
-}
+    .guide{
+        border: 1px solid black;
+        width: 50%;
+        height: 50px;
+        margin-bottom: 20px;
+        font-size:15px;
+        padding:0px 10px;
+        display:flex;
+        align-items:center;
+    }
 
-.show-nowNum{
-    margin-left:auto;
-}
+    .show-nowNum{
+        margin-left:auto;
+    }
 
-.usercard-unit{
-    /*border: 1px red solid;目印用後で消す*/
-    width:300px;
-    height: 500px;
-    display: inline-block;
-    vertical-align:top;
-    font-size: 20px;
-    margin: 0px 10px;
-    margin-bottom: 20px;
-    background: #f1f1f1;
-    color:black;
-    box-shadow:2px 8px   rgba(61, 60, 60, 0.2);
-    position: relative;
-}
+    .userList-wrapper{
+        justify-content: center;
+        display:inline-block;
+    }
 
-
-.usercard-unit:hover{
-    background: #d9d9d9;
-}
-
-
-.card-headerimg img{
-    width: 100%;
-    max-height: 150px;
-    object-fit: cover;
-}
-
-.user-icon_usercardunit{
-    width:90px;
-    height: 90px;
-    position: absolute;
-    top:20%;
-    left:5px;
-    border: white 5px solid;
-    border-radius: 50%;
-}
-
-.user-icon_usercardunit img{
-    object-fit: cover;
-    width: 100%;
-    height:100%;
-    border-radius: 50%;
-}
+    .usercard-unit{
+        /*border: 1px red solid;目印用後で消す*/
+        width:270px;
+        height: 400px;
+        display: inline-block;
+        vertical-align:top;
+        font-size: 20px;
+        margin: 0px 10px;
+        margin-bottom: 20px;
+        background: #f1f1f1;
+        color:black;
+        box-shadow:2px 8px   rgba(61, 60, 60, 0.2);
+        position: relative;
+    }
 
 
-.card{
-    padding: 5px;
-}
-
-.userName{
-    margin-left:95px;
-    font-weight: bold;
-    font-size: 25px;
-}
-
-.follow-btn{
-    position: absolute;
-    top:205px;
-    left:80px;
-    font-size:18px;
-    text-align: center;
-    width:150px;
-    margin: 0 auto;
-    border-radius: 20px;
-    cursor: pointer;
-
-    color: #0065a8;
-    border:2px solid #0065a8;
-    background:#f1f1f1;
-}
+    .usercard-unit:hover{
+        background: #d9d9d9;
+    }
 
 
-.usercard-unit:hover .unfollow{
-    background: #d9d9d9;
-}
+    .card-headerimg img{
+        width: 100%;
+        max-height: 150px;
+        object-fit: cover;
+    }
+
+    .user-icon_usercardunit{
+        width:90px;
+        height: 90px;
+        position: absolute;
+        top:20%;
+        left:5px;
+        border: white 5px solid;
+        border-radius: 50%;
+    }
+
+    .user-icon_usercardunit img{
+        object-fit: cover;
+        width: 100%;
+        height:100%;
+        border-radius: 50%;
+    }
 
 
-.followed{
-    border:2px solid #0065a8;
-    background: #0065a8;
-    color:white;
-}
+    .card{
+        padding: 5px;
+    }
 
-.userinfo{
-    margin-top: 40px;
-    text-align: left;
-    font-size: 15px;
-    padding: 8px;
-    height: 200px;
-}
+    .userName{
+        margin-left:95px;
+        font-weight: bold;
+        font-size: 25px;
+    }
 
-.to-detail{
-    display:block;
-    text-align: center;
-}
+    .follow-btn{
+        position: absolute;
+        top:205px;
+        left:80px;
+        font-size:18px;
+        text-align: center;
+        width:150px;
+        margin: 0 auto;
+        border-radius: 20px;
+        cursor: pointer;
 
-/*ここにあったページングのCSSは共通のCSSファイルに格上げした*/
+        color: #0065a8;
+        border:2px solid #0065a8;
+        background:#f1f1f1;
+    }
 
 
-</style>
+    .usercard-unit:hover .unfollow{
+        background: #d9d9d9;
+    }
+
+
+    .followed{
+        border:2px solid #0065a8;
+        background: #0065a8;
+        color:white;
+    }
+
+    .userinfo{
+        margin-top: 40px;
+        text-align: left;
+        font-size: 15px;
+        padding: 8px;
+        height: 200px;
+    }
+
+    .to-detail{
+        display:block;
+        text-align: center;
+    }
+
+    /*ここにあったページングのCSSは共通のCSSファイルに格上げした*/
+
+
+    </style>
+    <link href="responsive.css" rel="stylesheet">
+
 </head>
 <body>
     <?php require_once('header.php')?>
 
-    <div class="main-conteiner">
+    <div class="main-conteiner" id="userList-main-conteiner">
 
         <div class="search-conteiner">
             <form class="search-form" method="get">
@@ -217,7 +225,7 @@
                     <span class="show-nowNum"><?php echo "{$pgData['start']}-{$pgData['end']} 件/ {$allNum} 件"; ?></span>
                 </div>
 
-                
+                <div class="userList-wrapper">
                 <?php for($i=0; $i<$pgData['maxShow']; $i++) {?>
                 <div class="usercard-unit" >
 
@@ -234,7 +242,7 @@
                             <p><?php echo $u_data[$i]['introduction']?></p>
                         </div>
                     </div>
-                    <?php if($u_data[$i]['userid'] != $_SESSION['user_id']){?>
+                    <?php if(isset($_SESSION['user_id']) && $u_data[$i]['userid'] != $_SESSION['user_id']){?>
                         <button class="card follow-btn <?php if(isFollow($u_data[$i]['userid'])) echo "followed"?>" data-userid="<?php echo $u_data[$i]['userid']?>">
                                 フォロー
                         </button>
@@ -243,7 +251,7 @@
                 </div>
 
                 <?php }?>
-
+                </div>
                 <div class="paging">
                     <ul class="paging-list">
                         <?php if($currentPg != 1):?>
@@ -264,7 +272,7 @@
                 </div> 
             <?php }else{;?>
                 <div class="guide">
-                    <span class="no-result">商品が見つかりませんでした。</span>
+                    <span class="no-result">ユーザーが見つかりませんでした。</span>
                 </div>
             <?php }?>
 

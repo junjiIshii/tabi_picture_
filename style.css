@@ -14,6 +14,7 @@
 
 }
 
+/*ヘッダー*/
 header{
     height: 60px;
     background-color: aquamarine;
@@ -30,8 +31,8 @@ header{
 }
 
 .header-menue{
-    float:right;
-    line-height: 60px;
+    line-height: 50px;
+    margin-left: auto;
 }
 
 
@@ -39,21 +40,48 @@ header{
     width: 90%;
     height:100%;
     margin:0 auto;
-
+    display: flex;
 }
 
 
 .head-conteiner li{
     list-style: none;
-    display: inline;
+    display: inline-block;
     margin-right: 20px;
     color: darkcyan;
     font-weight: 600;
+    padding:3px;
 }
 
 .head-conteiner a{
     color: darkcyan;
+    display: inline-block;
 }
+
+/*スライドメニュー（スマホ用）*/
+
+.menu-button-wrapper{
+    /*480PX以上では隠しておく*/
+    display: none;
+}
+
+.slidemenu-conteiner{
+    width:0%;
+    height:100%;
+    max-width:200px;
+    background:rgba(7, 230, 163, 0.9);
+    float:left;
+    z-index:99;
+    position: absolute;
+    top:0;
+    overflow: hidden;
+}
+
+.slidemenu-conteiner ul{
+    width:150px;
+
+}
+
 
 /*メインコンテナのデフォルト設定*/
 .main-conteiner{
@@ -61,7 +89,7 @@ header{
     margin: 0 auto;
     position: relative;
     display:flex;
-    flex-wrap:wrap;
+    /*flex-wrap:wrap;*/
     margin-top:30px;
 }
 
@@ -140,10 +168,11 @@ footer{
 .mypage-menu-conteiner{
     display: inline-block;
     vertical-align: top;
-    width:200px;
+    min-width:200px;
     padding: 10px;
     background-color: rgba(7, 230, 163, 0.6);
     height: 100%;
+    margin-left:10px;
     }
 
 .mypage-menu-section{
@@ -164,6 +193,7 @@ footer{
 .paging {
     width: 100%;
     text-align:center;
+    margin:10px 0px;
 }
 
 .pageNum{

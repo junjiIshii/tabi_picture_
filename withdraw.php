@@ -44,6 +44,7 @@
     <meta charset="UTF-8">
     <title>退会ページ</title>
     <link href="style.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <style>
         .main-conteiner{
             width: 60%;
@@ -114,8 +115,8 @@
             margin-bottom: 20px;
         }
     </style>
-
-    </head>
+    <link href="responsive.css" rel="stylesheet">
+</head>
     <body>
         <?php require_once('header.php')?>
             <div class="main-conteiner">

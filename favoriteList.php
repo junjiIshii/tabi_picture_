@@ -17,12 +17,20 @@
             justify-content: center;
         }
 
-        .prodocuts-conteiner{
+        .favorite-prodocuts-conteiner{
             display: flex;
             flex-wrap:wrap;
-            width:70%;
+            
         }
-        .product-unit{
+
+        .unitswrapper{
+            width:90%;
+            margin:0 auto;
+            display:flex;
+            flex-wrap: wrap;
+        }
+
+        .favorite-product-unit{
             /*border: 1px red solid;目印用後で消す*/
             width:280px;
             height: 600px;
@@ -46,7 +54,7 @@
             color:pink;
         }
 
-        .product-unit:hover{
+        .favorite-product-unit:hover{
             background: #d9d9d9;
         }
 
@@ -56,22 +64,27 @@
             margin: 2px;
         }
 
-        .product-img img{
+        .favorite-product-img{
+            width:100%;
+            height:280px;
+        }
+
+        .favorite-product-img img{
             width: 100%;
-            height: 280px;
+            height: 100%;
             object-fit: cover;
         }
 
-        .user-icon_producunit{
+        .favorite-user-icon_producunit{
             width:80px;
             height: 80px;
             position: absolute;
-            top:270px;
+            top:250px;
             left:5px;
             border-radius: 50%;
         }
 
-        .user-icon_producunit img{
+        .favorite-user-icon_producunit img{
             object-fit: cover;
             width: 100%;
             height:100%;
@@ -103,53 +116,57 @@
         }
 
         .guide{
-            width: 100%;
+            width: 90%;
             height: 50px;
             margin-bottom: 20px;
             font-size:15px;
             padding:0px 10px;
             display:flex;
             align-items:center;
+            border-bottom:2px dotted lightgray;
         }
         </style>
+        <link href="responsive.css" rel="stylesheet">
     </head>
     <body>
         <?php require_once('header.php')?>
 
         <div class="main-conteiner">
-            <div class="prodocuts-conteiner">
+            <div class="favorite-prodocuts-conteiner">
             <?php if(count($p_data) !=0){ //お気に入り数が0の時は何も表示しない?>
                 <span class="guide"><?php echo count($p_data)."件のお気に入り登録があります。"; ?></span>
 
-                <?php for($i=0; $i< count($p_data); $i++) {;?>
-                    <div class="product-unit">
-                        <div class="user-icon_producunit">
-                            <a href="<?php echo "profile_detail.php?u_id=".$p_data[$i]['userid']?>"><img src="<?php echo $p_data[$i]['icon_img']?>"></a>
-                        </div>
-
-                        
-                            <div class="product-img">
-                                <i class="fas fa-heart favorit-btn fa-2x <?php if(isFavorit($p_data[$i]['productid']))echo "checked"?>"
-                                data-productid ="<?php echo $p_data[$i]['productid']?>"></i>
-                                <img src="<?php echo $p_data[$i]['pic1']?>">
+                <div class="unitswrapper">
+                    <?php for($i=0; $i< count($p_data); $i++) {;?>
+                        <div class="favorite-product-unit">
+                            <div class="favorite-user-icon_producunit">
+                                <a href="<?php echo "profile_detail.php?u_id=".$p_data[$i]['userid']?>"><img src="<?php echo $p_data[$i]['icon_img']?>"></a>
                             </div>
-                        <div class="link-cover" data-url="<?php echo 'product_detail.php?p_id='.$p_data[$i]['productid']?>">
-                            <p class = "product author"><?php echo $p_data[$i]['username']?></p>
-                            <p class = "product title"><?php echo $p_data[$i]['title']?></p>
 
-                            <div class="product pictureinfo">
-                                <p><?php $detail = $p_data[$i]['detail'] ;
-                                    //商品詳細文は150文字までだす。
-                                    if(strlen($detail)>150){
-                                        echo mb_substr($detail,0,150)."...";
-                                    }else{
-                                        echo $detail;
-                                    }
-                                    ?></p>
+                            
+                                <div class="favorite-product-img">
+                                    <i class="fas fa-heart favorit-btn fa-2x <?php if(isFavorit($p_data[$i]['productid']))echo "checked"?>"
+                                    data-productid ="<?php echo $p_data[$i]['productid']?>"></i>
+                                    <img src="<?php echo $p_data[$i]['pic1']?>">
+                                </div>
+                            <div class="link-cover" data-url="<?php echo 'product_detail.php?p_id='.$p_data[$i]['productid']?>">
+                                <p class = "product author"><?php echo $p_data[$i]['username']?></p>
+                                <p class = "product title"><?php echo $p_data[$i]['title']?></p>
+
+                                <div class="product pictureinfo">
+                                    <p><?php $detail = $p_data[$i]['detail'] ;
+                                        //商品詳細文は150文字までだす。
+                                        if(strlen($detail)>150){
+                                            echo mb_substr($detail,0,150)."...";
+                                        }else{
+                                            echo $detail;
+                                        }
+                                        ?></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <?php }?>
+                    <?php }?>
+                </div>
 
                 <?php }else{?>
                     

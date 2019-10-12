@@ -138,27 +138,24 @@
     <meta charset="UTF-8">
     <title>プロフィール編集</title>
     <link href="style.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
     <style>
     .main-conteiner{
-        width: 85%;
         margin: 0 auto;
         margin-top:10px;
-            }
-
-
-
-
+        justify-content:center;
+        }
 
     .edit-menu-wrapper{
         display: inline-block;
         height: 100%;
-        width:80%;
+        width:60%;
         background: #f5f5f5;
     }
 
     .edit-menu-conteiner{
-        width:600px;
+        width:80%;
         margin: 0 auto;
         padding: 20px 30px;
     }
@@ -310,6 +307,7 @@
         }
 
     </style>
+    <link href="responsive.css" rel="stylesheet">
 </head>
 <body>
     <?php require_once('header.php')?>

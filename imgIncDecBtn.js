@@ -3,7 +3,6 @@ var $decBtn = $('.lessNum');
 var displayNum = 4;
 
 
-
 var i = 4;
 while(i<10){
     var $s = $('.im'+i).children('.preview-product_img').attr('src');
@@ -14,7 +13,8 @@ while(i<10){
     i++;
     displayNum += 1;
 }
-console.log(displayNum);
+
+//console.log(displayNum);
 $incBtn.on('click',function(){
 
     if(displayNum < 10){

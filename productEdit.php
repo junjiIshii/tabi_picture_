@@ -27,6 +27,9 @@
     }else{
         debug('編集画面です。');
         $edit_flg = true;
+        $open_flg = getOneProductData($p_id,'open_flg');
+        debug(print_r($open_flg ,true));
+        $open_flg = $open_flg['open_flg'];
     }
 
     debug('商品ID：'.$p_id);
@@ -51,6 +54,17 @@
         debug('POSTのなかみ：'.print_r($_POST,true));
         $intr = htmlspecialchars($_POST['introduction']);
         $price = htmlspecialchars($_POST['price']);
+
+    if(isset($_POST['delete'])){
+        productDel($p_id);
+        exit();
+    }
+
+    if(isset($_POST['state'])){
+        updateProductState($_GET['p_id']);
+        header("location:productEdit.php?p_id=".$p_id);
+        exit();
+    }
 
     if($edit_flg == false){
         //新規
@@ -85,11 +99,6 @@
             mustEnter($price,'price');
         }
 
-    }
-
-    if(isset($_POST['delete'])){
-        productDel($_GET['p_id']);
-        exit();
     }
 
         //全ての画像に対してUPLOAD処理を行う→パスは配列に入れる
@@ -252,25 +261,27 @@
     <meta charset="UTF-8">
     <title>商品出品・編集</title>
     <link href="style.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
     <style>
     .main-conteiner{
-        width: 85%;
         margin: 0 auto;
         margin-top:10px;
+        justify-content: center;
             }
 
     .edit-menu-wrapper{
         display: inline-block;
         height: 100%;
-        width:80%;
+        width:70%;
         background: #f5f5f5;
+        
     }
 
     .edit-menu-conteiner{
-        width:700px;
+        max-width: 670px;
         margin: 0 auto;
-        padding: 20px 30px;
+        padding: 20px;
     }
 
     .conteiner-Name{
@@ -295,6 +306,7 @@
     /*EditArea*/
     .product_img{
         width:200px;
+        height:200px;
         position: relative;
         background:rgba(204,255,229,0.5);
         margin-bottom:5px;
@@ -305,8 +317,8 @@
 
     .preview-product_img{
         width: 100%;
-        max-height: 200px;
-        object-fit: contain;
+        height: 100%;
+        object-fit: fill;
         position: absolute;
         top:0;
     }
@@ -316,7 +328,7 @@
     /*↓INPUT*/
     .editContent-product_img{
         width: 100%;
-        height:200px;
+        height:100%;
         opacity:0;
     }
 
@@ -428,16 +440,29 @@
         .register{
             background-color: darkcyan;
         }
+
+        .open{
+            border:2px solid skyblue;
+            color:dodgerblue;
+            margin:0px 10px;
+        }
+
+        .locked{
+            background:dodgerblue;
+            color:white;
+            margin:0px 10px;
+        }
+
         .delete{
-                margin-left:20px;
-                background-color: darkred;
-            }
+            background-color: darkred;
+        }
 
     </style>
+    <link href="responsive.css" rel="stylesheet">
 </head>
 <body>
     <?php require_once('header.php')?>
-    <div class="main-conteiner">
+    <div class="main-conteiner" id="productEdit">
 
             <div class="edit-menu-wrapper">
                     <div class="edit-menu-conteiner">
@@ -528,6 +553,12 @@
                             <div class="btn-conteiner">
                                 <input type="submit" class="register form-btn" 
                                 value="<?php if($edit_flg){echo '変更する';}else{echo '出品する';}?>">  
+
+                                <?php if($edit_flg && $open_flg==1){?>
+                                    <input type="submit" name="state" class="locked form-btn" value="非公開にする">  
+                                <?php }elseif($edit_flg && $open_flg==0){?>
+                                    <input type="submit" name="state" class="open form-btn" value="公開する"> 
+                                <?php }?>
 
                                 <input type="submit" class="delete form-btn" name="delete"
                                 value="商品削除" style="<?php if($edit_flg==false){echo 'display:none;';}?>"> 

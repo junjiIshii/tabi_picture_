@@ -160,7 +160,8 @@ function footer(){
 function mustEnter($str,$errkey){
     global $err_msg;
     if(empty($str)){
-        $err_msg[$errkey] = MSG01;}
+        $err_msg[$errkey] = MSG01;
+    }
 }
 
 function mustSelect($str,$errkey){
@@ -479,7 +480,10 @@ function getSelectData($getCount,$offSet,$table,$column){
 function getNumData($column,$table){
     try{
         $dbh= dbconnect();
-        $sql= "SELECT count({$column}) FROM {$table}" ;
+        //ユーザーリストはここにOPENFLGは入れてはいけない。
+        $sql= "SELECT count({$column}) FROM {$table} WHERE delete_flg = 0" ;
+        if($table=='products'){ $sql .= ' AND open_flg = 1';}
+
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
 
@@ -495,7 +499,7 @@ function getNumData($column,$table){
 function getUserProducNum($u_id){
     try{
         $dbh = dbconnect();
-        $sql = 'SELECT count(productid) FROM products WHERE userid=:u_id';
+        $sql = 'SELECT count(productid) FROM products WHERE userid=:u_id AND delete_flg = 0';
         $data = array(':u_id'=>$u_id);
 
         $stmt = queryPost($dbh,$sql,$data);
@@ -622,7 +626,7 @@ function makeProducList($maxShow,$offset){
     try{
         $dbh = dbconnect();
         $sql = "SELECT productid,u.userid, username, icon_img,pic1,title,detail
-        FROM users AS u RIGHT JOIN products AS p ON u.userid = p.userid WHERE p.delete_flg = 0 
+        FROM users AS u RIGHT JOIN products AS p ON u.userid = p.userid WHERE p.delete_flg = 0 AND open_flg = 1
         LIMIT {$maxShow} OFFSET {$offset}";
         
         $stmt = $dbh->prepare($sql);
@@ -641,7 +645,7 @@ function makeProducList($maxShow,$offset){
 function makeUserProducList($maxShow,$offset,$u_id){
     try{
         $dbh = dbconnect();
-        $sql = "SELECT productid,pic1,title,detail FROM products WHERE delete_flg = 0 AND userid = :u_id;
+        $sql = "SELECT productid,pic1,title,detail,open_flg FROM products WHERE delete_flg = 0 AND userid = :u_id;
         LIMIT {$maxShow} OFFSET {$offset}";
 
         $data = array(':u_id'=>$u_id);
@@ -664,7 +668,7 @@ function showProductData($p_id){
         $dbh = dbconnect();
         $sql = 'SELECT
                 productid,u.userid, username,icon_img,pic1,pic2,pic3,pic4,pic5,pic6,pic7,pic8,pic9,
-                title,detail,price,p.delete_flg,categoryid,username,icon_img,introduction
+                title,detail,price,p.delete_flg,open_flg,categoryid,username,icon_img,introduction
                 FROM users AS u RIGHT JOIN products AS p ON u.userid = p.userid
                 WHERE productid=:p_id';
         $data = array(':p_id'=>$p_id);
@@ -682,8 +686,8 @@ function showProductData($p_id){
     }
 }
 
-//検索結果分のデータを表示する。
-function showSearchProd($currentPg){
+//検索結果分のデータを表示する。$type=1は通常検索、2の時は自分の商品の中での検索(myproducts_List)
+function showSearchProd($currentPg,$type=1){
     $nameSer = htmlspecialchars($_GET['byName']);
     $catSer =  htmlspecialchars($_GET['c_id']);
     $slectShowNum =  htmlspecialchars($_GET['showNum']);
@@ -693,7 +697,7 @@ function showSearchProd($currentPg){
         $dbh=dbconnect();
 
         //検索にヒットするレコードを指定数分取得する。
-        $sql = 'SELECT productid,u.userid, username, icon_img,pic1,title,detail,p.create_time
+        $sql = 'SELECT productid,u.userid, username, icon_img,pic1,title,detail,p.create_time,open_flg
         FROM users AS u RIGHT JOIN products AS p ON u.userid = p.userid';
 
         //検索総数を出すためのカウント
@@ -716,6 +720,16 @@ function showSearchProd($currentPg){
             $sql .= ' WHERE categoryid=:cat_id';
             $sql2 .=' WHERE categoryid=:cat_id';
             $data[':cat_id'] = $catSer;
+        }
+
+        if((!empty($nameSer) || $catSer !=0 ) && $type==2){
+            $sql .= ' AND p.userid=:u_id';
+            $sql2 .=' AND p.userid=:u_id';
+            $data[':u_id'] = $_SESSION['user_id'];
+        }elseif(empty($nameSer) && $catSer ==0 && $type==2){
+            $sql .= ' WHERE p.userid=:u_id';
+            $sql2 .=' WHERE p.userid=:u_id';
+            $data[':u_id'] = $_SESSION['user_id'];
         }
 
         switch($slectShowType){
@@ -964,7 +978,10 @@ function createAuthKey($leng = 8){
 }
 
 //ページングの関数。引数について前から、表示する要素の全ての数、現在のページ、最後のページ番号、１ページあたりの表示数。
+//AllNum:表示できる要素の数、CurrentPg:閲覧中のページの番号、LastPg_count:総要素数と表示数から算出した最後のページ番号、MaxShowNum:1ページに表示する要素の数。
 function paging($allNum,$currentPg,$lastPg_count,$maxShowNum){
+
+    //最小値は必ず１
     $firstPg = 1;
     
         //基本は現在のページから±2ページ分の番号をだす
@@ -987,7 +1004,7 @@ function paging($allNum,$currentPg,$lastPg_count,$maxShowNum){
         
         $startNum = ($currentPg -1)*$maxShowNum +1;
 
-        //最後のページで表示できるカード数の調整。余り＝表示する数。（0を除く）
+        //最後のページなど、表示数(Ex:12)が要素数(Ex:6)を上回る時、最大表示数を変更する。余り＝表示する数。（0を除く）
         if($currentPg==$lastPg_count && $allNum % $maxShowNum!=0){
             $maxShowNum = $allNum % $maxShowNum;
         }
@@ -1016,13 +1033,24 @@ function withGetPram(){
     }
 }
 
+//確か必要なやつ、、
 function selectedEcho($key,$num){
     if(!empty($_GET) && isset($_GET[$key])){
         if($_GET[$key] == "$num"){echo "selected";
         }
-  }
+    }
 }
 
+//指定文字数以上を表示しないようにする。
+function hiddenOverStr($str,$max){
+    if(strlen($str)>$max){
+        return mb_substr($str,0,$max)."...";
+    }else{
+        return $str;
+    }
+}
+
+//FROMユーザーが発信したメッセージMSGをTO宛てに送る。
 function sendMessage($to,$user,$msg){
     debug('メッセージを送信します。');
     try{
@@ -1119,6 +1147,35 @@ function updateMesRoom($roomid,$mes){
     }
 }
 
+//商品を非公開または公開状態に変更するための関数
+function updateProductState($p_id){
+    try{
+        $dbh = dbconnect();
+        $sql = 'SELECT open_flg FROM products WHERE productid = :p_id';
+        $data = array(':p_id'=> $p_id);
+
+        $stmt = queryPost($dbh,$sql,$data);
+        $result = $stmt -> fetch();
+
+        switch($result['open_flg']){
+            case 1:
+                $sql2 = 'UPDATE products SET open_flg = 0 WHERE productid = :p_id';
+                debug('商品ID'.$p_id.'の公開状態を「非公開」変更しました。');
+                break;
+            case 0:
+                $sql2 = 'UPDATE products SET open_flg = 1 WHERE productid = :p_id';
+                debug('商品ID'.$p_id.'の公開状態を「公開」変更しました。');
+                break;
+        }
+
+        $stmt2 = queryPost($dbh,$sql2,$data);
+    
+    }catch(Exception $e){
+        debug('エラー発生；'.$e->getMessage());
+    }
+
+}
+
 //対照ユーザーがログインユーザーであるか(セッションがセットまたは、時間オーバーでない。)))をチェックする。
 function islogin(){
     if(time() > $_SESSION['login_limit']+$_SESSION['login_date']){
@@ -1137,6 +1194,7 @@ function islogin(){
     }
 }
 
+//ユーザーが対象の商品をお気に入り登録しているかを調べる。
 function isFavorit($p_id){
     try{
         $p_id=htmlspecialchars($p_id);

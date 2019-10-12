@@ -69,6 +69,23 @@
         }
         }
 
+        if(!empty($_POST['delproductid']) && isset($_SESSION['user_id']) && islogin()){
+            try{
+                $p_id = htmlspecialchars($_POST['delproductid']);
+                productDel($p_id);
+            }catch(Exception $e){
+                debug('エラー発生；'.$e->getMessage());
+            }
+        }
+
+        if(!empty($_POST['stChangeproductid']) && isset($_SESSION['user_id']) && islogin()){
+            try{
+                $p_id = htmlspecialchars($_POST['stChangeproductid']);
+                updateProductState($p_id);
+            }catch(Exception $e){
+                debug('エラー発生；'.$e->getMessage());
+            }
+        }
     
 
 ?>
