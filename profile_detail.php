@@ -235,8 +235,8 @@
 
             <?php if($u_data['userid'] != $_SESSION['user_id'] && isset($_SESSION['user_id'])){ //自分の場合はフォローボタンとDMボタンは表示しない。?>
                 <div class="btn-wrapper">
-                    <button type="button" class="dm-btn" data-url="<?php echo "directMail.php?to=".$u_id?>">DMをする</button>
-                    <button type="button" class="card follow-btn <?php if(isFollow($u_data['userid'])) echo "followed"?>" data-userid="<?php echo $u_data['userid']?>">フォロー</button>
+                    <button type="button" class="dm-btn has-link" data-url="<?php echo "directMail.php?to=".$u_id?>">DMをする</button>
+                    <button type="button" class="card follow-btn <?php if(isFollow($u_data['userid'])) echo "followed"?> has-link" data-userid="<?php echo $u_data['userid']?>">フォロー</button>
                 </div>
             <?php }else{?>
                 <div class="btn-wrapper">

@@ -60,7 +60,7 @@ session_regenerate_id();
 
 
 //デバックログの設定TRUE→ログ開始、FALSE→ログを出さない
-$debug_flg= FALSE;
+$debug_flg= false;
 
 function debug($str){
     global $debug_flg;

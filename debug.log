@@ -104483,3 +104483,245 @@ debug：クエリが成功
 debug：取得データ：0
 debug：5
 debug：users情報を0番目から12個取得します。
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「ログインページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：4279abeeac78800ddccaa09b18618ef4
+debug：セッション変数：Array
+(
+)
+
+debug：現在日時：1570951177
+debug：未ログインのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：================画面表示処理終了
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「ログインページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：93a7a801528cd3e6916199a1911b7cc7
+debug：セッション変数：Array
+(
+)
+
+debug：現在日時：1570951186
+debug：未ログインのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：バリデーションOK
+debug：エラー発生：SQLSTATE[HY000] [2005] Unknown MySQL server host 'sv8118.xserver.jp ' (2)
+debug：================画面表示処理終了
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「ログインページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：7d7b00fa5e32552486f1086fecdad64f
+debug：セッション変数：Array
+(
+)
+
+debug：現在日時：1570951355
+debug：未ログインのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：バリデーションOK
+debug：エラー発生：SQLSTATE[HY000] [1130] Host 'sv8118.xserver.jp' is not allowed to connect to this MariaDB server
+debug：================画面表示処理終了
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「ログインページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：3ec54e7eebf4100aac5d63ebd26c1f10
+debug：セッション変数：Array
+(
+)
+
+debug：現在日時：1570951358
+debug：未ログインのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：バリデーションOK
+debug：エラー発生：SQLSTATE[HY000] [1130] Host 'sv8118.xserver.jp' is not allowed to connect to this MariaDB server
+debug：================画面表示処理終了
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「ログインページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：0d860e1ea6f6f321bfcbf0a41c49e231
+debug：セッション変数：Array
+(
+)
+
+debug：現在日時：1570951698
+debug：未ログインのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：バリデーションOK
+debug：エラー発生：SQLSTATE[HY000] [1130] Host 'sv8118.xserver.jp' is not allowed to connect to this MariaDB server
+debug：================画面表示処理終了
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「ログインページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：518d853d9273d58c7cfd447a8566f875
+debug：セッション変数：Array
+(
+)
+
+debug：現在日時：1570951700
+debug：未ログインのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：バリデーションOK
+debug：エラー発生：SQLSTATE[HY000] [1130] Host 'sv8118.xserver.jp' is not allowed to connect to this MariaDB server
+debug：================画面表示処理終了
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「ログインページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：21b9d94c532523d82a5d707cb9959047
+debug：セッション変数：Array
+(
+)
+
+debug：現在日時：1570952024
+debug：未ログインのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：バリデーションOK
+debug：エラー発生：SQLSTATE[42000] [1044] Access denied for user 'junji1996_ishii'@'sv8118.xserver.jp' to database '	junji1996_tabipicturedb'
+debug：================画面表示処理終了
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「ログインページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：4312bced1b5f63caf4eeb98b26a6f819
+debug：セッション変数：Array
+(
+)
+
+debug：現在日時：1570952030
+debug：未ログインのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：バリデーションOK
+debug：エラー発生：SQLSTATE[42000] [1044] Access denied for user 'junji1996_ishii'@'sv8118.xserver.jp' to database '	junji1996_tabipicturedb'
+debug：================画面表示処理終了
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「ログインページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：6a71dc631a49306e5b789bbdfcf22fe7
+debug：セッション変数：Array
+(
+)
+
+debug：現在日時：1570952031
+debug：未ログインのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：バリデーションOK
+debug：エラー発生：SQLSTATE[42000] [1044] Access denied for user 'junji1996_ishii'@'sv8118.xserver.jp' to database '	junji1996_tabipicturedb'
+debug：================画面表示処理終了
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「ログインページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：874678d335286c6dd315c5c748c03c47
+debug：セッション変数：Array
+(
+)
+
+debug：現在日時：1570952157
+debug：未ログインのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：バリデーションOK
+debug：クエリの中身：Array
+(
+    [password] => $2y$10$AuVuPLBEVw0Q2.WqIzPU9.USnvztrTc7T74OYGRNGL/f7TNcHNpbW
+    [userid] => 14
+)
+
+debug：関数実行
+debug：退会済みユーザーに該当なし
+debug：パスワードが合致
+debug：ログイン保持にチェックなし
+debug：セッション変数の中身：Array
+(
+    [login_date] => 1570952157
+    [login_limit] => 3600
+    [user_id] => 14
+)
+
+debug：マイページへ遷移
+debug：================画面表示処理終了
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：4aed3e1b1dcef193ccc574398e8636f3
+debug：セッション変数：Array
+(
+    [login_date] => 1570952157
+    [login_limit] => 3600
+    [user_id] => 14
+)
+
+debug：現在日時：1570952157
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1570955757
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 21:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 21:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 21:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 21:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 21:01:28
+        )
+
+)
