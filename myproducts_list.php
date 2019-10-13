@@ -274,10 +274,15 @@
 
             $('.changeState').on('click',function(){
                 $p_id = $(this).attr('data-productid') || null ;
-                $(this).toggleClass("locked").text('非公開中');
-                $(this).toggleClass("open").text('公開中');
 
-                
+                if($(this).hasClass('locked')){
+                    $(this).removeClass('locked');
+                    $(this).addClass('open').text('公開中');
+
+                }else if($(this).hasClass('open')){
+                    $(this).removeClass('open');
+                    $(this).addClass('locked').text('非公開中');
+                }
 
                 $.ajax({
                         type:"POST",

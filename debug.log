@@ -101178,3 +101178,3308 @@ debug：取得データ：Array
         )
 
 )
+
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「ログインページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：1io7pjsfcaiu1gae7t5j1hg6ii
+debug：セッション変数：Array
+(
+)
+
+debug：現在日時：1570940564
+debug：未ログインのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：バリデーションOK
+debug：クエリの中身：Array
+(
+    [password] => $2y$10$AuVuPLBEVw0Q2.WqIzPU9.USnvztrTc7T74OYGRNGL/f7TNcHNpbW
+    [userid] => 14
+)
+
+debug：関数実行
+debug：退会済みユーザーに該当なし
+debug：パスワードが合致
+debug：ログイン保持にチェックなし
+debug：セッション変数の中身：Array
+(
+    [login_date] => 1570940565
+    [login_limit] => 3600
+    [user_id] => 14
+)
+
+debug：マイページへ遷移
+debug：================画面表示処理終了
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：e84gvvtarol8gmog0s62r38nsp
+debug：セッション変数：Array
+(
+    [login_date] => 1570940565
+    [login_limit] => 3600
+    [user_id] => 14
+)
+
+debug：現在日時：1570940565
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1570944165
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1570940615
+    [login_limit] => 3600
+    [user_id] => 14
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：クエリが成功
+debug：取得データ：8
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 85
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 自転車旅
+            [detail] => 実家の猫たちの写真です。
+            [open_flg] => 0
+        )
+
+    [1] => Array
+        (
+            [productid] => 86
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+            [open_flg] => 1
+        )
+
+    [2] => Array
+        (
+            [productid] => 87
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+            [open_flg] => 1
+        )
+
+    [3] => Array
+        (
+            [productid] => 88
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+            [open_flg] => 1
+        )
+
+    [4] => Array
+        (
+            [productid] => 89
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+            [open_flg] => 1
+        )
+
+    [5] => Array
+        (
+            [productid] => 90
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+            [open_flg] => 1
+        )
+
+    [6] => Array
+        (
+            [productid] => 91
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+            [open_flg] => 1
+        )
+
+    [7] => Array
+        (
+            [productid] => 92
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+            [open_flg] => 1
+        )
+
+)
+
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：474quiiana4vc0vnhh9rosfj74
+debug：セッション変数：Array
+(
+    [login_date] => 1570940615
+    [login_limit] => 3600
+    [user_id] => 14
+)
+
+debug：現在日時：1570940638
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1570944215
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「ログインページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：rmhnts5isncfco1hbmpq6ehtei
+debug：セッション変数：Array
+(
+    [login_date] => 1570940638
+    [login_limit] => 3600
+    [user_id] => 14
+)
+
+debug：現在日時：1570940654
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1570944238
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログアウトします
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「ログインページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：bmdjmra3oaeaugp1t6icm9h06k
+debug：セッション変数：Array
+(
+)
+
+debug：現在日時：1570940654
+debug：未ログインのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：================画面表示処理終了
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「ログインページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：nqj0irr994pmkra5mhl75eig1r
+debug：セッション変数：Array
+(
+)
+
+debug：現在日時：1570940662
+debug：未ログインのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：バリデーションOK
+debug：クエリの中身：Array
+(
+    [password] => $2y$10$AuVuPLBEVw0Q2.WqIzPU9.USnvztrTc7T74OYGRNGL/f7TNcHNpbW
+    [userid] => 14
+)
+
+debug：関数実行
+debug：退会済みユーザーに該当なし
+debug：パスワードが合致
+debug：ログイン保持にチェックあり
+debug：セッション変数の中身：Array
+(
+    [login_date] => 1570940663
+    [login_limit] => 2592000
+    [user_id] => 14
+)
+
+debug：マイページへ遷移
+debug：================画面表示処理終了
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：1f8o0tc8ttbjvonc7d8pcuh7uj
+debug：セッション変数：Array
+(
+    [login_date] => 1570940663
+    [login_limit] => 2592000
+    [user_id] => 14
+)
+
+debug：現在日時：1570940663
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573532663
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1570941199
+    [login_limit] => 2592000
+    [user_id] => 14
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：クエリが成功
+debug：取得データ：8
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 85
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 自転車旅
+            [detail] => 実家の猫たちの写真です。
+            [open_flg] => 0
+        )
+
+    [1] => Array
+        (
+            [productid] => 86
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+            [open_flg] => 1
+        )
+
+    [2] => Array
+        (
+            [productid] => 87
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+            [open_flg] => 1
+        )
+
+    [3] => Array
+        (
+            [productid] => 88
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+            [open_flg] => 1
+        )
+
+    [4] => Array
+        (
+            [productid] => 89
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+            [open_flg] => 1
+        )
+
+    [5] => Array
+        (
+            [productid] => 90
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+            [open_flg] => 1
+        )
+
+    [6] => Array
+        (
+            [productid] => 91
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+            [open_flg] => 1
+        )
+
+    [7] => Array
+        (
+            [productid] => 92
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+            [open_flg] => 1
+        )
+
+)
+
+debug：======Ajax通信開始======
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：4l0s5lptd7l08jin01o7so7iu6
+debug：セッション変数：Array
+(
+    [login_date] => 1570941199
+    [login_limit] => 2592000
+    [user_id] => 14
+)
+
+debug：現在日時：1570941213
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533199
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログインユーザーのです。
+debug：商品削除ボタンが押されました。
+debug：商品を削除しました。商品情報：85
+debug：マイページへ遷移。
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：372kvjb2nfktc21ksqnpqits0i
+debug：セッション変数：Array
+(
+    [login_date] => 1570941199
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 商品内容を削除しました。
+)
+
+debug：現在日時：1570941214
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533199
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：suc内容：商品内容を削除しました。
+debug：======Ajax通信開始======
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：d2tivta7lnm2lh347dqaabri2t
+debug：セッション変数：Array
+(
+    [login_date] => 1570941214
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570941215
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533214
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログインユーザーのです。
+debug：商品削除ボタンが押されました。
+debug：商品を削除しました。商品情報：86
+debug：マイページへ遷移。
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：2sqof6aoqdeb1731pp244b96fv
+debug：セッション変数：Array
+(
+    [login_date] => 1570941214
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 商品内容を削除しました。
+)
+
+debug：現在日時：1570941215
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533214
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：suc内容：商品内容を削除しました。
+debug：======Ajax通信開始======
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：fmdkp0elu9lnambqmkd1fvtmp8
+debug：セッション変数：Array
+(
+    [login_date] => 1570941215
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570941216
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533215
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログインユーザーのです。
+debug：商品削除ボタンが押されました。
+debug：商品を削除しました。商品情報：87
+debug：マイページへ遷移。
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：kmc446dfqjkktvv4aai9esa13h
+debug：セッション変数：Array
+(
+    [login_date] => 1570941215
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 商品内容を削除しました。
+)
+
+debug：現在日時：1570941216
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533215
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：suc内容：商品内容を削除しました。
+debug：======Ajax通信開始======
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：pgrv6co2m3dakbq71cba7m0g2n
+debug：セッション変数：Array
+(
+    [login_date] => 1570941216
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570941216
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533216
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログインユーザーのです。
+debug：商品削除ボタンが押されました。
+debug：商品を削除しました。商品情報：88
+debug：マイページへ遷移。
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：jmb1ttbvcdm4vdb30u7lqujm3a
+debug：セッション変数：Array
+(
+    [login_date] => 1570941216
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 商品内容を削除しました。
+)
+
+debug：現在日時：1570941216
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533216
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：suc内容：商品内容を削除しました。
+debug：======Ajax通信開始======
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：r0m0bsm7hn2k1lhqmvh8q22d6i
+debug：セッション変数：Array
+(
+    [login_date] => 1570941216
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570941217
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533216
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログインユーザーのです。
+debug：商品削除ボタンが押されました。
+debug：商品を削除しました。商品情報：89
+debug：マイページへ遷移。
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：03sk3g1digtsfm5ncij01lngmi
+debug：セッション変数：Array
+(
+    [login_date] => 1570941216
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 商品内容を削除しました。
+)
+
+debug：現在日時：1570941217
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533216
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：suc内容：商品内容を削除しました。
+debug：======Ajax通信開始======
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：12o9kfcd80u26ae1ljra7qjka4
+debug：セッション変数：Array
+(
+    [login_date] => 1570941217
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570941218
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533217
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログインユーザーのです。
+debug：商品削除ボタンが押されました。
+debug：商品を削除しました。商品情報：90
+debug：マイページへ遷移。
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：nk292ip23gsjcd5lk1rf86u3eb
+debug：セッション変数：Array
+(
+    [login_date] => 1570941217
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 商品内容を削除しました。
+)
+
+debug：現在日時：1570941218
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533217
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：suc内容：商品内容を削除しました。
+debug：======Ajax通信開始======
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：iguaesc597mtfrp0almb6c27s7
+debug：セッション変数：Array
+(
+    [login_date] => 1570941218
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570941219
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533218
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログインユーザーのです。
+debug：商品削除ボタンが押されました。
+debug：商品を削除しました。商品情報：91
+debug：マイページへ遷移。
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：36q0kpf851fsd7ucs1ujscpg01
+debug：セッション変数：Array
+(
+    [login_date] => 1570941218
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 商品内容を削除しました。
+)
+
+debug：現在日時：1570941219
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533218
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：suc内容：商品内容を削除しました。
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1570941224
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：クエリが成功
+debug：取得データ：1
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 92
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+            [open_flg] => 1
+        )
+
+)
+
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1570941234
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：クエリが成功
+debug：取得データ：1
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 92
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+            [open_flg] => 1
+        )
+
+)
+
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「商品登録、編集画面」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：bdjkm4j44mdeikeh8agi7smkfq
+debug：セッション変数：Array
+(
+    [login_date] => 1570941234
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570941244
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533234
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：カテゴリの内容：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：新規登録です。
+debug：商品ID：
+debug：フォーム用DBデータ：
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「商品登録、編集画面」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：p9fb443n4uqll0eegg2c17m318
+debug：セッション変数：Array
+(
+    [login_date] => 1570941244
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570941294
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533244
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：カテゴリの内容：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：新規登録です。
+debug：商品ID：
+debug：フォーム用DBデータ：
+debug：POSTのなかみ：Array
+(
+    [MAX_FILE_SIZE] => 5242880
+    [title] => 渋峠サイクリング
+    [categoryid] => 1
+    [introduction] => 日本国道最高地点までサイクリングをした時の写真集です。
+    [price] => 150
+)
+
+debug：画像アップロード処理開始
+debug：FLIE情報：Array
+(
+    [name] => IMG_20170502_110953.jpg
+    [type] => image/jpeg
+    [tmp_name] => /Applications/MAMP/tmp/php/phpKJKwpT
+    [error] => 0
+    [size] => 1361718
+)
+
+debug：FILESエラー値をキャッチ
+debug：画像はアップロード可能です。
+debug：アップロードします。
+debug：ファイルパス：uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+debug：ファイルは正常にアップロードされました。
+debug：ファイルパス：uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+debug：FILESの中身：Array
+(
+    [pic1] => Array
+        (
+            [name] => IMG_20170502_110953.jpg
+            [type] => image/jpeg
+            [tmp_name] => /Applications/MAMP/tmp/php/phpKJKwpT
+            [error] => 0
+            [size] => 1361718
+        )
+
+    [pic2] => Array
+        (
+            [name] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+        )
+
+    [pic3] => Array
+        (
+            [name] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+        )
+
+    [pic4] => Array
+        (
+            [name] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+        )
+
+    [pic5] => Array
+        (
+            [name] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+        )
+
+    [pic6] => Array
+        (
+            [name] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+        )
+
+    [pic7] => Array
+        (
+            [name] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+        )
+
+    [pic8] => Array
+        (
+            [name] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+        )
+
+    [pic9] => Array
+        (
+            [name] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+        )
+
+)
+
+debug：picのなかみ：Array
+(
+    [0] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+    [1] => 
+    [2] => 
+    [3] => 
+    [4] => 
+    [5] => 
+    [6] => 
+    [7] => 
+    [8] => 
+)
+
+debug：クエリ内容：Array
+(
+    [:u_id] => 14
+    [:p1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+    [:p2] => 
+    [:p3] => 
+    [:p4] => 
+    [:p5] => 
+    [:p6] => 
+    [:p7] => 
+    [:p8] => 
+    [:p9] => 
+    [:title] => 渋峠サイクリング
+    [:detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+    [:price] => 150
+    [:cre_time] => 2019-10-13 04:34:54
+    [:cat_id] => 1
+)
+
+debug：クエリ成功。マイページへ移動
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：i75mtgjl94mnhcc6nd582u38kh
+debug：セッション変数：Array
+(
+    [login_date] => 1570941294
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 商品の出品が完了しました。
+)
+
+debug：現在日時：1570941294
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533294
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：suc内容：商品の出品が完了しました。
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：3
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 1
+            [userid] => 16
+            [username] => jun
+            [icon_img] => uploads/noimage.png
+            [pic1] => uploads/0f12fae63c716960549370049393ab671a9b9f80.jpeg
+            [title] => 台湾旅行
+            [detail] => 修学旅行でアメリカ行った時の写真。（テスト）
+        )
+
+    [1] => Array
+        (
+            [productid] => 92
+            [userid] => 14
+            [username] => Junji
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+        )
+
+    [2] => Array
+        (
+            [productid] => 93
+            [userid] => 14
+            [username] => Junji
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+)
+
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：6qo7rm9q5qvu8l5b6c6hdpdta9
+debug：セッション変数：Array
+(
+    [login_date] => 1570941294
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570941309
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533294
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1570941310
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：クエリが成功
+debug：取得データ：2
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 92
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+            [open_flg] => 1
+        )
+
+    [1] => Array
+        (
+            [productid] => 93
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+)
+
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1570941349
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：クエリが成功
+debug：取得データ：2
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 92
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+            [open_flg] => 1
+        )
+
+    [1] => Array
+        (
+            [productid] => 93
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+)
+
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1570941372
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：クエリが成功
+debug：取得データ：2
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 92
+            [pic1] => uploads/d259dd347283864b062bd557b213ea2e18e73ae7.jpeg
+            [title] => 実家猫
+            [detail] => 実家の猫たちの写真です。
+            [open_flg] => 1
+        )
+
+    [1] => Array
+        (
+            [productid] => 93
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+)
+
+debug：======Ajax通信開始======
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：vvv0a79a9nhglsgilgk9lfnsug
+debug：セッション変数：Array
+(
+    [login_date] => 1570941372
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570941394
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533372
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログインユーザーのです。
+debug：商品削除ボタンが押されました。
+debug：商品を削除しました。商品情報：92
+debug：マイページへ遷移。
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：atqiha6ot6eljoaemhpc2ijl0e
+debug：セッション変数：Array
+(
+    [login_date] => 1570941372
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 商品内容を削除しました。
+)
+
+debug：現在日時：1570941394
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533372
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：suc内容：商品内容を削除しました。
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1570941425
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：クエリが成功
+debug：取得データ：1
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 93
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+)
+
+debug：======Ajax通信開始======
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：dq142c51dl2mffcgchehbsh661
+debug：セッション変数：Array
+(
+    [login_date] => 1570941425
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570941430
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533425
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログインユーザーのです。
+debug：商品ID93の公開状態を「非公開」変更しました。
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1570941435
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：クエリが成功
+debug：取得データ：1
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 93
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 0
+        )
+
+)
+
+debug：======Ajax通信開始======
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：bpp4knvndb4jljje1lo14jmv25
+debug：セッション変数：Array
+(
+    [login_date] => 1570941435
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570941438
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533435
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログインユーザーのです。
+debug：商品ID93の公開状態を「公開」変更しました。
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1570941439
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：クエリが成功
+debug：取得データ：1
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 93
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+)
+
+debug：======Ajax通信開始======
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：agj417vlu3svj71qiecdnem9gk
+debug：セッション変数：Array
+(
+    [login_date] => 1570941439
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570941770
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533439
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログインユーザーのです。
+debug：商品ID93の公開状態を「非公開」変更しました。
+debug：======Ajax通信開始======
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：8b3gsgq7u96ua3m8ohipbvbuuq
+debug：セッション変数：Array
+(
+    [login_date] => 1570941439
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570941771
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533439
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログインユーザーのです。
+debug：商品ID93の公開状態を「公開」変更しました。
+debug：======Ajax通信開始======
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：1gc6q79buehp5jvbstde6068vb
+debug：セッション変数：Array
+(
+    [login_date] => 1570941439
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570941774
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533439
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログインユーザーのです。
+debug：商品ID93の公開状態を「非公開」変更しました。
+debug：======Ajax通信開始======
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：jgnfs5ja2t2oot6hd1dv8tsbmd
+debug：セッション変数：Array
+(
+    [login_date] => 1570941439
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570941774
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533439
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログインユーザーのです。
+debug：商品ID93の公開状態を「公開」変更しました。
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1570941897
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：クエリが成功
+debug：取得データ：1
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 93
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+)
+
+debug：======Ajax通信開始======
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：dea6ddegkt5kpktr94gkof0obm
+debug：セッション変数：Array
+(
+    [login_date] => 1570941897
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570941901
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533897
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログインユーザーのです。
+debug：商品ID93の公開状態を「非公開」変更しました。
+debug：======Ajax通信開始======
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：j521jueq7oi9p7qd7km79v4usv
+debug：セッション変数：Array
+(
+    [login_date] => 1570941897
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570941902
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533897
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログインユーザーのです。
+debug：商品ID93の公開状態を「公開」変更しました。
+debug：======Ajax通信開始======
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：dphkrlhl1cdsnca801r8gt58dv
+debug：セッション変数：Array
+(
+    [login_date] => 1570941897
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570941903
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533897
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログインユーザーのです。
+debug：商品ID93の公開状態を「非公開」変更しました。
+debug：======Ajax通信開始======
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：jpl5qep10bf01vkq7u6gndmsup
+debug：セッション変数：Array
+(
+    [login_date] => 1570941897
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570941912
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533897
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログインユーザーのです。
+debug：商品ID93の公開状態を「公開」変更しました。
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1570941949
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：クエリが成功
+debug：取得データ：1
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 93
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+)
+
+debug：======Ajax通信開始======
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：eijvn7cv94lm5kmhku8l7gcmg1
+debug：セッション変数：Array
+(
+    [login_date] => 1570941949
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570941951
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533949
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログインユーザーのです。
+debug：商品ID93の公開状態を「非公開」変更しました。
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1570941952
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：クエリが成功
+debug：取得データ：1
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 93
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 0
+        )
+
+)
+
+debug：======Ajax通信開始======
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：hsv2a57o31biantbcg58952h1j
+debug：セッション変数：Array
+(
+    [login_date] => 1570941952
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570941973
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533952
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログインユーザーのです。
+debug：商品ID93の公開状態を「公開」変更しました。
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1570941975
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：クエリが成功
+debug：取得データ：1
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 93
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+)
+
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：7k41nqc76ngbnqdcril720b053
+debug：セッション変数：Array
+(
+    [login_date] => 1570941975
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570942020
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573533975
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：2
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 1
+            [userid] => 16
+            [username] => jun
+            [icon_img] => uploads/noimage.png
+            [pic1] => uploads/0f12fae63c716960549370049393ab671a9b9f80.jpeg
+            [title] => 台湾旅行
+            [detail] => 修学旅行でアメリカ行った時の写真。（テスト）
+        )
+
+    [1] => Array
+        (
+            [productid] => 93
+            [userid] => 14
+            [username] => Junji
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+)
+
+debug：3
+debug：users情報を0番目から12個取得します。
+debug：14のユーザー情報を取得します：userid,username,introduction,header_img,icon_img,delete_flg
+debug：クエリが成功
+debug：取得データ：1
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 93
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+)
+
+debug：3
+debug：users情報を0番目から12個取得します。
+debug：15のユーザー情報を取得します：userid,username,introduction,header_img,icon_img,delete_flg
+debug：クエリが成功
+debug：取得データ：0
+debug：3
+debug：users情報を0番目から12個取得します。
+debug：16のユーザー情報を取得します：userid,username,introduction,header_img,icon_img,delete_flg
+debug：クエリが成功
+debug：取得データ：1
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 1
+            [pic1] => uploads/0f12fae63c716960549370049393ab671a9b9f80.jpeg
+            [title] => 台湾旅行
+            [detail] => 修学旅行でアメリカ行った時の写真。（テスト）
+            [open_flg] => 1
+        )
+
+)
+
+debug：3
+debug：users情報を0番目から12個取得します。
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：2
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 1
+            [userid] => 16
+            [username] => jun
+            [icon_img] => uploads/noimage.png
+            [pic1] => uploads/0f12fae63c716960549370049393ab671a9b9f80.jpeg
+            [title] => 台湾旅行
+            [detail] => 修学旅行でアメリカ行った時の写真。（テスト）
+        )
+
+    [1] => Array
+        (
+            [productid] => 93
+            [userid] => 14
+            [username] => Junji
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+)
+
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「ログインページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：u06gpdni4jp13i4cq2rvcr4r17
+debug：セッション変数：Array
+(
+    [login_date] => 1570942020
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1570943258
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573534020
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログアウトします
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「ログインページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：rcekdoscgap7jflu0tpr252btk
+debug：セッション変数：Array
+(
+)
+
+debug：現在日時：1570943258
+debug：未ログインのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：================画面表示処理終了
+debug：関数実行
+debug：退会済みユーザーに該当なし
+debug：関数実行
+debug：退会済みユーザーに該当なし
+debug：登録処理実行
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：1d9grp7ts5up1oau65qs9vmghj
+debug：セッション変数：Array
+(
+    [login_date] => 1570943319
+    [login_limit] => 3600
+    [user_id] => 17
+)
+
+debug：現在日時：1570943319
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1570946919
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+)
+
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「プロフィール編集画面」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：2rf1gvs9mchqd7r1n9c1rokvfv
+debug：セッション変数：Array
+(
+    [login_date] => 1570943319
+    [login_limit] => 3600
+    [user_id] => 17
+)
+
+debug：現在日時：1570943326
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1570946919
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：ユーザー情報を全て取得します
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：5a6vd0nntagf1ji5pk0tfsvif6
+debug：セッション変数：Array
+(
+    [login_date] => 1570943326
+    [login_limit] => 3600
+    [user_id] => 17
+)
+
+debug：現在日時：1570943336
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1570946926
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+)
+
+debug：4
+debug：users情報を0番目から12個取得します。
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：5upqj6h671t36j5u3o06bpuja7
+debug：セッション変数：Array
+(
+    [login_date] => 1570943336
+    [login_limit] => 3600
+    [user_id] => 17
+)
+
+debug：現在日時：1570943348
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1570946936
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：2
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 1
+            [userid] => 16
+            [username] => jun
+            [icon_img] => uploads/noimage.png
+            [pic1] => uploads/0f12fae63c716960549370049393ab671a9b9f80.jpeg
+            [title] => 台湾旅行
+            [detail] => 修学旅行でアメリカ行った時の写真。（テスト）
+        )
+
+    [1] => Array
+        (
+            [productid] => 93
+            [userid] => 14
+            [username] => Junji
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+)
+
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：dup74cj1vrg7diocuom8o9hffj
+debug：セッション変数：Array
+(
+    [login_date] => 1570943348
+    [login_limit] => 3600
+    [user_id] => 17
+)
+
+debug：現在日時：1570943351
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1570946948
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+)
+
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「商品登録、編集画面」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：fnkvojnc63lg2btpvekkbfjua9
+debug：セッション変数：Array
+(
+    [login_date] => 1570943351
+    [login_limit] => 3600
+    [user_id] => 17
+)
+
+debug：現在日時：1570943353
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1570946951
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：カテゴリの内容：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：新規登録です。
+debug：商品ID：
+debug：フォーム用DBデータ：
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：9gi4ntj5mql155rplcp7nr3is3
+debug：セッション変数：Array
+(
+    [login_date] => 1570943353
+    [login_limit] => 3600
+    [user_id] => 17
+)
+
+debug：現在日時：1570943364
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1570946953
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+)
+
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「ログインページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：ld8oer9q3teq82jciqapst8mq0
+debug：セッション変数：Array
+(
+    [login_date] => 1570943364
+    [login_limit] => 3600
+    [user_id] => 17
+)
+
+debug：現在日時：1570943371
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1570946964
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログアウトします
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「ログインページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：d5ifae6mso5g4uuktfpjmkl770
+debug：セッション変数：Array
+(
+)
+
+debug：現在日時：1570943371
+debug：未ログインのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：================画面表示処理終了
+debug：関数実行
+debug：退会済みユーザーに該当なし
+debug：関数実行
+debug：退会済みユーザーに該当なし
+debug：登録処理実行
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：utpaksrbs15v8lguhgn3rq3jso
+debug：セッション変数：Array
+(
+    [login_date] => 1570943415
+    [login_limit] => 3600
+    [user_id] => 18
+)
+
+debug：現在日時：1570943415
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1570947015
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+)
+
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1570943425
+    [login_limit] => 3600
+    [user_id] => 18
+)
+
+debug：ユーザーID：18が含まれているメッセージルームの情報Array
+(
+)
+
+debug：DM内容を取得します。
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：rhcd3thadju0n0bdq65m0998m2
+debug：セッション変数：Array
+(
+    [login_date] => 1570943425
+    [login_limit] => 3600
+    [user_id] => 18
+)
+
+debug：現在日時：1570943429
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1570947025
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+)
+
+debug：5
+debug：users情報を0番目から12個取得します。
+debug：17のユーザー情報を取得します：userid,username,introduction,header_img,icon_img,delete_flg
+debug：クエリが成功
+debug：取得データ：0
+debug：5
+debug：users情報を0番目から12個取得します。
+debug：15のユーザー情報を取得します：userid,username,introduction,header_img,icon_img,delete_flg
+debug：クエリが成功
+debug：取得データ：0
+debug：5
+debug：users情報を0番目から12個取得します。

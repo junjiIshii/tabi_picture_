@@ -18,8 +18,11 @@
 header{
     height: 60px;
     background-color: aquamarine;
-    position: relative;
+    position: fixed;
     overflow: hidden;
+    z-index: 98;
+    top: 0;
+    width: 100%;
 }
 
 .logo-icon{
@@ -70,18 +73,26 @@ header{
     height:100%;
     max-width:200px;
     background:rgba(7, 230, 163, 0.9);
-    float:left;
     z-index:99;
-    position: absolute;
+    position: fixed;
     top:0;
     overflow: hidden;
+
 }
 
 .slidemenu-conteiner ul{
     width:150px;
-
+    margin:10px auto 0px 10px;
 }
 
+.slidemenu-conteiner li{
+    height: 40px;
+    color: darkcyan;
+}
+
+.slidemenu-conteiner a{
+    color: darkcyan;
+}
 
 /*メインコンテナのデフォルト設定*/
 .main-conteiner{
@@ -90,7 +101,7 @@ header{
     position: relative;
     display:flex;
     /*flex-wrap:wrap;*/
-    margin-top:30px;
+    margin-top:70px!important;
 }
 
 .search-conteiner{
@@ -136,6 +147,7 @@ header{
 
 footer{
     width: 100%;
+    bottom:0;
 }
 .copy-right{
     width:100%;
@@ -180,6 +192,7 @@ footer{
     margin-bottom: 15px;
    
 }
+
 
 .mypage-menu-section a{
     color: darkcyan;

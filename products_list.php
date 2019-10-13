@@ -86,6 +86,7 @@
 .unit-wrapper{
     display:flex;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .product-unit{
@@ -171,6 +172,14 @@
     left:25%;
 
 }
+
+.link-cover{
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    align-self: end;
+    bottom: 0;
+}
 /*ここにあったページングのCSSは共通のCSSファイルに格上げした*/
 
     </style>
@@ -242,19 +251,20 @@
 
                 <div class="unit-wrapper">
                     <?php for($i=0; $i<$pgData['maxShow']; $i++) {;?>
-                    <div class="product-unit has-link" data-url="<?php echo 'product_detail.php?p_id='.$p_data[$i]['productid']?>">
-
-                        <div class="user-icon_producunit">
-                            <a href="<?php echo "profile_detail.php?u_id=".$p_data[$i]['userid']?>"><img src="<?php echo $p_data[$i]['icon_img']?>"></a>
-                        </div>
-
+                    <div class="product-unit">
                         
                             <div class="product-img">
-                                <i class="fas fa-heart has-link favorit-btn fa-2x <?php if(isFavorit($p_data[$i]['productid']))echo "checked"?>"
+                                <i class="fas fa-heart favorit-btn fa-2x <?php if(isFavorit($p_data[$i]['productid']))echo "checked"?>"
                                 data-productid ="<?php echo $p_data[$i]['productid']?>"></i>
                                 <img src="<?php echo $p_data[$i]['pic1']?>">
                             </div>
-                        
+
+                            <div class="user-icon_producunit">
+                                <a href="<?php echo "profile_detail.php?u_id=".$p_data[$i]['userid']?>"><img src="<?php echo $p_data[$i]['icon_img']?>"></a>
+                            </div>
+
+                            <div class="link-cover has-link" data-url="<?php echo 'product_detail.php?p_id='.$p_data[$i]['productid']?>"></div>
+                            
                             <div class="authorAndtitle">
                                 <p class = "product author"><?php 
                                 $name = $p_data[$i]['username'];
@@ -267,13 +277,14 @@
 
                                 <p class = "product title"><?php echo $p_data[$i]['title']?></p>
                             </div>
-                            
+                                
 
-                            <div class="product pictureinfo">
-                                <p><?php $detail = $p_data[$i]['detail'] ;
-                                    //商品詳細文は80文字までだす。
-                                    echo hiddenOverStr($detail,80);?></p>
-                            </div>
+                                <div class="product pictureinfo">
+                                    <p><?php $detail = $p_data[$i]['detail'] ;
+                                        //商品詳細文は80文字までだす。
+                                        echo hiddenOverStr($detail,80);?></p>
+                                </div>
+                            
                             
                         
 
@@ -318,7 +329,7 @@
 
     $('.favorit-btn').on('click',function(){
         $p_id = $(this).attr('data-productid') || null ;
-
+        $(this).toggleClass('checked');
         if($p_id !== undefined && $p_id !== null){
 
         $.ajax({
@@ -332,9 +343,6 @@
         });        
         }
     })
-
-
-
 
     </script>
     

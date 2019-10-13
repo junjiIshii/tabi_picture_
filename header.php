@@ -48,10 +48,7 @@
                 <i class="fas fa-align-justify fa-lg" id="menu-button"></i>
             </div>
         </div>
-
-</header>
-
-<div class="slidemenu-conteiner slideoff">
+        <div class="slidemenu-conteiner slideoff">
     <ul>
         <?php if(isset($menuLink)) echo $menuLink;?>
         <?php echo $regiOrMypage;?>
@@ -101,4 +98,7 @@
         <?php }?>
     </ul>
 </div>
+</header>
+
+
 

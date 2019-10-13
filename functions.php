@@ -60,7 +60,7 @@ session_regenerate_id();
 
 
 //デバックログの設定TRUE→ログ開始、FALSE→ログを出さない
-$debug_flg= false;
+$debug_flg= FALSE;
 
 function debug($str){
     global $debug_flg;
@@ -321,10 +321,10 @@ function cautionEcho($errKey){
 //共通のDB接続設定
 function dbconnect(){
 
-    require('secretpass.php');
-    $dsn = $dataBase_name;
-    $user = $user_name;
-    $password = $server_pass;
+    require('secretpass.php');//パスワードなどを管理する別ファイル
+    $dsn = $dataBase_name;//データベース名を入力
+    $user = $user_name;//DB管理者名
+    $password = $server_pass;//パスワード
 
     $options = array(
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
