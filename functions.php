@@ -527,7 +527,7 @@ function getMesaage($to,$user){
                 WHERE send_from= :sender AND send_to = :sendto
                 ORDER BY d.create_time DESC';
 
-        //送信者が自分自身。このデータでは自分が送ったメッセージを取得
+        //送信者が自分自身。自分が相手に送ったメッセージを取得
         $dataSed = array(':sender'=>$user, ':sendto'=>$to);
 
         //自分宛に送られた相手のメッセージ
@@ -935,6 +935,9 @@ function signup(){
     }
 }
 
+
+//function signupAs($guest){}
+
 //===================
 //削除処理
 //===================
@@ -1062,7 +1065,7 @@ function sendMessage($to,$user,$msg){
 
         $dbh =dbconnect();
         $sql = 'INSERT INTO dm(send_from,send_to,send_msg,create_time) VALUES(:sefrom, :seto, :msg,:cre_time)';
-        $data = array(':sefrom'=>$user, ':seto'=>$to, ':msg'=>$msg, ':cre_time'=>date('Y-m-d H:i'));
+        $data = array(':sefrom'=>$user, ':seto'=>$to, ':msg'=>$msg, ':cre_time'=>date('Y-m-d H:i:s'));
 
         $stmt = queryPost($dbh,$sql,$data);
         if($stmt){
@@ -1163,6 +1166,7 @@ function updateProductState($p_id){
             case 1:
                 $sql2 = 'UPDATE products SET open_flg = 0 WHERE productid = :p_id';
                 debug('商品ID'.$p_id.'の公開状態を「非公開」変更しました。');
+                $_SESSION['msg_suc']="商品を非公開にしました。";
                 break;
             case 0:
                 $sql2 = 'UPDATE products SET open_flg = 1 WHERE productid = :p_id';

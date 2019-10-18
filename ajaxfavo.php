@@ -78,6 +78,7 @@
             }
         }
 
+        //非公開処理
         if(!empty($_POST['stChangeproductid']) && isset($_SESSION['user_id']) && islogin()){
             try{
                 $p_id = htmlspecialchars($_POST['stChangeproductid']);

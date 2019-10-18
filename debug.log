@@ -104725,3 +104725,4959 @@ debug：取得データ：Array
         )
 
 )
+
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：u8r68aup0smirvsof27jpiput1
+debug：セッション変数：Array
+(
+    [login_date] => 1571309368
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1571309408
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573901368
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「プロフィール編集画面」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：226i6g44mihrt2f56j2nd0jcsm
+debug：セッション変数：Array
+(
+    [login_date] => 1571309408
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1571309421
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573901408
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：ユーザー情報を全て取得します
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「プロフィール編集画面」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：amvsrjbot3e2e2i5s3uf6r7nml
+debug：セッション変数：Array
+(
+    [login_date] => 1571309421
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1571309427
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573901421
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：ユーザー情報を全て取得します
+debug：POST送信があります。
+debug：POST内容：Array
+(
+    [MAX_FILE_SIZE] => 3145728
+    [username] => Junj
+    [introduction] => 自転車で色々回っています。
+    [tel] => 
+    [zip] => 
+    [adress] => 
+    [age] => 
+    [email] => iscii1996@gmail.com
+)
+
+debug：FILES内容：Array
+(
+    [header_img] => Array
+        (
+            [name] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+        )
+
+    [icon_img] => Array
+        (
+            [name] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+        )
+
+)
+
+debug：バリデーションはOK。データを送信をします。
+debug：クエリ成功
+debug：マイページへ遷移
+debug：suc内容：プロフィール内容を変更しました。
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：ae8cm0nfhvs3ltrf71d9p2gnir
+debug：セッション変数：Array
+(
+    [login_date] => 1571309427
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1571309427
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573901427
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1571309624
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：クエリが成功
+debug：取得データ：37
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 93
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [1] => Array
+        (
+            [productid] => 94
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [2] => Array
+        (
+            [productid] => 95
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [3] => Array
+        (
+            [productid] => 96
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [4] => Array
+        (
+            [productid] => 97
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [5] => Array
+        (
+            [productid] => 98
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [6] => Array
+        (
+            [productid] => 99
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [7] => Array
+        (
+            [productid] => 100
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [8] => Array
+        (
+            [productid] => 101
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [9] => Array
+        (
+            [productid] => 102
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [10] => Array
+        (
+            [productid] => 103
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [11] => Array
+        (
+            [productid] => 104
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [12] => Array
+        (
+            [productid] => 105
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [13] => Array
+        (
+            [productid] => 106
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [14] => Array
+        (
+            [productid] => 107
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [15] => Array
+        (
+            [productid] => 108
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [16] => Array
+        (
+            [productid] => 109
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [17] => Array
+        (
+            [productid] => 110
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [18] => Array
+        (
+            [productid] => 111
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [19] => Array
+        (
+            [productid] => 112
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [20] => Array
+        (
+            [productid] => 113
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [21] => Array
+        (
+            [productid] => 114
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [22] => Array
+        (
+            [productid] => 115
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [23] => Array
+        (
+            [productid] => 116
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [24] => Array
+        (
+            [productid] => 117
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [25] => Array
+        (
+            [productid] => 118
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [26] => Array
+        (
+            [productid] => 119
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [27] => Array
+        (
+            [productid] => 120
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [28] => Array
+        (
+            [productid] => 121
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [29] => Array
+        (
+            [productid] => 122
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [30] => Array
+        (
+            [productid] => 123
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [31] => Array
+        (
+            [productid] => 124
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [32] => Array
+        (
+            [productid] => 125
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [33] => Array
+        (
+            [productid] => 126
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [34] => Array
+        (
+            [productid] => 127
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [35] => Array
+        (
+            [productid] => 128
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [36] => Array
+        (
+            [productid] => 129
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+)
+
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：3valbv77377ovc0ktkt34ndi8n
+debug：セッション変数：Array
+(
+    [login_date] => 1571309624
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1571309626
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573901624
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「プロフィール編集画面」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：nd1nmicls5m9o8mc1nqrvre8n4
+debug：セッション変数：Array
+(
+    [login_date] => 1571309626
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1571309627
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573901626
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：ユーザー情報を全て取得します
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「プロフィール編集画面」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：c8nsl8s95nl5esf25i5nh68tt3
+debug：セッション変数：Array
+(
+    [login_date] => 1571309627
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1571309635
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573901627
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：ユーザー情報を全て取得します
+debug：POST送信があります。
+debug：POST内容：Array
+(
+    [MAX_FILE_SIZE] => 3145728
+    [username] => Junj
+    [introduction] => 自転車で色々回っています
+    [tel] => 
+    [zip] => 
+    [adress] => 
+    [age] => 
+    [email] => iscii1996@gmail.com
+)
+
+debug：FILES内容：Array
+(
+    [header_img] => Array
+        (
+            [name] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+        )
+
+    [icon_img] => Array
+        (
+            [name] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+        )
+
+)
+
+debug：バリデーションはOK。データを送信をします。
+debug：クエリ成功
+debug：マイページへ遷移
+debug：suc内容：プロフィール内容を変更しました。
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：jgehd77n6ui8o9s8jj0rdk5gnr
+debug：セッション変数：Array
+(
+    [login_date] => 1571309635
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1571309635
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573901635
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：38
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 1
+            [userid] => 16
+            [username] => jun
+            [icon_img] => uploads/noimage.png
+            [pic1] => uploads/0f12fae63c716960549370049393ab671a9b9f80.jpeg
+            [title] => 台湾旅行
+            [detail] => 修学旅行でアメリカ行った時の写真。（テスト）
+        )
+
+    [1] => Array
+        (
+            [productid] => 93
+            [userid] => 14
+            [username] => Junj
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [2] => Array
+        (
+            [productid] => 94
+            [userid] => 14
+            [username] => Junj
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [3] => Array
+        (
+            [productid] => 95
+            [userid] => 14
+            [username] => Junj
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [4] => Array
+        (
+            [productid] => 96
+            [userid] => 14
+            [username] => Junj
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [5] => Array
+        (
+            [productid] => 97
+            [userid] => 14
+            [username] => Junj
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [6] => Array
+        (
+            [productid] => 98
+            [userid] => 14
+            [username] => Junj
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [7] => Array
+        (
+            [productid] => 99
+            [userid] => 14
+            [username] => Junj
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [8] => Array
+        (
+            [productid] => 100
+            [userid] => 14
+            [username] => Junj
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [9] => Array
+        (
+            [productid] => 101
+            [userid] => 14
+            [username] => Junj
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [10] => Array
+        (
+            [productid] => 102
+            [userid] => 14
+            [username] => Junj
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [11] => Array
+        (
+            [productid] => 103
+            [userid] => 14
+            [username] => Junj
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+)
+
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：90ha9m0p3gv2p33q5jh4gidgq9
+debug：セッション変数：Array
+(
+    [login_date] => 1571309635
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1571309851
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573901635
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「プロフィール編集画面」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：gfqu4a5bocvvtil1uuenb0nd73
+debug：セッション変数：Array
+(
+    [login_date] => 1571309851
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1571309855
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573901851
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：ユーザー情報を全て取得します
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「プロフィール編集画面」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：luje600pv9v8811dl0n6bd9r5i
+debug：セッション変数：Array
+(
+    [login_date] => 1571309855
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1571309858
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573901855
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：ユーザー情報を全て取得します
+debug：POST送信があります。
+debug：POST内容：Array
+(
+    [MAX_FILE_SIZE] => 3145728
+    [username] => Jun
+    [introduction] => 自転車で色々回っています
+    [tel] => 
+    [zip] => 
+    [adress] => 
+    [age] => 
+    [email] => iscii1996@gmail.com
+)
+
+debug：FILES内容：Array
+(
+    [header_img] => Array
+        (
+            [name] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+        )
+
+    [icon_img] => Array
+        (
+            [name] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+        )
+
+)
+
+debug：バリデーションはOK。データを送信をします。
+debug：クエリ成功
+debug：マイページへ遷移
+debug：suc内容：プロフィール内容を変更しました。
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：l2j8qk63h241bhmigt69j2em6m
+debug：セッション変数：Array
+(
+    [login_date] => 1571309858
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => プロフィール内容を変更しました。
+)
+
+debug：現在日時：1571309858
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573901858
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：suc内容：プロフィール内容を変更しました。
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：u4hg9ileccqgci81tt6kn3cses
+debug：セッション変数：Array
+(
+    [login_date] => 1571309858
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => プロフィール内容を変更しました。
+)
+
+debug：現在日時：1571309867
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573901858
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：suc内容：プロフィール内容を変更しました。
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：d5oc89mhk63fbiq7krpf9v4mj3
+debug：セッション変数：Array
+(
+    [login_date] => 1571309867
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => プロフィール内容を変更しました。
+)
+
+debug：現在日時：1571309884
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573901867
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：suc内容：プロフィール内容を変更しました。
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：ldf64u37ulkaaqilsnsbailp89
+debug：セッション変数：Array
+(
+    [login_date] => 1571309884
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => プロフィール内容を変更しました。
+)
+
+debug：現在日時：1571309985
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573901884
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：suc内容：プロフィール内容を変更しました。
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：19r7ak3r9pef0nnha0frish93j
+debug：セッション変数：Array
+(
+    [login_date] => 1571309985
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => プロフィール内容を変更しました。
+)
+
+debug：現在日時：1571310016
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573901985
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：suc内容：プロフィール内容を変更しました。
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：dkk0hgvus9de9000bl6d30u3tq
+debug：セッション変数：Array
+(
+    [login_date] => 1571310016
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => プロフィール内容を変更しました。
+)
+
+debug：現在日時：1571310031
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573902016
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：suc内容：プロフィール内容を変更しました。
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1571310038
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => プロフィール内容を変更しました。
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：クエリが成功
+debug：取得データ：37
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 93
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [1] => Array
+        (
+            [productid] => 94
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [2] => Array
+        (
+            [productid] => 95
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [3] => Array
+        (
+            [productid] => 96
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [4] => Array
+        (
+            [productid] => 97
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [5] => Array
+        (
+            [productid] => 98
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [6] => Array
+        (
+            [productid] => 99
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [7] => Array
+        (
+            [productid] => 100
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [8] => Array
+        (
+            [productid] => 101
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [9] => Array
+        (
+            [productid] => 102
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [10] => Array
+        (
+            [productid] => 103
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [11] => Array
+        (
+            [productid] => 104
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [12] => Array
+        (
+            [productid] => 105
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [13] => Array
+        (
+            [productid] => 106
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [14] => Array
+        (
+            [productid] => 107
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [15] => Array
+        (
+            [productid] => 108
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [16] => Array
+        (
+            [productid] => 109
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [17] => Array
+        (
+            [productid] => 110
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [18] => Array
+        (
+            [productid] => 111
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [19] => Array
+        (
+            [productid] => 112
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [20] => Array
+        (
+            [productid] => 113
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [21] => Array
+        (
+            [productid] => 114
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [22] => Array
+        (
+            [productid] => 115
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [23] => Array
+        (
+            [productid] => 116
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [24] => Array
+        (
+            [productid] => 117
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [25] => Array
+        (
+            [productid] => 118
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [26] => Array
+        (
+            [productid] => 119
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [27] => Array
+        (
+            [productid] => 120
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [28] => Array
+        (
+            [productid] => 121
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [29] => Array
+        (
+            [productid] => 122
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [30] => Array
+        (
+            [productid] => 123
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [31] => Array
+        (
+            [productid] => 124
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [32] => Array
+        (
+            [productid] => 125
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [33] => Array
+        (
+            [productid] => 126
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [34] => Array
+        (
+            [productid] => 127
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [35] => Array
+        (
+            [productid] => 128
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [36] => Array
+        (
+            [productid] => 129
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+)
+
+debug：suc内容：プロフィール内容を変更しました。
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1571310051
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => プロフィール内容を変更しました。
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：クエリが成功
+debug：取得データ：37
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 93
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [1] => Array
+        (
+            [productid] => 94
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [2] => Array
+        (
+            [productid] => 95
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [3] => Array
+        (
+            [productid] => 96
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [4] => Array
+        (
+            [productid] => 97
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [5] => Array
+        (
+            [productid] => 98
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [6] => Array
+        (
+            [productid] => 99
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [7] => Array
+        (
+            [productid] => 100
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [8] => Array
+        (
+            [productid] => 101
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [9] => Array
+        (
+            [productid] => 102
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [10] => Array
+        (
+            [productid] => 103
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [11] => Array
+        (
+            [productid] => 104
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [12] => Array
+        (
+            [productid] => 105
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [13] => Array
+        (
+            [productid] => 106
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [14] => Array
+        (
+            [productid] => 107
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [15] => Array
+        (
+            [productid] => 108
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [16] => Array
+        (
+            [productid] => 109
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [17] => Array
+        (
+            [productid] => 110
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [18] => Array
+        (
+            [productid] => 111
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [19] => Array
+        (
+            [productid] => 112
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [20] => Array
+        (
+            [productid] => 113
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [21] => Array
+        (
+            [productid] => 114
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [22] => Array
+        (
+            [productid] => 115
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [23] => Array
+        (
+            [productid] => 116
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [24] => Array
+        (
+            [productid] => 117
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [25] => Array
+        (
+            [productid] => 118
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [26] => Array
+        (
+            [productid] => 119
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [27] => Array
+        (
+            [productid] => 120
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [28] => Array
+        (
+            [productid] => 121
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [29] => Array
+        (
+            [productid] => 122
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [30] => Array
+        (
+            [productid] => 123
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [31] => Array
+        (
+            [productid] => 124
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [32] => Array
+        (
+            [productid] => 125
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [33] => Array
+        (
+            [productid] => 126
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [34] => Array
+        (
+            [productid] => 127
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [35] => Array
+        (
+            [productid] => 128
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [36] => Array
+        (
+            [productid] => 129
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+)
+
+debug：suc内容：プロフィール内容を変更しました。
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1571310066
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => プロフィール内容を変更しました。
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：クエリが成功
+debug：取得データ：37
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 93
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [1] => Array
+        (
+            [productid] => 94
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [2] => Array
+        (
+            [productid] => 95
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [3] => Array
+        (
+            [productid] => 96
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [4] => Array
+        (
+            [productid] => 97
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [5] => Array
+        (
+            [productid] => 98
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [6] => Array
+        (
+            [productid] => 99
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [7] => Array
+        (
+            [productid] => 100
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [8] => Array
+        (
+            [productid] => 101
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [9] => Array
+        (
+            [productid] => 102
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [10] => Array
+        (
+            [productid] => 103
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [11] => Array
+        (
+            [productid] => 104
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [12] => Array
+        (
+            [productid] => 105
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [13] => Array
+        (
+            [productid] => 106
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [14] => Array
+        (
+            [productid] => 107
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [15] => Array
+        (
+            [productid] => 108
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [16] => Array
+        (
+            [productid] => 109
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [17] => Array
+        (
+            [productid] => 110
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [18] => Array
+        (
+            [productid] => 111
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [19] => Array
+        (
+            [productid] => 112
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [20] => Array
+        (
+            [productid] => 113
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [21] => Array
+        (
+            [productid] => 114
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [22] => Array
+        (
+            [productid] => 115
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [23] => Array
+        (
+            [productid] => 116
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [24] => Array
+        (
+            [productid] => 117
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [25] => Array
+        (
+            [productid] => 118
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [26] => Array
+        (
+            [productid] => 119
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [27] => Array
+        (
+            [productid] => 120
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [28] => Array
+        (
+            [productid] => 121
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [29] => Array
+        (
+            [productid] => 122
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [30] => Array
+        (
+            [productid] => 123
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [31] => Array
+        (
+            [productid] => 124
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [32] => Array
+        (
+            [productid] => 125
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [33] => Array
+        (
+            [productid] => 126
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [34] => Array
+        (
+            [productid] => 127
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [35] => Array
+        (
+            [productid] => 128
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [36] => Array
+        (
+            [productid] => 129
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+)
+
+debug：suc内容：プロフィール内容を変更しました。
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：u6lkvq4meevrh3lef4ktjck6v4
+debug：セッション変数：Array
+(
+    [login_date] => 1571310066
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => プロフィール内容を変更しました。
+)
+
+debug：現在日時：1571310084
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573902066
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：suc内容：プロフィール内容を変更しました。
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：am050tva8epod7oq19bmf602mv
+debug：セッション変数：Array
+(
+    [login_date] => 1571310084
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => プロフィール内容を変更しました。
+)
+
+debug：現在日時：1571310090
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573902084
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：suc内容：プロフィール内容を変更しました。
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1571310092
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：ユーザーID：14が含まれているメッセージルームの情報Array
+(
+    [0] => Array
+        (
+            [roomid] => 1
+            [user1] => 15
+            [user2] => 14
+            [update_time] => 2019-10-08 04:07:27
+            [last_mes] => アイウエオ
+        )
+
+    [1] => Array
+        (
+            [roomid] => 6
+            [user1] => 14
+            [user2] => 16
+            [update_time] => 2019-09-28 21:45:37
+            [last_mes] => 
+        )
+
+    [2] => Array
+        (
+            [roomid] => 7
+            [user1] => 14
+            [user2] => 14
+            [update_time] => 2019-10-09 12:46:35
+            [last_mes] => 
+        )
+
+)
+
+debug：15のユーザー情報を取得します：userid,username,icon_img
+debug：16のユーザー情報を取得します：userid,username,icon_img
+debug：14のユーザー情報を取得します：userid,username,icon_img
+debug：DM内容を取得します。
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：fuq0et2rbkrggh8o1tfr9jvve1
+debug：セッション変数：Array
+(
+    [login_date] => 1571310092
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1571310095
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573902092
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：38
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 1
+            [userid] => 16
+            [username] => jun
+            [icon_img] => uploads/noimage.png
+            [pic1] => uploads/0f12fae63c716960549370049393ab671a9b9f80.jpeg
+            [title] => 台湾旅行
+            [detail] => 修学旅行でアメリカ行った時の写真。（テスト）
+        )
+
+    [1] => Array
+        (
+            [productid] => 93
+            [userid] => 14
+            [username] => Jun
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [2] => Array
+        (
+            [productid] => 94
+            [userid] => 14
+            [username] => Jun
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [3] => Array
+        (
+            [productid] => 95
+            [userid] => 14
+            [username] => Jun
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [4] => Array
+        (
+            [productid] => 96
+            [userid] => 14
+            [username] => Jun
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [5] => Array
+        (
+            [productid] => 97
+            [userid] => 14
+            [username] => Jun
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [6] => Array
+        (
+            [productid] => 98
+            [userid] => 14
+            [username] => Jun
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [7] => Array
+        (
+            [productid] => 99
+            [userid] => 14
+            [username] => Jun
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [8] => Array
+        (
+            [productid] => 100
+            [userid] => 14
+            [username] => Jun
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [9] => Array
+        (
+            [productid] => 101
+            [userid] => 14
+            [username] => Jun
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [10] => Array
+        (
+            [productid] => 102
+            [userid] => 14
+            [username] => Jun
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [11] => Array
+        (
+            [productid] => 103
+            [userid] => 14
+            [username] => Jun
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+)
+
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：bfbkbqc85scns1ma1dr76nk5rr
+debug：セッション変数：Array
+(
+    [login_date] => 1571310095
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1571310333
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573902095
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：38
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 1
+            [userid] => 16
+            [username] => jun
+            [icon_img] => uploads/noimage.png
+            [pic1] => uploads/0f12fae63c716960549370049393ab671a9b9f80.jpeg
+            [title] => 台湾旅行
+            [detail] => 修学旅行でアメリカ行った時の写真。（テスト）
+        )
+
+    [1] => Array
+        (
+            [productid] => 93
+            [userid] => 14
+            [username] => Jun
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [2] => Array
+        (
+            [productid] => 94
+            [userid] => 14
+            [username] => Jun
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [3] => Array
+        (
+            [productid] => 95
+            [userid] => 14
+            [username] => Jun
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [4] => Array
+        (
+            [productid] => 96
+            [userid] => 14
+            [username] => Jun
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [5] => Array
+        (
+            [productid] => 97
+            [userid] => 14
+            [username] => Jun
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [6] => Array
+        (
+            [productid] => 98
+            [userid] => 14
+            [username] => Jun
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [7] => Array
+        (
+            [productid] => 99
+            [userid] => 14
+            [username] => Jun
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [8] => Array
+        (
+            [productid] => 100
+            [userid] => 14
+            [username] => Jun
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [9] => Array
+        (
+            [productid] => 101
+            [userid] => 14
+            [username] => Jun
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [10] => Array
+        (
+            [productid] => 102
+            [userid] => 14
+            [username] => Jun
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+    [11] => Array
+        (
+            [productid] => 103
+            [userid] => 14
+            [username] => Jun
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+        )
+
+)
+
+debug：「「「「「「「「「「「「「「「「「「「「「「「「「「「「
+debug：「マイページ」
+debug：」」」」」」」」」」」」」」」」」」」」」」」」」」」」
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：bduidpglrdqa01hjlldbl5kc4a
+debug：セッション変数：Array
+(
+    [login_date] => 1571310333
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1571310335
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573902333
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン有効期限以内です。
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:04:40
+        )
+
+    [1] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:03:42
+        )
+
+    [2] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:41
+        )
+
+    [3] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:36
+        )
+
+    [4] => Array
+        (
+            [userid] => 14
+            [icon_img] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [contents] => Junjiさんが 実家猫 をいいねしました。
+            [type] => 1
+            [create_time] => 2019-10-12 12:01:28
+        )
+
+)
+
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1571310336
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：クエリが成功
+debug：取得データ：37
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 93
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [1] => Array
+        (
+            [productid] => 94
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [2] => Array
+        (
+            [productid] => 95
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [3] => Array
+        (
+            [productid] => 96
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [4] => Array
+        (
+            [productid] => 97
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [5] => Array
+        (
+            [productid] => 98
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [6] => Array
+        (
+            [productid] => 99
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [7] => Array
+        (
+            [productid] => 100
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [8] => Array
+        (
+            [productid] => 101
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [9] => Array
+        (
+            [productid] => 102
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [10] => Array
+        (
+            [productid] => 103
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [11] => Array
+        (
+            [productid] => 104
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [12] => Array
+        (
+            [productid] => 105
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [13] => Array
+        (
+            [productid] => 106
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [14] => Array
+        (
+            [productid] => 107
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [15] => Array
+        (
+            [productid] => 108
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [16] => Array
+        (
+            [productid] => 109
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [17] => Array
+        (
+            [productid] => 110
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [18] => Array
+        (
+            [productid] => 111
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [19] => Array
+        (
+            [productid] => 112
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [20] => Array
+        (
+            [productid] => 113
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [21] => Array
+        (
+            [productid] => 114
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [22] => Array
+        (
+            [productid] => 115
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [23] => Array
+        (
+            [productid] => 116
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [24] => Array
+        (
+            [productid] => 117
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [25] => Array
+        (
+            [productid] => 118
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [26] => Array
+        (
+            [productid] => 119
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [27] => Array
+        (
+            [productid] => 120
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [28] => Array
+        (
+            [productid] => 121
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [29] => Array
+        (
+            [productid] => 122
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [30] => Array
+        (
+            [productid] => 123
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [31] => Array
+        (
+            [productid] => 124
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [32] => Array
+        (
+            [productid] => 125
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [33] => Array
+        (
+            [productid] => 126
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [34] => Array
+        (
+            [productid] => 127
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [35] => Array
+        (
+            [productid] => 128
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [36] => Array
+        (
+            [productid] => 129
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+)
+
+debug：======Ajax通信開始======
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：4ssdgr83c8iger7i4cqhsh9kte
+debug：セッション変数：Array
+(
+    [login_date] => 1571310336
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1571310339
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573902336
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログインユーザーのです。
+debug：商品ID93の公開状態を「非公開」変更しました。
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1571310342
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 商品を非公開にしました。
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：クエリが成功
+debug：取得データ：37
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 93
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 0
+        )
+
+    [1] => Array
+        (
+            [productid] => 94
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [2] => Array
+        (
+            [productid] => 95
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [3] => Array
+        (
+            [productid] => 96
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [4] => Array
+        (
+            [productid] => 97
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [5] => Array
+        (
+            [productid] => 98
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [6] => Array
+        (
+            [productid] => 99
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [7] => Array
+        (
+            [productid] => 100
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [8] => Array
+        (
+            [productid] => 101
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [9] => Array
+        (
+            [productid] => 102
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [10] => Array
+        (
+            [productid] => 103
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [11] => Array
+        (
+            [productid] => 104
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [12] => Array
+        (
+            [productid] => 105
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [13] => Array
+        (
+            [productid] => 106
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [14] => Array
+        (
+            [productid] => 107
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [15] => Array
+        (
+            [productid] => 108
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [16] => Array
+        (
+            [productid] => 109
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [17] => Array
+        (
+            [productid] => 110
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [18] => Array
+        (
+            [productid] => 111
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [19] => Array
+        (
+            [productid] => 112
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [20] => Array
+        (
+            [productid] => 113
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [21] => Array
+        (
+            [productid] => 114
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [22] => Array
+        (
+            [productid] => 115
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [23] => Array
+        (
+            [productid] => 116
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [24] => Array
+        (
+            [productid] => 117
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [25] => Array
+        (
+            [productid] => 118
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [26] => Array
+        (
+            [productid] => 119
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [27] => Array
+        (
+            [productid] => 120
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [28] => Array
+        (
+            [productid] => 121
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [29] => Array
+        (
+            [productid] => 122
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [30] => Array
+        (
+            [productid] => 123
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [31] => Array
+        (
+            [productid] => 124
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [32] => Array
+        (
+            [productid] => 125
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [33] => Array
+        (
+            [productid] => 126
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [34] => Array
+        (
+            [productid] => 127
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [35] => Array
+        (
+            [productid] => 128
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [36] => Array
+        (
+            [productid] => 129
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+)
+
+debug：suc内容：商品を非公開にしました。
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1571310368
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：クエリが成功
+debug：取得データ：37
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 93
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 0
+        )
+
+    [1] => Array
+        (
+            [productid] => 94
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [2] => Array
+        (
+            [productid] => 95
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [3] => Array
+        (
+            [productid] => 96
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [4] => Array
+        (
+            [productid] => 97
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [5] => Array
+        (
+            [productid] => 98
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [6] => Array
+        (
+            [productid] => 99
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [7] => Array
+        (
+            [productid] => 100
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [8] => Array
+        (
+            [productid] => 101
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [9] => Array
+        (
+            [productid] => 102
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [10] => Array
+        (
+            [productid] => 103
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [11] => Array
+        (
+            [productid] => 104
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [12] => Array
+        (
+            [productid] => 105
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [13] => Array
+        (
+            [productid] => 106
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [14] => Array
+        (
+            [productid] => 107
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [15] => Array
+        (
+            [productid] => 108
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [16] => Array
+        (
+            [productid] => 109
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [17] => Array
+        (
+            [productid] => 110
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [18] => Array
+        (
+            [productid] => 111
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [19] => Array
+        (
+            [productid] => 112
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [20] => Array
+        (
+            [productid] => 113
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [21] => Array
+        (
+            [productid] => 114
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [22] => Array
+        (
+            [productid] => 115
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [23] => Array
+        (
+            [productid] => 116
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [24] => Array
+        (
+            [productid] => 117
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [25] => Array
+        (
+            [productid] => 118
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [26] => Array
+        (
+            [productid] => 119
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [27] => Array
+        (
+            [productid] => 120
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [28] => Array
+        (
+            [productid] => 121
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [29] => Array
+        (
+            [productid] => 122
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [30] => Array
+        (
+            [productid] => 123
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [31] => Array
+        (
+            [productid] => 124
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [32] => Array
+        (
+            [productid] => 125
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [33] => Array
+        (
+            [productid] => 126
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [34] => Array
+        (
+            [productid] => 127
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [35] => Array
+        (
+            [productid] => 128
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [36] => Array
+        (
+            [productid] => 129
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+)
+
+debug：ログイン有効期限以内です。
+debug：セッション情報：Array
+(
+    [login_date] => 1571311452
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：カテゴリー情報を取得します
+debug：Array
+(
+    [0] => Array
+        (
+            [categoryid] => 1
+            [category_name] => 国内
+        )
+
+    [1] => Array
+        (
+            [categoryid] => 2
+            [category_name] => 海外
+        )
+
+    [2] => Array
+        (
+            [categoryid] => 5
+            [category_name] => 自転車旅
+        )
+
+    [3] => Array
+        (
+            [categoryid] => 7
+            [category_name] => ひとり旅
+        )
+
+)
+
+debug：クエリが成功
+debug：取得データ：37
+debug：取得データ：Array
+(
+    [0] => Array
+        (
+            [productid] => 93
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 0
+        )
+
+    [1] => Array
+        (
+            [productid] => 94
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [2] => Array
+        (
+            [productid] => 95
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [3] => Array
+        (
+            [productid] => 96
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [4] => Array
+        (
+            [productid] => 97
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [5] => Array
+        (
+            [productid] => 98
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [6] => Array
+        (
+            [productid] => 99
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [7] => Array
+        (
+            [productid] => 100
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [8] => Array
+        (
+            [productid] => 101
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [9] => Array
+        (
+            [productid] => 102
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [10] => Array
+        (
+            [productid] => 103
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [11] => Array
+        (
+            [productid] => 104
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [12] => Array
+        (
+            [productid] => 105
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [13] => Array
+        (
+            [productid] => 106
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [14] => Array
+        (
+            [productid] => 107
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [15] => Array
+        (
+            [productid] => 108
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [16] => Array
+        (
+            [productid] => 109
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [17] => Array
+        (
+            [productid] => 110
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [18] => Array
+        (
+            [productid] => 111
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [19] => Array
+        (
+            [productid] => 112
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [20] => Array
+        (
+            [productid] => 113
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [21] => Array
+        (
+            [productid] => 114
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [22] => Array
+        (
+            [productid] => 115
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [23] => Array
+        (
+            [productid] => 116
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [24] => Array
+        (
+            [productid] => 117
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [25] => Array
+        (
+            [productid] => 118
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [26] => Array
+        (
+            [productid] => 119
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [27] => Array
+        (
+            [productid] => 120
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [28] => Array
+        (
+            [productid] => 121
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [29] => Array
+        (
+            [productid] => 122
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [30] => Array
+        (
+            [productid] => 123
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [31] => Array
+        (
+            [productid] => 124
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [32] => Array
+        (
+            [productid] => 125
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [33] => Array
+        (
+            [productid] => 126
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [34] => Array
+        (
+            [productid] => 127
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [35] => Array
+        (
+            [productid] => 128
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+    [36] => Array
+        (
+            [productid] => 129
+            [pic1] => uploads/3128f8a58460fc540dbf0c660ce1f9a282109162.jpeg
+            [title] => 渋峠サイクリング
+            [detail] => 日本国道最高地点までサイクリングをした時の写真集です。
+            [open_flg] => 1
+        )
+
+)
+
+debug：======Ajax通信開始======
+debug：================画面表示処理開始
+debug：>>>>>>>>>>セッション情報
+debug：セッションID：l9df059fc1jau9kgn34545jtls
+debug：セッション変数：Array
+(
+    [login_date] => 1571311452
+    [login_limit] => 2592000
+    [user_id] => 14
+    [msg_suc] => 
+)
+
+debug：現在日時：1571311455
+debug：ログイン済みのユーザー
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログイン期限日時タイムスタンプ：1573903452
+debug：>>>>>>>>>>>>>>>>>>>>
+debug：ログインユーザーのです。
+debug：商品ID94の公開状態を「非公開」変更しました。

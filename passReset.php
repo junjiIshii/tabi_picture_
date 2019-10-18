@@ -148,10 +148,6 @@ EOM;
 <body>
     <?php require_once('header.php')?>
 
-    <p id="js-show-msg"  class="msg-slide" style="display:none;">
-        <?php echo getSessionFlash('msg_suc') ;?>
-    </p>
-
         <div class="main-conteiner">
             <div class="signup-conteiner">
 

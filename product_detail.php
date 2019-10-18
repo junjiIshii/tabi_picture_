@@ -1,7 +1,7 @@
 <?php
     require_once('functions.php');
 
-    loginAuth();
+    //loginAuth();
 
     $currentPg_id = $_GET['p_id']; 
     $getCategory = getCategory();
@@ -240,6 +240,12 @@
             border:2px solid #B40404;
         }
 
+        .notSignin-mes{
+            background:lightgray;
+            font-weight:bold;
+            padding:5px;
+            cursor: pointer;
+        }
 
     </style>
     <link href="responsive.css" rel="stylesheet">
@@ -315,13 +321,15 @@
             <div class="actions">
                 
                 <div class="buttons">
-                    <?php if($p_data['userid'] != $_SESSION['user_id']){?>
-                        <button type="button" class="buy-btn">購入する</button>
-                        <button type="button" class="dm-btn has-link" data-url="<?php echo "directMail.php?to=".$p_data['userid']?>">作者にDM</button>
-                        <button type="button" class="favorit-btn <?php if(isFavorit($p_data['productid']))echo "checked"?>" data-productid="<?php echo $p_data['productid']?>">お気に入り</button>
-                    <?php }else{ ?>
-
+                    <?php if(!isset($_SESSION['user_id'])){//ログインしているか？?>
+                        <p class="notSignin-mes has-link" data-url="signin.php">購入、DMにはログインが必要です</p>
+                    <?php }else{ if($p_data['userid'] != $_SESSION['user_id']){ //ログインしていて自分の商品か？?>
+                            <button type="button" class="buy-btn">購入する</button>
+                            <button type="button" class="dm-btn has-link" data-url="<?php echo "directMail.php?to=".$p_data['userid']?>">作者にDM</button>
+                            <button type="button" class="favorit-btn <?php if(isFavorit($p_data['productid']))echo "checked"?>" data-productid="<?php echo $p_data['productid']?>">お気に入り</button>
+                    <?php }else{ //自分の商品ならば編集するボタンにする。？?>
                         <button type="button" class="buy-btn has-link" data-url="<?php echo "productEdit.php?p_id=".$p_data['productid']?>">編集する</button>
+                    <?php }?>
                     <?php }?>
                 </div>
             </div>

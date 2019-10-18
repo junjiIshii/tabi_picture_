@@ -277,10 +277,6 @@
     <link href="responsive.css" rel="stylesheet">
 </head>
 <body>
-        <!-- 案内用のニュッと出てくるやつ-->
-    <p id="js-show-msg"  class="msg-slide" style="display:none;">
-        <?php echo getSessionFlash('msg_suc') ;?>
-    </p>
 
     <?php require_once('header.php')?>
 

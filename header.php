@@ -13,7 +13,7 @@
             break;
 
             //ユーザーリストなら、写真リストページへのリンクになる。
-        case strstr($url,'/tabi_picture/users_list.php'):
+        default:
             $menuLink='<li><a href="products_list.php">写真を見つける</a></li>';
             break;
     };
@@ -32,13 +32,18 @@
     }
 ?>
 
+<!--フラッシュメッセージ-->
+<p id="js-show-msg"  class="msg-slide" style="display:none;">
+    <?php echo getSessionFlash('msg_suc') ;?>
+</p>
+
 <header>
         <div class='head-conteiner'>
-            <a  class='logo-icon' href='/tabi_picture/products_list.php'>TABI PICTUREs</a>
+            <a  class='logo-icon' href='/tabi_picture/index.php'>TABI PICTUREs</a>
 
             <div class='header-menue'>
                 <ul>
-                    <?php if(isset($menuLink)) echo $menuLink;?>
+                    <?php echo $menuLink;?>
                     <?php echo $regiOrMypage;?>
                     <?php echo $log_InOrOut;?>
                 </ul>

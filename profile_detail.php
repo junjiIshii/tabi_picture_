@@ -106,7 +106,8 @@
     
 
     .btn-wrapper{
-        text-align: right;
+        display:flex;
+        justify-content:flex-end;
     }
 
     .dm-btn{
@@ -117,6 +118,7 @@
             height:40px;
             border-radius: 20px;
             cursor: pointer;
+            margin-right:5px;
         }
 
     .profEdit-btn{
@@ -168,6 +170,20 @@
         display:flex;
         flex-direction: column;
         justify-content: center;
+    }
+
+    .mes-wrapper{
+        display:flex;
+        margin-top:25px;
+    }
+
+    .notSignin-mes{
+        background:lightgray;
+        font-weight:bold;
+        padding:5px;
+        cursor: pointer;
+        display:inline-block;
+        margin-left:auto;
     }
 
     .product-unit{    
@@ -233,17 +249,24 @@
 
             <div class="profileArea">
 
-            <?php if($u_data['userid'] != $_SESSION['user_id'] && isset($_SESSION['user_id'])){ //自分の場合はフォローボタンとDMボタンは表示しない。?>
-                <div class="btn-wrapper">
-                    <button type="button" class="dm-btn has-link" data-url="<?php echo "directMail.php?to=".$u_id?>">DMをする</button>
-                    <button type="button" class="card follow-btn <?php if(isFollow($u_data['userid'])) echo "followed"?> has-link" data-userid="<?php echo $u_data['userid']?>">フォロー</button>
-                </div>
+            <?php if(isset($_SESSION['user_id'])){?>
+                <?php if($u_data['userid'] != $_SESSION['user_id']){ //自分の場合はフォローボタンとDMボタンは表示しない。?>
+                    <div class="btn-wrapper">
+                        <button type="button" class="dm-btn has-link" data-url="<?php echo "directMail.php?to=".$u_id?>">DMをする</button>
+                        <button type="button" class="card follow-btn <?php if(isFollow($u_data['userid'])) echo "followed"?>" data-userid="<?php echo $u_data['userid']?>">フォロー</button>
+                    </div>
+                <?php }else{?>
+                    <div class="btn-wrapper">
+                        <button type="button" class="profEdit-btn has-link" data-url="profileEdit.php">プロフィール編集</button>
+                        <button type="button" class="dm-btn has-link " data-url="myproducts_list.php">商品編集</button>
+                    </div>
+                <?php }?>
             <?php }else{?>
-                <div class="btn-wrapper">
-                    <button type="button" class="profEdit-btn has-link" data-url="profileEdit.php">プロフィール編集</button>
-                    <button type="button" class="dm-btn has-link " data-url="myproducts_list.php">商品編集</button>
+                <div class="mes-wrapper">
+                    <p class="notSignin-mes has-link" data-url="signin.php">フォロー、DMにはログインが必要です</p>
                 </div>
             <?php }?>
+
                 <div class="info-wrap">
                     <p class="userName"><?php echo $u_data['username']?></p>
                     <p class="introduction"><?php echo $u_data['introduction']?></p>
