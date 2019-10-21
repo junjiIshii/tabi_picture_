@@ -11,7 +11,7 @@
     
         $allNum = getNumData('productid','products');
     
-        $maxShowNum = 12;
+        $maxShowNum = 8;
         $offset =($currentPg-1)*$maxShowNum;
         $p_data = makeProducList($maxShowNum,$offset);
         $lastPg_count = ceil($allNum/$maxShowNum); //　全ページ数　全体数÷表示数
@@ -217,6 +217,7 @@
                     <div class="serchsection showNumber">
                         <p>表示数</p>
                         <select name="showNum" class="showNum">
+                        <option value="8" <?php selectedEcho('showNum',8)?>>指定しない</option>
                             <?php for($i=1;$i<=4;$i++):?>
                                 <option value="<?php echo $i*12?>" <?php selectedEcho('showNum',$i*12)?>><?php echo $i*12?></option>
                             <?php endfor;?>

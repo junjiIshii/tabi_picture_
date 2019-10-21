@@ -149,6 +149,7 @@
 
 
     </style>
+    <link href="responsive.css" rel="stylesheet">
 </head>
 
 <body>
@@ -182,6 +183,7 @@
                         <div class="guest-signup">
                             <p>ポートフォリオをご覧頂きありがとうございます。</p>
                             <p>ゲストユーザーとして登録をせず機能を見れます。</p>
+                            <p>samaple1@exmaple.comの様な適当なアドレスでもアカウントを作れます。</p>
                             
                                 <ul class="guest-selector">
                                 <form method="post">

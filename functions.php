@@ -732,11 +732,11 @@ function showSearchProd($currentPg,$type=1){
 
         switch($slectShowType){
             case 1:
-            $sql .= " ORDER BY create_time ASC";
+            $sql .= " ORDER BY create_time DESC";
             break;
 
             case 2:
-            $sql .= " ORDER BY create_time DESC";
+            $sql .= " ORDER BY create_time ASC";
             break;
 
             
@@ -791,11 +791,11 @@ function showSearchUser($currentPg){
 
         switch($slectShowType){
             case 1:
-            $sql .= " ORDER BY create_date ASC";
+            $sql .= " ORDER BY create_date DESC";
             break;
 
             case 2:
-            $sql .= " ORDER BY create_date DESC";
+            $sql .= " ORDER BY create_date ASC";
             break;
 
             

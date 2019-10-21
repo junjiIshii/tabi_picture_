@@ -64,6 +64,40 @@
             margin:0 auto;
         }
 
+    /*-------------------*/
+    /*紹介ページ*/
+    /*-------------------*/
+
+    #indexPage .info-conteiner{
+        width:100%;
+        min-width:0px;
+    }
+
+    #indexPage .info-mes{
+        font-size:27px;
+    }
+
+    .guest-signup p{
+        font-size:13px;
+    }
+
+    .tutorial-info{
+        width:100%;
+    }
+
+    .info-unit{
+        flex-direction:column;
+        margin:15px 0px 0px 0px;
+    }
+
+    .info-unit .sentence{
+        width:100%;
+        margin-bottom:10px;
+    }
+
+    .info-unit .info-imge{
+        min-width:190px;
+    }
 
     /*--------独立---------*/
     /*マイページ*/
@@ -667,6 +701,10 @@
         }
 
         #productList-main-conteiner .prodocuts-conteiner{
+            width:100%;
+        }
+
+        .tutorial-info{
             width:100%;
         }
 }

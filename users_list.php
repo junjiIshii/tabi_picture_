@@ -9,7 +9,7 @@
         if((int)$currentPg === 0){header("location:?pg=1");}
     
         $allNum = getNumData('userid','users');
-        $maxShowNum = 12;
+        $maxShowNum = 6;
         $offset =($currentPg-1)*$maxShowNum;
         $u_data = getSelectData($maxShowNum ,$offset,'users','userid,username,introduction,header_img,icon_img');
         $lastPg_count = ceil($allNum/$maxShowNum); //　全ページ数　全体数÷表示数
@@ -196,6 +196,7 @@
                 <div class="serchsection showNumber">
                         <p>表示数</p>
                         <select name="showNum" class="showNum">
+                            <option value="6" <?php selectedEcho('showNum',6)?>>指定しない</option>
                             <?php for($i=1;$i<=4;$i++):?>
                                 <option value="<?php echo $i*12?>" <?php selectedEcho('showNum',$i*12)?>><?php echo $i*12?></option>
                             <?php endfor;?>
