@@ -6,6 +6,7 @@
     debug('」」」」」」」」」」」」」」」」」」」」」」」」」」」」');
     debugLogStart();
     loginAuth();
+    
 
     if(!empty($_GET['max'])){
         $max = $_GET['max'];

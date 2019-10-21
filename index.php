@@ -1,5 +1,24 @@
 <?php
     require("functions.php");
+
+
+    //ゲストユーザーログイン
+    if(!empty($_POST['guestlogin'])){
+        switch(htmlspecialchars($_POST['guestlogin'])){
+            case('ゲストユーザー１'):
+                signinAs(17);
+                break;
+
+            case('ゲストユーザー２'):
+                signinAs(18);
+                break;
+
+            case('ゲストユーザー３'):
+                signinAs(19);
+                break;
+        }
+        $_SESSION['msg_suc']=$_POST['guestlogin']."としてログイン中です。";
+    }
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +31,9 @@
     
     <style>
         .bg-img{
-            background-image: url("pictures/sample04.jpg");
+            background-image: url("pictures/index.jpg");
+            background-repeat:no-repeat;
+            background-position:50% 50%;
             background-size: cover;
             width:100%;
         }
@@ -20,7 +41,7 @@
         .bg-mask{
             width:100%;
             height:100%;
-            background: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0.4);
         }
         .main-conteiner{
             flex-direction:column;
@@ -116,6 +137,15 @@
             
         }
 
+        .guest-selector input{
+            width: 25%;
+            min-width:200px;
+            height:30px;
+            padding: 3px;
+            font-size:16px;
+            background: rgba(7, 230, 163, 0.6);
+            border-radius: 5px;
+        }
 
 
     </style>
@@ -136,11 +166,11 @@
 
                         <div class="btn-conteiner">
 
-                            <button class="actionbutton green has-link" type="button" data-url="signin.php">
+                            <button class="actionbutton green has-link" type="button" data-url="signup.php">
                                 新規アカウント作成
                             </button>
 
-                            <button class="actionbutton blue has-link" type="button" data-url="signup.php">
+                            <button class="actionbutton blue has-link" type="button" data-url="signin.php">
                                 ログイン
                             </button>
 
@@ -152,11 +182,16 @@
                         <div class="guest-signup">
                             <p>ポートフォリオをご覧頂きありがとうございます。</p>
                             <p>ゲストユーザーとして登録をせず機能を見れます。</p>
-                            <ul class="guest-selector">
-                                <li class="guest01">ゲストユーザー１</li>
-                                <li class="guest02">ゲストユーザー２</li>
-                                <li class="guest03">ゲストユーザー３</li>
-                            </ul>
+                            
+                                <ul class="guest-selector">
+                                <form method="post">
+                                    <li class="guest01"><input type="submit" name="guestlogin" value="ゲストユーザー１"></li>
+                                    <li class="guest02"><input type="submit" name="guestlogin" value="ゲストユーザー２"></li>
+                                    <li class="guest03"><input type="submit" name="guestlogin" value="ゲストユーザー３"></li>
+                                    </form>
+                                </ul>
+                            
+                            
                         </div>
                     </div>
 

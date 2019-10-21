@@ -267,22 +267,17 @@
                             
                             <div class="authorAndtitle">
                                 <p class = "product author"><?php 
-                                $name = $p_data[$i]['username'];
-                                if(strlen($name)>10){
-                                    echo mb_substr($name,0,9)."...";
-                                }else{
-                                    echo $name;
-                                }
+                                echo hiddenOverStr($p_data[$i]['username'],9)
                                 ?></p>
 
-                                <p class = "product title"><?php echo $p_data[$i]['title']?></p>
+                                <p class = "product title"><?php echo hiddenOverStr($p_data[$i]['title'],9)?></p>
                             </div>
                                 
 
                                 <div class="product pictureinfo">
                                     <p><?php $detail = $p_data[$i]['detail'] ;
                                         //商品詳細文は80文字までだす。
-                                        echo hiddenOverStr($detail,80);?></p>
+                                        echo hiddenOverStr($detail,60);?></p>
                                 </div>
                             
                             

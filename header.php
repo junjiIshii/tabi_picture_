@@ -34,7 +34,7 @@
 
 <!--フラッシュメッセージ-->
 <p id="js-show-msg"  class="msg-slide" style="display:none;">
-    <?php echo getSessionFlash('msg_suc') ;?>
+    <?php getSessionFlash() ;?>
 </p>
 
 <header>

@@ -11,59 +11,69 @@
     }
 
     if(!empty($_POST)){
+        $inpAuth = htmlspecialchars($_POST['authKey']);
+        $newPass = htmlspecialchars($_POST['password']);
+
+        mustEnter($inpAuth,'authKey');
+        mustEnter($newPass,'password');
+    }
+
+
+
+    if(!empty($_POST['authKey'])){
 
         //authKeyのチェック
-        $inpAuth = htmlspecialchars($_POST['authKey']);
-
         lengthCheck($inpAuth,8,'authKey');
         validHalf($inpAuth,'authKey');
-        mustEnter($inpAuth,'authKey');
+    }
 
+    if(!empty($_POST['password'])){
+
+        //authKeyのチェック
+        validHalf($newPass,'password');
+        minMaxWords($newPass,8,30,'password');
     }
     
 
     if(!empty($_POST) && empty($err_msg) && $inpAuth == $_SESSION['auth_key'] ){
         debug('バリデーションOKかつ認証キー合致');
-        $new_pass = createAuthKey($leng = 8);
 
         try{
-            $pass_fordb = password_hash($new_pass, PASSWORD_DEFAULT);
+            $pass_fordb = password_hash($newPass, PASSWORD_DEFAULT);
             $email = $_SESSION['auth_email'];
-
             $dbh = dbconnect();
             $sql = 'UPDATE users SET password =:pass WHERE email = :email';
             $data = array(':pass'=> $pass_fordb,':email'=> $email);
             $stmt = queryPost($dbh,$sql,$data);
 
             if($stmt){
-                debug('クエリ成功');
+                    debug('クエリ成功');
                 $to= $email;
-                $sjt = '【パスワードを再発行しました】TABI PICTURE';
+                $sjt = '【パスワードを再設定しました】TABI PICTURE';
                 $msg= <<<EOM
-認証キーによる本人確認ができました。
-パスワードを再発行します。こちらの
-パスワードを用いてログインをしてください。
+認証キーによる本人確認とパスワードの変更ができました。
+引き続き安全のためログイン画面よりログインしてください。
 
-パスワード：{$new_pass}
 
 ログイン画面はこちら
-http://localhost:8888/tabi_picture/signin.php
+http://test.english-protocol.net/tabi_picture/signin.php
 
-ログイン後はパスワードを変更することをお勧めします。
-パスワード変更はマイページの「パスワード変更」から
-アクセスしてください。
 EOM;
 
-                mail($to,$sjt,$msg);
-                session_destroy();
-                $_SEESION['msg_suc']=SUC07;
-                header('location:signin.php');
-            }
-        }catch (Exception $e){
-            debug('エラー発生：'.$e->getMessage());
-            $err_msg['fatal']= MSG06;
+            mail($to,$sjt,$msg);
+            session_unset();
+            unset($_SESSION['auth_key'],$_SESSION['auth_key_limit'],$_SESSION['auth_email']);
+            $_SESSION['msg_suc'] ="パスワードの再設定が完了しました。安全のため再度ログインをしてください。";
+            
+            header('location:signin.php');
+            
         }
-    }else if(!empty($_POST) && empty($err_msg) && $inpAuth != $_SESSION['auth_key']){
+    }catch (Exception $e){
+        debug('エラー発生：'.$e->getMessage());
+        $err_msg['fatal']= MSG06;
+    }
+
+    }else if(!empty($_POST) && $inpAuth != $_SESSION['auth_key']){
         //認証キーが違う場合
         debug('バリデーションOK、認証キー非合致');
         $err_msg['authKey']= MSG17;
@@ -71,7 +81,6 @@ EOM;
         debug('認証キー期限切れ');
         $err_msg['authKey']= MSG17;
     }
-
 ?>
 
 <!DOCTYPE html>
@@ -99,6 +108,7 @@ EOM;
         .formLabel{
             display: block;
             font-size: 18pxpx;
+            margin-bottom:15px;
         }
         .form-group{
             width:90%;
@@ -155,23 +165,26 @@ EOM;
 <body>
     <?php require_once('header.php')?>
 
-    <p id="js-show-msg"  class="msg-slide" style="display:none;">
-        <?php echo getSessionFlash('msg_suc') ;?>
-    </p>
-
         <div class="main-conteiner">
             <div class="signup-conteiner">
 
                 <form method="post">
 
                     <div class="form-group">
-                        <p class= "formName">入力したアドレス宛に認証キーを送信しました。認証キーを入力して「確認」を押してください。認証キーが一致した場合、メールにて再発行用のパスワードを送信します。</p>
-                        <div class="help-block"><?php if(!empty($err_msg)) echo $err_msg['fatal'];?></div>
+                        <p class= "formName">入力したアドレス宛に認証キーを送信しました。認証キーを入力しパスワードを再設定してください。</p>
+                        <div class="help-block"><?php if(!empty($err_msg['fatal'])) echo $err_msg['fatal'];?></div>
 
                         <label class="formLabel" for="authKey">認証キー入力<span class="help-block">
-                            <?php if(!empty($err_msg)) echo $err_msg['authKey'];?></span>
+                            <?php if(!empty($err_msg['authKey'])) echo $err_msg['authKey'];?></span>
                             <input class="formArea valid-authKey" id="authKey" type="password" name="authKey"
-                            value=<?php if(!empty($_POST['authKey'])) echo $_POST['authKey'];?>></label>
+                            value=<?php if(!empty($_POST['authKey'])) echo $_POST['authKey'];?>>
+                        </label>
+
+                        <label class="formLabel" for="password">パスワードを再設定<span class="help-block">
+                            <?php if(!empty($err_msg['password'])) echo $err_msg['password'];?></span>
+                            <input class="formArea valid-pass" id="pass" type="password" name="password"
+                            value=<?php if(!empty($_POST['password'])) echo $_POST['password'];?>>
+                        </label>
                     </div>
 
                     <input class="submit-btn" type="submit" value="確認">

@@ -25,7 +25,8 @@
                 session_destroy();
                 debug('退会によるセッション削除：'.print_r($_SESSION,true));
                 debug('トップページへ遷移');
-                header("location:products_list.php");
+                $_SESION['msg_suc']="退会処理が完了しました。";
+                header("location:index.php");
             }else{
                 debug('クエリ失敗！！');
                 $err_msg['fatal']=MSG06;

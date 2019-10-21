@@ -7,7 +7,11 @@
 
 
     //期限切れの人が来た→すでにある認証キーの中身、アドレス、有効期限をリセットする。
-    session_unset();
+    
+    if(isset($_SESSION['auth_key']) && time() > $_SESSION['auth_key_limit']){
+        unset($_SESSION['auth_key'],$_SESSION['auth_key_limit']);
+    }
+
     if(!empty($_POST)){
 
         //Emailのチェック
@@ -37,11 +41,11 @@
 下記のURLにアクセスしていただき、認証キーを入力してください。
 
 認証キー：{$auth_key}
-認証キー入力URL：http://localhost:8888/tabi_picture/passResetInput.php
+認証キー入力URL：http://test.english-protocol.net/tabi_picture/passResetInput.php
 ※30分以内に入力してください。
 
 認証キーの再発行はこちらのページから行えます。
-http://localhost:8888/tabi_picture/passReset.php
+http://test.english-protocol.net/tabi_picture/passReset.php
 
 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 TABI　PICTUREカスタマーセンター

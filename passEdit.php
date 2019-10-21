@@ -4,9 +4,9 @@
     debug('「パスワード変更」');
     debug('」」」」」」」」」」」」」」」」」」」」」」」」」」」」');
     debugLogStart();
+    
     loginAuth();
-
-
+    
 
     if(!empty($_POST)){
         $oldpass = htmlspecialchars($_POST['oldpass']);

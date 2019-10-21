@@ -1,6 +1,13 @@
 <?php
     require("functions.php");
 
+    if(!empty($_SESSION['user_id'])){
+        $_SESSION['msg_suc']="新規登録をする場合はログアウトしてください。";
+        header('location:mypage.php');
+        exit();
+    }
+
+
     if(!empty($_POST)){
         $chk=array(
                 'user-name'=>$_POST['user-name'],
@@ -59,6 +66,7 @@
 
 
     if(!empty($_POST) && empty($err_msg)){
+        $_SESSION['msg_suc']="新規登録が完了しました。";
         signup();
         debug('登録処理実行');
     }

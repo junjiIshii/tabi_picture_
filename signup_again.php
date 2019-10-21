@@ -10,21 +10,37 @@
         debug('POST送信あり');
         try{
             $dbh= dbconnect();
-            $sql1= 'UPDATE users SET delete_flg = 1 WHERE userid = :us_id';
-            $sql2= 'UPDATE products SET delete_flg = 1 WHERE userid = :us_id';
-            $sql3= 'UPDATE favorite SET delete_flg = 1 WHERE userid = :us_id';
+            $sql = 'SELECT userid FROM users WHERE email = :email';
+            $data1 = array(':email'=>$_SESSION['past_email']);
 
-            $data = array(':us_id'=>$_SESSION['user_id']);
+            $stmt = queryPost($dbh,$sql,$data1);
+            $userid = $stmt -> fetch(PDO::FETCH_ASSOC);
+            //debug('データ内容：'.print_r($userid,true));
 
-            $stmt1 =queryPost($dbh,$sql1,$data);
-            $stmt2 =queryPost($dbh,$sql2,$data);
-            $stmt3 =queryPost($dbh,$sql2,$data);
+            $sql1= 'UPDATE users SET delete_flg = 0 WHERE userid = :us_id';
+            $sql2= 'UPDATE products SET delete_flg = 0 WHERE userid = :us_id';
+            $sql3= 'UPDATE favorite SET delete_flg = 0 WHERE userid = :us_id';
+
+            $data2=array(':us_id'=>$userid['userid']);
+            //debug('データ内容：'.print_r($data2,true));
+            
+            $stmt1 =queryPost($dbh,$sql1,$data2);
+            $stmt2 =queryPost($dbh,$sql2,$data2);
+            $stmt3 =queryPost($dbh,$sql2,$data2);
 
             if($stmt1){
-                session_destroy();
+                $_SESSION['login_date']= time();
+                $_SESSION['login_limit'] = 3600;
+                $_SESSION['user_id'] = $userid['userid'];
+
+
+                unset($_SESSION['past_email']);
+
                 debug('退会によるセッション削除：'.print_r($_SESSION,true));
                 debug('トップページへ遷移');
-                header("location:products_list.php");
+
+                $_SESSION['msg_suc']="アカウント復活処理が完了しました。";
+                header("location:mypage.php");
             }else{
                 debug('クエリ失敗！！');
                 $err_msg['fatal']=MSG06;
@@ -41,7 +57,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>退会ページ</title>
+    <title>アカウント復活</title>
     <link href="style.css" rel="stylesheet">
     <style>
         .main-conteiner{

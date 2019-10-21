@@ -69,14 +69,10 @@ function debug($str){
     }
 }
 
-function getSessionFlash($key){
-    if(!empty($_SESSION[$key])){
-        $data=$_SESSION[$key];
-        $_SESSION[$key]='';
-        debug('suc内容：'.$data);
-
-        //↓この$dataには空文字にする前のデータが入っている。
-        return $data;
+function getSessionFlash(){
+    if(!empty($_SESSION['msg_suc']) && empty($_POST)){
+        echo $_SESSION['msg_suc'];
+        unset($_SESSION['msg_suc']);
     }
 }
 
@@ -936,7 +932,12 @@ function signup(){
 }
 
 
-//function signupAs($guest){}
+function signinAs($guestid){
+    $_SESSION['user_id'] = $guestid;
+    $_SESSION['login_date']= time();
+    $_SESSION['login_limit']=3600;
+    header("location:mypage.php");
+}
 
 //===================
 //削除処理
@@ -1048,7 +1049,7 @@ function selectedEcho($key,$num){
 
 //指定文字数以上を表示しないようにする。
 function hiddenOverStr($str,$max){
-    if(strlen($str)>$max){
+    if(mb_strlen($str)>$max){
         return mb_substr($str,0,$max)."...";
     }else{
         return $str;

@@ -6,7 +6,13 @@
     debug('」」」」」」」」」」」」」」」」」」」」」」」」」」」」');
     debugLogStart();
 
-
+    //仮にログイン済みのユーザーが来た場合
+    if(!empty($_SESSION['user_id'])){
+        $_SESSION['msg_suc']="すでにログイン済です。";
+        header('location:mypage.php');
+        exit();//後続の処理でmsg_sucが消えないようにする。
+    }
+    
 //==================
 //バリデーション
 //==================
@@ -67,10 +73,11 @@
 
             //ユーザーIDをセッションに格納
             $_SESSION['user_id'] = $result['userid'];
-
+            $_SESSION['msg_suc']="ログインしました";
             debug('セッション変数の中身：'.print_r($_SESSION,true));
             debug('マイページへ遷移');
             header('Location:mypage.php');
+            
 
         }elseif(delFlagchek($email) !=0 && !empty($result) && password_verify($password, array_shift($result))){
             debug('退会ユーザーがログインしようとした');
