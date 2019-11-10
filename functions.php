@@ -123,6 +123,8 @@ function loginAuth(){
                 debug('ログインユーザーがログインページにアクセス。マイページに遷移');
                 header('location:mypage.php');
             }
+
+
             return true;
         }
     }else{
@@ -581,7 +583,27 @@ function getFollowData($u_id){
     }
 }
 
-//ユーザーをフォローしているユーザー一覧作成のため、フォロワーの名前、アイコン、IDをとる。
+
+//対象ユーザーをフォローしているユーザー一覧作成のため、フォロワーIDをとる。引数に調べる対象ユーザーのIDを入れる
+function getWhoFollowId($u_id){
+    try{
+        $dbh = dbconnect();
+        $sql ='SELECT follow, f.userid, u.userid
+        FROM follows AS f RIGHT JOIN users AS u ON f.userid = u.userid 
+        WHERE u.delete_flg =0 AND f.follow = :f_user';
+
+        $data = array(':f_user'=>$u_id);
+        $stmt = queryPost($dbh,$sql,$data);
+
+        $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+        debug('取得データ：'.print_r($result,true));
+        return $result;
+    }catch(Exception $e){
+        debug('エラー発生：'.$e->getMessage());
+    }
+}
+
+//対象ユーザーをフォローしているユーザー一覧作成のため、フォロワーの名前、アイコン、IDをとる。引数に調べる対象ユーザーのIDを入れる
 function getWhoFollow($u_id){
     try{
         $dbh = dbconnect();
@@ -932,11 +954,94 @@ function signup(){
 }
 
 
+
+function signin(){
+    global $err_msg;
+    if(!empty($_POST) && empty($err_msg)){
+        debug('バリデーションOK');
+        $email = htmlspecialchars($_POST['email']);
+        $password = htmlspecialchars($_POST['password']);
+
+        try{
+            $dbh = dbconnect();
+            $sql = 'SELECT password, userid FROM users WHERE email = :email';
+            $data = array(':email'=> $email);
+            $stmt = queryPost($dbh,$sql,$data);
+            $result = $stmt -> fetch(PDO::FETCH_ASSOC);
+
+            debug('クエリの中身：'.print_r($result,true));
+
+            //パスワードの照合
+
+            //退会ユーザーでなく、合致した場合。EmailはEMPTYで区別している。
+            if(delFlagchek($email) ==0 && !empty($result) && password_verify($password, array_shift($result))){
+            debug('パスワードが合致');
+
+
+            //デフォルトのログイン有効期限
+            $sesLimit = 60*60;
+
+            //最終ログイン日時を現在日時にする。
+            $_SESSION['login_date']= time();
+
+
+                //ログイン保持にチェックがある。
+                if($pass_save){
+                    debug('ログイン保持にチェックあり');
+
+                    //ログイン有効期限を30日にする。
+                    $_SESSION['login_limit']= $sesLimit*24*30;
+                }else{
+                    debug('ログイン保持にチェックなし');
+                    $_SESSION['login_limit'] = $sesLimit;
+                }
+
+            //ユーザーIDをセッションに格納
+            $_SESSION['user_id'] = $result['userid'];
+            $_SESSION['msg_suc']="ログインしました";
+            debug('セッション変数の中身：'.print_r($_SESSION,true));
+            debug('マイページへ遷移');
+            header('Location:mypage.php');
+            
+
+        }elseif(delFlagchek($email) !=0 && !empty($result) && password_verify($password, array_shift($result))){
+            debug('退会ユーザーがログインしようとした');
+            debug('復活登録フォームへ遷移');
+            $_SESSION['past_email'] = $email;
+            header('location:signup_again.php');
+        }else{
+            debug('パスワードが非合致');
+            $err_msg['fatal'] = MSG07;
+        }
+    }catch(Exception $e){
+        debug('エラー発生：'.($e->getMessage()));
+        $err_msg['fatal']= MSG06;
+    }
+}
+}
+
+
 function signinAs($guestid){
     $_SESSION['user_id'] = $guestid;
     $_SESSION['login_date']= time();
     $_SESSION['login_limit']=3600;
     header("location:mypage.php");
+}
+
+//mypageに来た時、loginTimeをアップデートする。
+function updateLoginTime(){
+    try{
+        $dbh= dbconnect();
+        $sql = 'UPDATE users SET login_time = :login_time WHERE userid = :u_id';
+        $data = array(
+                ':u_id'=> $_SESSION['user_id'],
+                ':login_time'=> date('Y-m-d H:i:s'));
+
+    $stmt = queryPost($dbh,$sql,$data);
+    debug('ログイン時間を更新しました。');
+    }catch(Exception $e){
+        debug('エラー発生'.$e->getMessage());
+    }
 }
 
 //===================
@@ -1039,7 +1144,7 @@ function withGetPram(){
     }
 }
 
-//確か必要なやつ、、
+//検索機能で選択肢たタグを記録し、HTMLに選択した内容をもつタグにcheckedを入れる。
 function selectedEcho($key,$num){
     if(!empty($_GET) && isset($_GET[$key])){
         if($_GET[$key] == "$num"){echo "selected";
@@ -1268,6 +1373,9 @@ function set_notify($toUser,$fromUser,$type,$p_id=1){
             case 2://DM通知
                 $mes = $fromUser['username']."さんからのDMが届いています。";
                 break;
+            
+            case 3://商品アップロード通知
+                $mes = $fromUser['username']."さんが新しい商品をアップロードしました。";
         }
 
 
@@ -1289,6 +1397,15 @@ function set_notify($toUser,$fromUser,$type,$p_id=1){
     }
     
 }
+
+
+function set_upload_notify($fromuser){
+    $followers = getWhoFollowId($fromuser);
+    foreach ($followers as $key => $val) {
+        set_notify($val['userid'],$fromuser,3);
+    }
+}
+
 
 //マイページに表示する通知の取得
 function get_notify($u_id,$limit=5){

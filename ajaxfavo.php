@@ -35,8 +35,7 @@
                 debug($toUser['userid']);
                 set_notify($toUser['userid'],$_SESSION['user_id'],1,$p_id);
                 
-                //通知用の設定
-                //良いねした商品のユーザーIDを取得する。
+
             }
         }catch(Exception $e){
             debug('エラー発生；'.$e->getMessage());

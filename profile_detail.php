@@ -58,7 +58,8 @@
     .main-conteiner{
         width: 85%;
         margin: 0 auto;
-        margin-top:10px;
+        margin-bottom:10px;
+        justify-content: center;
     }
 
     .user-data-container{
@@ -324,7 +325,6 @@
             </div>
             
         </div>
-        <?php require_once('mypageBar.php')?>
     </div>
     <div class="cd"></div>
     

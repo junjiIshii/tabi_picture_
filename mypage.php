@@ -6,7 +6,7 @@
     debug('」」」」」」」」」」」」」」」」」」」」」」」」」」」」');
     debugLogStart();
     loginAuth();
-    
+    updateLoginTime();
 
     if(!empty($_GET['max'])){
         $max = $_GET['max'];
@@ -129,6 +129,10 @@
         .fa-envelope{
             color:dodgerblue;
         }
+
+        .fa-image{
+            color:greenyellow;
+        }
         
 
         .content-area{
@@ -137,6 +141,7 @@
 
         .notify_time{
             font-size:10px;
+            display: block;
         }
 
     </style>
@@ -185,6 +190,7 @@
                                         
                                     </div>
                                 </div>
+
                             <?php }elseif($val['type']==0){ //フォローの通知?>
                                 <div class="notifyUnit has-link" data-url="<?php echo "profile_detail.php?u_id=".$val['userid']?>">
                                     <div class="user-icon has-link" data-url="<?php echo "profile_detail.php?u_id=".$val['userid']?>">
@@ -195,6 +201,7 @@
                                         <i class="fas fa-user fa-lg"></i><p class = "content"><?php echo $val['contents']?><span class="notify_time"><?php echo $val['create_time']?></span></p>
                                     </div>
                                 </div>
+
                             <?php }elseif($val['type']==2){ //DMの通知?>
                                 <div class="notifyUnit has-link" data-url="<?php echo "directMail.php?to=".$val['userid']?>">
                                     <div class="user-icon has-link" data-url="<?php echo "profile_detail.php?u_id=".$val['userid']?>">
@@ -204,12 +211,23 @@
                                         <i class="fas fa-envelope fa-lg"></i><p class = "content"><?php echo $val['contents']?><span class="notify_time"><?php echo $val['create_time']?></span></p>
                                     </div>
                                 </div>
+
+                            <?php }elseif($val['type']==3){ //新商品のアップロード通知 ?>
+                                <div class="notifyUnit has-link" data-url="<?php echo "profile_detail.php?u_id=".$val['userid']?>">
+                                    <div class="user-icon has-link" data-url="<?php echo "profile_detail.php?u_id=".$val['userid']?>">
+                                        <img src="<?php echo $val['icon_img']?>">
+                                    </div>
+                                    <div class="content-area">
+                                        <i class="fas fa-image fa-lg"></i><p class = "content"><?php echo $val['contents']?><span class="notify_time"><?php echo $val['create_time']?></span></p>
+                                    </div>
+                                </div>
                             <?php } ?>
 
                         <?php } ?>
-                        <?php }else{ ?>
-                            <p>まだ通知はありません。</p>
-                        <?php } ?>
+                        
+                    <?php }else{ ?>
+                        <p>まだ通知はありません。</p>
+                    <?php } ?>
                 </div>
             </div>
             <?php require_once('mypageBar.php')?>

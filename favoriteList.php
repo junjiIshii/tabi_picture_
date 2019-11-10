@@ -1,6 +1,7 @@
 <?php 
     require_once('functions.php');
     $p_data = getFavoList($_SESSION['user_id']);
+    loginAuth();
 ?>
 
 <!DOCTYPE html>

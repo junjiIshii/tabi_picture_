@@ -66,7 +66,7 @@
         exit();
     }
 
-    if($edit_flg == false){
+    if($edit_flg === false){
         //新規
         minMaxWords($title,0,50,'title');
         minMaxWords($intr,0,500,'introduction');
@@ -135,6 +135,7 @@
         $dbh = dbconnect();
         try{
             if($edit_flg == false){
+                //新規
                 $sql = 'INSERT INTO products(
                         userid,
                         pic1,
@@ -235,6 +236,8 @@
 
             if($stmt && $edit_flg == false){
                 debug('クエリ成功。マイページへ移動');
+
+                set_upload_notify($_SESSION['user_id']);
                 $_SESSION['msg_suc']= SUC03;
                 header("location:mypage.php");
             }elseif($stmt && $edit_flg == true){
