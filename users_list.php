@@ -11,7 +11,7 @@
         $allNum = getNumData('userid','users');
         $maxShowNum = 6;
         $offset =($currentPg-1)*$maxShowNum;
-        $u_data = getSelectData($maxShowNum ,$offset,'users','userid,username,introduction,header_img,icon_img');
+        $u_data = getUsersData($maxShowNum ,$offset);
         $lastPg_count = ceil($allNum/$maxShowNum); //　全ページ数　全体数÷表示数
         //debug('検索データ内容：'.print_r($u_data,true));
     }else{
@@ -50,7 +50,7 @@
     <title>商品一覧</title>
     <style>
     .usercards-conteiner{
-        margin: 30px 20px;
+        margin: 0px 20px;
         width:80%;
         display: flex;
         flex-wrap:wrap;
@@ -59,7 +59,7 @@
 
     .guide{
         border: 1px solid black;
-        width: 50%;
+        width: 80%;
         height: 50px;
         margin-bottom: 20px;
         font-size:15px;

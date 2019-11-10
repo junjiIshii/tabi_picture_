@@ -10,11 +10,11 @@
         $currentPg = (!empty($_GET['pg']))? $_GET['pg']:1;
         if((int)$currentPg === 0){header("location:?pg=1");}
     
-        $allNum = getUserProducNum($_SESSION['user_id']);
+        $allNum = getUserProducNum($_SESSION['user_id'],1);
     
         $maxShowNum = 12;
         $offset =($currentPg-1)*$maxShowNum;
-        $p_data = makeUserProducList($maxShowNum,$offset,$_SESSION['user_id']);
+        $p_data = makeMyProducList($maxShowNum,$offset,$_SESSION['user_id']);
         $lastPg_count = ceil($allNum/$maxShowNum); //　全ページ数　全体数÷表示数
     }else{
         $currentPg = (!empty($_GET['pg']))? $_GET['pg']:1;

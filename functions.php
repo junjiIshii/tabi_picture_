@@ -460,11 +460,11 @@ function getOneProductData($productid,$colKey){
 }
 
 //特定のデータを指定数分だけ取得する。
-function getSelectData($getCount,$offSet,$table,$column){
-    debug("{$table}情報を{$offSet}番目から{$getCount}個取得します。");
+function getUsersData($getCount,$offSet){
+    
     try{
         $dbh = dbconnect();
-        $sql = "SELECT {$column} FROM {$table} LIMIT {$getCount} OFFSET {$offSet}";
+        $sql = "SELECT userid,username,introduction,header_img,icon_img FROM users WHERE delete_flg = 0 ORDER BY create_date DESC LIMIT {$getCount} OFFSET {$offSet} ";
 
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
@@ -496,10 +496,21 @@ function getNumData($column,$table){
 }
 
 //IDで指定したユーザーが持っている商品データの総数を取得する。
-function getUserProducNum($u_id){
+function getUserProducNum($u_id,$type){
     try{
         $dbh = dbconnect();
-        $sql = 'SELECT count(productid) FROM products WHERE userid=:u_id AND delete_flg = 0';
+
+        switch($type){
+            case 0:
+                //他のユーザーに見られる場合は非公開の商品は含まない
+                $sql = 'SELECT count(productid) FROM products WHERE userid=:u_id AND delete_flg = 0 AND open_flg = 1';
+                break;
+
+            case 1:
+                //編集一覧の時は非公開のものも含める
+                $sql = 'SELECT count(productid) FROM products WHERE userid=:u_id AND delete_flg = 0';
+                break;
+        }
         $data = array(':u_id'=>$u_id);
 
         $stmt = queryPost($dbh,$sql,$data);
@@ -647,7 +658,7 @@ function makeProducList($maxShow,$offset){
         $dbh = dbconnect();
         $sql = "SELECT productid,u.userid, username, icon_img,pic1,title,detail
         FROM users AS u RIGHT JOIN products AS p ON u.userid = p.userid WHERE p.delete_flg = 0 AND open_flg = 1
-        LIMIT {$maxShow} OFFSET {$offset}";
+        ORDER BY p.create_time DESC LIMIT {$maxShow} OFFSET {$offset}";
         
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
@@ -665,8 +676,27 @@ function makeProducList($maxShow,$offset){
 function makeUserProducList($maxShow,$offset,$u_id){
     try{
         $dbh = dbconnect();
+        $sql = "SELECT productid,pic1,title,detail FROM products WHERE delete_flg = 0 AND userid = :u_id AND open_flg = 1;
+        ORDER BY p.create_time DESC LIMIT {$maxShow} OFFSET {$offset}";
+
+        $data = array(':u_id'=>$u_id);
+        
+        $stmt = queryPost($dbh,$sql,$data);
+
+        $result = $stmt -> fetchAll();
+        debug('取得データ：'.print_r($result,true));
+        return $result;
+
+    }catch(Exception $e){
+        debug('エラー発生：'.$e->getMessage());
+    }
+}
+
+function makeMyProducList($maxShow,$offset,$u_id){
+    try{
+        $dbh = dbconnect();
         $sql = "SELECT productid,pic1,title,detail,open_flg FROM products WHERE delete_flg = 0 AND userid = :u_id;
-        LIMIT {$maxShow} OFFSET {$offset}";
+        ORDER BY p.create_time DESC LIMIT {$maxShow} OFFSET {$offset}";
 
         $data = array(':u_id'=>$u_id);
         
@@ -707,7 +737,7 @@ function showProductData($p_id){
 }
 
 //検索結果分のデータを表示する。$type=1は通常検索、2の時は自分の商品の中での検索(myproducts_List)
-function showSearchProd($currentPg,$type=1){
+function showSearchProd($currentPg,$type){
     $nameSer = htmlspecialchars($_GET['byName']);
     $catSer =  htmlspecialchars($_GET['c_id']);
     $slectShowNum =  htmlspecialchars($_GET['showNum']);
@@ -742,14 +772,35 @@ function showSearchProd($currentPg,$type=1){
             $data[':cat_id'] = $catSer;
         }
 
-        if((!empty($nameSer) || $catSer !=0 ) && $type==2){
-            $sql .= ' AND p.userid=:u_id';
-            $sql2 .=' AND p.userid=:u_id';
-            $data[':u_id'] = $_SESSION['user_id'];
-        }elseif(empty($nameSer) && $catSer ==0 && $type==2){
-            $sql .= ' WHERE p.userid=:u_id';
-            $sql2 .=' WHERE p.userid=:u_id';
-            $data[':u_id'] = $_SESSION['user_id'];
+        if(!empty($nameSer) || $catSer !=0 ){
+
+            switch($type){
+                case 1:
+                    $sql .= ' AND open_flg=1 AND p.delete_flg=0';
+                    $sql2 .=' AND open_flg=1 AND p.delete_flg=0';
+                    break;
+
+                case 2:
+                    $sql .= ' AND p.userid=:u_id AND p.delete_flg=0';
+                    $sql2 .=' AND p.userid=:u_id AND p.delete_flg=0';
+                    $data[':u_id'] = $_SESSION['user_id'];
+                    break;
+            }
+
+        }elseif(empty($nameSer) && $catSer ==0){
+
+            switch($type){
+                case 1:
+                    $sql .= ' WHERE p.delete_flg=0 AND open_flg=1';
+                    $sql2 .=' WHERE p.delete_flg=0 AND open_flg=1';
+                    break;
+
+                case 2:
+                    $sql .= ' WHERE p.userid=:u_id AND p.delete_flg=0';
+                    $sql2 .=' WHERE p.userid=:u_id AND p.delete_flg=0';
+                    $data[':u_id'] = $_SESSION['user_id'];
+                    break;
+            }
         }
 
         switch($slectShowType){
@@ -797,16 +848,16 @@ function showSearchUser($currentPg){
 
         //検索にヒットするレコードを指定数分取得する。
         $sql = 'SELECT userid,username,introduction,header_img,icon_img,create_date
-        FROM users';
+        FROM users WHERE delete_flg=0';
 
         //検索総数を出すためのカウント
-        $sql2 = 'SELECT count(userid) FROM users';
+        $sql2 = 'SELECT count(userid) FROM users WHERE delete_flg=0';
         $data = array();
 
         //
         if(!empty($nameSer)){
-            $sql .= ' WHERE username=:u_name';
-            $sql2 .= ' WHERE username=:u_name';
+            $sql .= ' AND username=:u_name';
+            $sql2 .= ' AND username=:u_name';
             $data[':u_name'] = $nameSer;
         }
 
@@ -955,70 +1006,6 @@ function signup(){
 
 
 
-function signin(){
-    global $err_msg;
-    if(!empty($_POST) && empty($err_msg)){
-        debug('バリデーションOK');
-        $email = htmlspecialchars($_POST['email']);
-        $password = htmlspecialchars($_POST['password']);
-
-        try{
-            $dbh = dbconnect();
-            $sql = 'SELECT password, userid FROM users WHERE email = :email';
-            $data = array(':email'=> $email);
-            $stmt = queryPost($dbh,$sql,$data);
-            $result = $stmt -> fetch(PDO::FETCH_ASSOC);
-
-            debug('クエリの中身：'.print_r($result,true));
-
-            //パスワードの照合
-
-            //退会ユーザーでなく、合致した場合。EmailはEMPTYで区別している。
-            if(delFlagchek($email) ==0 && !empty($result) && password_verify($password, array_shift($result))){
-            debug('パスワードが合致');
-
-
-            //デフォルトのログイン有効期限
-            $sesLimit = 60*60;
-
-            //最終ログイン日時を現在日時にする。
-            $_SESSION['login_date']= time();
-
-
-                //ログイン保持にチェックがある。
-                if($pass_save){
-                    debug('ログイン保持にチェックあり');
-
-                    //ログイン有効期限を30日にする。
-                    $_SESSION['login_limit']= $sesLimit*24*30;
-                }else{
-                    debug('ログイン保持にチェックなし');
-                    $_SESSION['login_limit'] = $sesLimit;
-                }
-
-            //ユーザーIDをセッションに格納
-            $_SESSION['user_id'] = $result['userid'];
-            $_SESSION['msg_suc']="ログインしました";
-            debug('セッション変数の中身：'.print_r($_SESSION,true));
-            debug('マイページへ遷移');
-            header('Location:mypage.php');
-            
-
-        }elseif(delFlagchek($email) !=0 && !empty($result) && password_verify($password, array_shift($result))){
-            debug('退会ユーザーがログインしようとした');
-            debug('復活登録フォームへ遷移');
-            $_SESSION['past_email'] = $email;
-            header('location:signup_again.php');
-        }else{
-            debug('パスワードが非合致');
-            $err_msg['fatal'] = MSG07;
-        }
-    }catch(Exception $e){
-        debug('エラー発生：'.($e->getMessage()));
-        $err_msg['fatal']= MSG06;
-    }
-}
-}
 
 
 function signinAs($guestid){
@@ -1277,6 +1264,7 @@ function updateProductState($p_id){
             case 0:
                 $sql2 = 'UPDATE products SET open_flg = 1 WHERE productid = :p_id';
                 debug('商品ID'.$p_id.'の公開状態を「公開」変更しました。');
+                $_SESSION['msg_suc']="商品を公開にしました。";
                 break;
         }
 

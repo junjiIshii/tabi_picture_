@@ -32,7 +32,67 @@
 //==================
 //ログイン処理
 //==================
-    signin();
+    if(!empty($_POST) && empty($err_msg)){
+        debug('バリデーションOK');
+        $email = htmlspecialchars($_POST['email']);
+        $password = htmlspecialchars($_POST['password']);
+
+        try{
+            $dbh = dbconnect();
+            $sql = 'SELECT password, userid FROM users WHERE email = :email';
+            $data = array(':email'=> $email);
+            $stmt = queryPost($dbh,$sql,$data);
+            $result = $stmt -> fetch(PDO::FETCH_ASSOC);
+
+            debug('クエリの中身：'.print_r($result,true));
+
+            //パスワードの照合
+
+            //退会ユーザーでなく、合致した場合。EmailはEMPTYで区別している。
+            if(delFlagchek($email) ==0 && !empty($result) && password_verify($password, array_shift($result))){
+            debug('パスワードが合致');
+
+
+            //デフォルトのログイン有効期限
+            $sesLimit = 60*60;
+
+            //最終ログイン日時を現在日時にする。
+            $_SESSION['login_date']= time();
+
+
+                //ログイン保持にチェックがある。
+                if($pass_save){
+                    debug('ログイン保持にチェックあり');
+
+                    //ログイン有効期限を30日にする。
+                    $_SESSION['login_limit']= $sesLimit*24*30;
+                }else{
+                    debug('ログイン保持にチェックなし');
+                    $_SESSION['login_limit'] = $sesLimit;
+                }
+
+            //ユーザーIDをセッションに格納
+            $_SESSION['user_id'] = $result['userid'];
+            $_SESSION['msg_suc']="ログインしました";
+            debug('セッション変数の中身：'.print_r($_SESSION,true));
+            debug('マイページへ遷移');
+            header('Location:mypage.php');
+            
+
+        }elseif(delFlagchek($email) !=0 && !empty($result) && password_verify($password, array_shift($result))){
+            debug('退会ユーザーがログインしようとした');
+            debug('復活登録フォームへ遷移');
+            $_SESSION['past_email'] = $email;
+            header('location:signup_again.php');
+        }else{
+            debug('パスワードが非合致');
+            $err_msg['fatal'] = MSG07;
+        }
+    }catch(Exception $e){
+        debug('エラー発生：'.($e->getMessage()));
+        $err_msg['fatal']= MSG06;
+    }
+    }
     debug('================画面表示処理終了');
 ?>
 

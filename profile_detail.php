@@ -24,7 +24,7 @@
     }
 
     //ここからページングの調整。全体数の取得
-    $allNum = getUserProducNum($u_id);
+    $allNum = getUserProducNum($u_id,0);
 
     //商品を一つでも登録してなければページングはしない。
     if($allNum != 0){
@@ -279,18 +279,19 @@
                     <?php if($allNum != 0){?>
                     <div class="product-unit-wrap"> 
                         <?php for($i=0; $i< $pgData['maxShow']; $i++) {;?>
-                            <div class="product-unit has-link" data-url="<?php echo "product_detail.php?p_id=".$p_data[$i]['productid']?>">
-                                
-                                <div class="product-img">
-                                    <img src="<?php echo $p_data[$i]['pic1']?>">
+                                <div class="product-unit has-link" data-url="<?php echo "product_detail.php?p_id=".$p_data[$i]['productid']?>">
+                                    
+                                    <div class="product-img">
+                                        <img src="<?php echo $p_data[$i]['pic1']?>">
+                                    </div>
+
+                                    <div class="product pictureinfo">
+                                        <p class = "product title"><?php echo $p_data[$i]['title']?></p>
+                                        <p><?php echo $p_data[$i]['detail']?></p>
+                                    </div>
+
                                 </div>
 
-                                <div class="product pictureinfo">
-                                    <p class = "product title"><?php echo $p_data[$i]['title']?></p>
-                                    <p><?php echo $p_data[$i]['detail']?></p>
-                                </div>
-
-                            </div>
                         <?php }?>
                     </div>
 
